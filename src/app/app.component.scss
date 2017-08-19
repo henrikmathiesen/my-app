@@ -1,5 +1,7 @@
+@import '~sass/_settings.scss';
+
 h1 {
-    color: goldenrod;
+    color: $color-primary;
 }
 
 .selected {
