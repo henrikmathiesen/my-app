@@ -1,6 +1,8 @@
 @import 'settings/settings';
 @import 'my-settings';
+
 @import 'foundation';
+@include foundation-everything;
 
 @import 'my-base';
 

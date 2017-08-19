@@ -1,7 +1,9 @@
 @import 'my-settings';
+@import 'util/util';
 
 h1 {
     color: $color-primary;
+    font-size:rem-calc(48px);
 }
 
 .selected {
