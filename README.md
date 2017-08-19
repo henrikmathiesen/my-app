@@ -4,7 +4,8 @@
 https://angular.io/guide/quickstart  
 https://angular.io/tutorial  
 https://jeffshamley.com/blogs/using-sass-angular-cli  
-https://netbasal.com/angular-cli-and-global-sass-variables-a1b92d8ca9b7
+https://netbasal.com/angular-cli-and-global-sass-variables-a1b92d8ca9b7  
+https://github.com/angular/angular-cli/pull/4003
 
 ## CLI info
 
