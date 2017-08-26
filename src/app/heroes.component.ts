@@ -5,16 +5,13 @@ import { HeroService } from './hero.service';
 @Component({
   selector: 'my-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss'],
-  providers: [HeroService]
+  styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
 
   constructor(private heroService: HeroService) {
 
   }
-
-  title = 'Tour of Heroes';
 
   hero: Hero = {
     id: null,
