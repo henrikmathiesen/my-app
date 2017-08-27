@@ -20,6 +20,7 @@ export class HeroDetailComponent implements OnInit {
     @Input() hero: Hero;
 
     ngOnInit() {
+        // https://stackoverflow.com/questions/42655134/angular-2-why-use-switchmap-when-retrieving-route-params
         this.route.paramMap
             .switchMap((params: ParamMap) =>  this.heroService.getHero(+params.get('id')))
             .subscribe((hero: Hero) => this.hero = hero);
