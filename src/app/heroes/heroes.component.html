@@ -4,4 +4,9 @@
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
-<hero-detail [hero]="selectedHero"></hero-detail>
+<div [hidden]="!selectedHero">
+  <h2>{{ selectedHero?.name | uppercase }} is my hero</h2>
+  <div>
+    <button (click)="gotoDetail()">View Details</button>
+  </div>
+</div>
