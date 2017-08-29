@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
@@ -17,7 +17,7 @@ export class HeroDetailComponent implements OnInit {
         private location: Location
     ) { }
 
-    @Input() hero: Hero;
+    hero: Hero;
 
     ngOnInit() {
         // https://stackoverflow.com/questions/42655134/angular-2-why-use-switchmap-when-retrieving-route-params
