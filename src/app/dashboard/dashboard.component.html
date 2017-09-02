@@ -1,7 +1,7 @@
 <h3>Top Heroes</h3>
 <div class="grid-x grid-margin-x">
     <div class="cell medium-4" *ngFor="let hero of heroes">
-        <h4 class="callout my-link-text" [routerLink]="['/detail', hero.id]">
+        <h4 class="callout my-link-text" [routerLink]="['/detail', hero.id]" (keyup.enter)="goToDetail(hero.id)">
             {{hero.name}}
         </h4>
     </div>
