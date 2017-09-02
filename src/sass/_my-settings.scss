@@ -1,7 +1,10 @@
 // Override Foundation settings
 
 $white:#FFF; // just a test
-// $global-flexbox: false; seams to have no effect?
+
+// $global-flexbox: false; 
+// Seams to have no effect? Maybe it gets overridden by foundation-everything(true), also note that true is default
+// It could be that the variable will have effect if we use each foundation mixin seperatly
 
 // App
 

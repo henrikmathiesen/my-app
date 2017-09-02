@@ -2,7 +2,7 @@
 @import 'my-settings';
 
 @import 'foundation';
-@include foundation-everything(true); // use flexbox mode, everything also includes xy-grid (but does not include flex-grid nor float-grid)
+@include foundation-everything(true); // use flexbox mode, everything includes xy-grid (but does not include flex-grid nor float-grid)
 
 @import 'my-base';
 @import 'my-helpers';
