@@ -1,8 +1,12 @@
+// Override Foundation settings
+
+$white:#FFF; // just a test
+// $global-flexbox: false; seams to have no effect?
+
+// App
+
 $my-color-primary: #3498db;
 $my-color-background: #ecf0f1;
-
-// Testing overiding foundation variable
-$white:#FFF;
 
 // Gutter
 $my-gutter-md: rem-calc(15px);

@@ -1,2 +1,8 @@
 <h3>Top Heroes</h3>
-<h4 *ngFor="let hero of heroes"><a [routerLink]="['/detail', hero.id]">{{hero.name}}</a></h4>
+<div class="grid-x grid-margin-x">
+    <div class="cell medium-4" *ngFor="let hero of heroes">
+        <h4 class="callout my-link-text" [routerLink]="['/detail', hero.id]">
+            {{hero.name}}
+        </h4>
+    </div>
+</div>

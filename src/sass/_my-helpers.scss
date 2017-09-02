@@ -1,0 +1,15 @@
+.my-cursor-pointer {
+    cursor: pointer!important;
+}
+
+.my-link-text {
+    line-height: inherit;
+    color: $anchor-color;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.my-link-text:hover, 
+.my-link-text:focus {
+    color: $anchor-color-hover
+}
