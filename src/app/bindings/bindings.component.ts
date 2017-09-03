@@ -3,19 +3,13 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { random } from 'lodash';
 import { ErrorService } from 'app/shared/error.service';
-
-interface IJsonPlaceholder {
-    userId: number;
-    id: number;
-    title: string;
-    body: string;
-}
+import { IJsonPlaceholder } from './IJsonPlaceholder';
 
 @Component({
     selector: 'bindings',
     templateUrl: './bindings.component.html'
 })
-export class Bindings implements OnInit {
+export class Bindings implements OnInit, OnDestroy {
 
     jsonData: IJsonPlaceholder;
 
@@ -39,15 +33,14 @@ export class Bindings implements OnInit {
     }
 
     ngOnInit() {
-        console.log('init');
-        
+        console.log('init: bindings component');
+
         this.getData(this.getRandomInt()).then(data => {
-            console.log('got data', data);
             this.jsonData = data
         });
     }
 
     ngOnDestroy() {
-        console.log('destroy');
+        console.log('destroy: bindings component');
     }
 }
