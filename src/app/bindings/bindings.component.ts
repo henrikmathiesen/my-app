@@ -25,11 +25,11 @@ export class Bindings implements OnInit, OnDestroy {
     }
 
     private getData(id: number): Promise<IJsonPlaceholder> {
-        const url = `http://jsonplaceholder.typicode.com/posts/${id}`;
+        const url = `http://jsonplaceholder.typicode.com/postssssssss/${id}`;
 
         return this.http.get(url).toPromise()
             .then(data => data.json())
-            .catch(error => this.errorService.rejectPromise('bindings.component', error));
+            .catch(error => this.errorService.rejectPromise('bindings.component', error, true));
     }
 
     ngOnInit() {

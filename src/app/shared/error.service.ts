@@ -4,7 +4,18 @@ import { Injectable } from '@angular/core';
 
 export class ErrorService {
 
-    rejectPromise(component:string, error: Object): Promise<any> {
+    private _appHasError: boolean = false;
+
+    setAppHasError(hasError: boolean) {
+        this._appHasError = hasError;
+    }
+
+    getAppHasError() {
+        return this._appHasError;
+    }
+
+    rejectPromise(component: string, error: Object, showUser: boolean = false): Promise<any> {
+        this.setAppHasError(showUser);
         return Promise.reject(JSON.stringify({ component, error }));
     }
 

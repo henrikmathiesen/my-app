@@ -11,6 +11,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Bindings } from './bindings/bindings.component';
 import { BindingsSub } from './bindings/bindings-sub/bindings-sub.component';
+import { ErrorComponent } from './shared/error.component';
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
 
@@ -21,7 +22,8 @@ import { ErrorService } from './shared/error.service';
     HeroDetailComponent,
     DashboardComponent,
     Bindings,
-    BindingsSub
+    BindingsSub,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
