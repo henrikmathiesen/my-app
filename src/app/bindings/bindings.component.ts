@@ -16,16 +16,14 @@ export class Bindings implements OnInit, OnDestroy {
     constructor(
         private http: Http,
         private errorService: ErrorService
-    ) {
-
-    }
+    ) {}
 
     private getRandomInt(): number {
         return random(1, 100);
     }
 
     private getData(id: number): Promise<IJsonPlaceholder> {
-        const url = `http://jsonplaceholder.typicode.com/postssssssss/${id}`;
+        const url = `http://jsonplaceholder.typicode.com/posts/${id}`;
 
         return this.http.get(url).toPromise()
             .then(data => data.json())
