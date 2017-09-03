@@ -11,6 +11,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Bindings } from './bindings/bindings.component';
 import { HeroService } from './shared/hero.service';
+import { ErrorService } from './shared/error.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HeroService } from './shared/hero.service';
     AppRoutingModule
   ],
   providers: [
-    HeroService // if we need the service in many components we put it here, instead of local providers in @Component
+    HeroService, // if we need the service in many components we put it here, instead of local providers in @Component
+    ErrorService
   ],
   bootstrap: [AppComponent]
 })
