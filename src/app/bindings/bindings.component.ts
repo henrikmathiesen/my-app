@@ -21,7 +21,7 @@ export class Bindings implements OnInit, OnDestroy {
     }
 
     private getRandomInt(): number {
-        return random(1,100);
+        return random(1, 100);
     }
 
     private getData(id: number): Promise<IJsonPlaceholder> {
@@ -42,5 +42,11 @@ export class Bindings implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         console.log('destroy: bindings component');
+    }
+
+    refresh() {
+        this.getData(this.getRandomInt()).then(data => {
+            this.jsonData = data
+        });
     }
 }
