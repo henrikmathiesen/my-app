@@ -7,9 +7,14 @@ import { ErrorService } from 'app/shared/error.service';
     styles: ['button.alert { margin:0 }']
 })
 export class ErrorComponent {
+    errorService: ErrorService
+
     constructor(
-        private errorService: ErrorService
-    ) { }
+        errorService: ErrorService
+    ) { 
+        // need to do it like this, since we use service in template (else prod build fails)
+        this.errorService = errorService;
+    }
 
     discardError() { 
         this.errorService.setAppHasError(false);
