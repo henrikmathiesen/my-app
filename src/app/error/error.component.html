@@ -1,11 +1,11 @@
-<div class="alert callout" *ngIf="errorService.getAppHasError()">
+<div class="alert callout" *ngIf="errorIsVisible">
     <div class="grid-x grid-margin-x align-middle">
         <div class="cell medium-8">
             <h5>Error</h5>
             <p>Call support at 555 444 333</p>
         </div>
         <div class="cell medium-4 text-right">
-            <button class="alert button large" (click)="discardError()">Close</button>
+            <button class="alert button large" (click)="hideError()">Close</button>
         </div>
     </div>
 </div>

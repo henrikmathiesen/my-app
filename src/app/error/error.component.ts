@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ErrorService } from 'app/shared/error.service';
 
 @Component({
@@ -6,17 +6,26 @@ import { ErrorService } from 'app/shared/error.service';
     templateUrl: './error.component.html',
     styles: ['button.alert { margin:0 }']
 })
-export class ErrorComponent {
-    errorService: ErrorService
+export class ErrorComponent implements OnInit {
+
+    errorIsVisible: boolean;
 
     constructor(
-        errorService: ErrorService
-    ) { 
-        // need to do it like this, since we use service in template (else prod build fails)
-        this.errorService = errorService;
+        private errorService: ErrorService
+    ) {
+        // need to do it like this (not private), if we use service in template (else prod build fails)
+        // this.errorService = errorService;
     }
 
-    discardError() { 
-        this.errorService.setAppHasError(false);
+    ngOnInit() {
+        this.errorService.subscribeShowError(this.showError.bind(this));
+    }
+
+    showError() {
+        this.errorIsVisible = true;
+    }
+
+    hideError() {
+        this.errorIsVisible = false;
     }
 }

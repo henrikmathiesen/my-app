@@ -3,18 +3,21 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ErrorService {
 
-    private _appHasError: boolean = false;
+    private showErrorSubscriber: any;
 
-    setAppHasError(hasError: boolean) {
-        this._appHasError = hasError;
+    publishShowError() {
+        this.showErrorSubscriber();
     }
 
-    getAppHasError() {
-        return this._appHasError;
+    subscribeShowError(subscriber){
+        this.showErrorSubscriber = subscriber;
     }
 
     rejectPromise(component: string, error: Object, showUser: boolean = false): Promise<any> {
-        this.setAppHasError(showUser);
+        if (showUser) {
+            this.publishShowError();
+        }
+
         return Promise.reject(JSON.stringify({ component, error }));
     }
 
