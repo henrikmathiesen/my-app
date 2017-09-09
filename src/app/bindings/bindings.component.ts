@@ -26,7 +26,7 @@ export class Bindings implements OnInit, OnDestroy {
         const url = `http://jsonplaceholder.typicode.com/posts/${id}`;
 
         return this.http.get(url).toPromise()
-            .then(data => data.json())
+            .then(data => data.json())  // this is necessary in this version of Http (bu wont be in next version)
             .catch(error => this.errorService.rejectPromise('bindings.component', error, true));
     }
 
