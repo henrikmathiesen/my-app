@@ -1,10 +1,15 @@
 <div *ngIf="hero">
-    <h2>{{hero.name}} details!</h2>
+    <h2>{{hero.name}} details</h2>
     <div>
         <label>id: </label> {{hero.id}}
     </div>
     <div>
-        <label>name: </label> <input type="text" [(ngModel)]="hero.name" placeholder="name" />
+        <label for="hero-name">name: </label>
+        <input id="hero-name" type="text" [(ngModel)]="hero.name" placeholder="name" />
+    </div>
+    <div>
+        <label for="hero-name-debug">name (one way binding debug): </label> 
+        <input id="hero-name-debug" type="text" [value]="hero.name">
     </div>
     <div>
         <button class="my-link-text" (click)="goBack()">Back</button>

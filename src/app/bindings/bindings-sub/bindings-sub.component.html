@@ -1,5 +1,12 @@
+<h2>Bindings - sub component</h2>
+
+<div>
+    <button class="button" (click)="refresh()">Refresh data</button>
+</div>
+<p>
+    Refresh does NOT propagate up. For that to work we need to set up @Output with EventEmitter.
+</p>
 <div *ngIf="jsonData">
-    <h2>Bindings - sub component</h2>
     <h3>User Id: {{ jsonData.userId }}</h3>
     <h3>Id: {{ jsonData.id }}</h3>
     <h3>Title: {{ jsonData.title }}</h3>
