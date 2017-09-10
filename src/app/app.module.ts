@@ -17,6 +17,7 @@ import { CustomEventsSibblingComponent } from './custom-events-sibbling/custom-e
 
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
+import { CustomEventsMediatorService } from './shared/custom-events-mediator.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ErrorService } from './shared/error.service';
   ],
   providers: [
     HeroService, // if we need the service in many components we put it here, instead of local providers in @Component
-    ErrorService
+    ErrorService,
+    CustomEventsMediatorService
   ],
   bootstrap: [AppComponent]
 })
