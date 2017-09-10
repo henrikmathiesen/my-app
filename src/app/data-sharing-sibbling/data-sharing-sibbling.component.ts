@@ -11,10 +11,13 @@ export class DataSharingSibblingComponent implements OnInit {
 
     constructor(
         private dataSharingMediatorService: DataSharingMediatorService
-    ) {}
+    ) { }
 
     ngOnInit() {
         this.dataSharingMediatorService.currentMessage.subscribe(message => this.message = message);
     }
 
+    changeMessage() {
+        this.dataSharingMediatorService.changeMessage('Hello from data-sharing-sibbling.component');
+    }
 }

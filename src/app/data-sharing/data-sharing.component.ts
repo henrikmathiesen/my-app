@@ -15,4 +15,8 @@ export class DataSharingComponent implements OnInit {
     ngOnInit() {
         this.dataSharingMediatorService.currentMessage.subscribe(message => this.message = message);
     }
+
+    changeMessage() {
+        this.dataSharingMediatorService.changeMessage('Hello from data-sharing.component');
+    }
 }
