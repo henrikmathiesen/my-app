@@ -12,12 +12,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { Bindings } from './bindings/bindings.component';
 import { BindingsSub } from './bindings/bindings-sub/bindings-sub.component';
 import { ErrorComponent } from './error/error.component';
-import { CustomEventsComponent } from './custom-events/custom-events.component';
-import { CustomEventsSibblingComponent } from './custom-events-sibbling/custom-events-sibbling.component';
+import { DataSharingComponent } from './data-sharing/data-sharing.component';
+import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
 
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
-import { CustomEventsMediatorService } from './shared/custom-events-mediator.service';
+import { DataSharingMediatorService } from './shared/data-sharing-mediator.service';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,8 @@ import { CustomEventsMediatorService } from './shared/custom-events-mediator.ser
     Bindings,
     BindingsSub,
     ErrorComponent,
-    CustomEventsComponent,
-    CustomEventsSibblingComponent
+    DataSharingComponent,
+    DataSharingSibblingComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +40,7 @@ import { CustomEventsMediatorService } from './shared/custom-events-mediator.ser
   providers: [
     HeroService, // if we need the service in many components we put it here, instead of local providers in @Component
     ErrorService,
-    CustomEventsMediatorService
+    DataSharingMediatorService
   ],
   bootstrap: [AppComponent]
 })

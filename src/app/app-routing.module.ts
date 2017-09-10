@@ -5,8 +5,8 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { Bindings } from './bindings/bindings.component';
-import { CustomEventsComponent } from './custom-events/custom-events.component';
-import { CustomEventsSibblingComponent } from './custom-events-sibbling/custom-events-sibbling.component';
+import { DataSharingComponent } from './data-sharing/data-sharing.component';
+import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
 
 const routes: Routes = [
     {
@@ -31,12 +31,12 @@ const routes: Routes = [
         component: Bindings
     },
     {
-        path: 'custom-events',
-        component: CustomEventsComponent
+        path: 'data-sharing',
+        component: DataSharingComponent
     },
     {
-        path: 'custom-events-sibbling',
-        component: CustomEventsSibblingComponent
+        path: 'data-sharing-sibbling',
+        component: DataSharingSibblingComponent
     }
 ];
 
