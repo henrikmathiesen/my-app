@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { Bindings } from './bindings/bindings.component';
 import { CustomEventsComponent } from './custom-events/custom-events.component';
+import { CustomEventsSibblingComponent } from './custom-events-sibbling/custom-events-sibbling.component';
 
 const routes: Routes = [
     {
@@ -32,6 +33,10 @@ const routes: Routes = [
     {
         path: 'custom-events',
         component: CustomEventsComponent
+    },
+    {
+        path: 'custom-events-sibbling',
+        component: CustomEventsSibblingComponent
     }
 ];
 

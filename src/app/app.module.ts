@@ -13,7 +13,7 @@ import { Bindings } from './bindings/bindings.component';
 import { BindingsSub } from './bindings/bindings-sub/bindings-sub.component';
 import { ErrorComponent } from './error/error.component';
 import { CustomEventsComponent } from './custom-events/custom-events.component';
-import { CustomEventsSubComponent } from './custom-events/custom-events-sub/custom-events-sub.component';
+import { CustomEventsSibblingComponent } from './custom-events-sibbling/custom-events-sibbling.component';
 
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
@@ -28,7 +28,7 @@ import { ErrorService } from './shared/error.service';
     BindingsSub,
     ErrorComponent,
     CustomEventsComponent,
-    CustomEventsSubComponent
+    CustomEventsSibblingComponent
   ],
   imports: [
     BrowserModule,
