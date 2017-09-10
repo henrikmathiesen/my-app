@@ -1,4 +1,4 @@
-<h2>Bindings - component</h2>
+<h2>Bindings - Component</h2>
 
 <div *ngIf="jsonData">
     <button class="button" (click)="refresh()">Refresh data</button>
@@ -12,4 +12,4 @@
     <h3>Title: {{ jsonData.title }}</h3>
     <p>Body: {{ jsonData.body }}</p>
 </div>
-<bindings-sub [jsonData]="jsonData" (change)="change($event)"></bindings-sub>
+<bindings-child [jsonData]="jsonData" (change)="change($event)"></bindings-child>

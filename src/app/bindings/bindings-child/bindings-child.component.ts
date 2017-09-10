@@ -4,10 +4,10 @@ import { IJsonPlaceholder } from '../IJsonPlaceholder';
 import { JsonPlaceholderService } from '../jsonPlaceholder.service';
 
 @Component({
-    selector: 'bindings-sub',
-    templateUrl: './bindings-sub.component.html'
+    selector: 'bindings-child',
+    templateUrl: './bindings-child.component.html'
 })
-export class BindingsSub implements OnInit, OnDestroy {
+export class BindingsChild implements OnInit, OnDestroy {
 
     @Input() jsonData: IJsonPlaceholder; // = { id: 0, body: 'default', title: 'default', userId: 0 }; Can set default value on @Input() , can also map to another [name] by @Input('name')
     @Output() change: EventEmitter<IJsonPlaceholder> = new EventEmitter<IJsonPlaceholder>(); // it will only emit an event to the immediate parent component.
@@ -24,11 +24,11 @@ export class BindingsSub implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.testingViewChild = 'testing';
-        console.log('init: bindings-sub component');
+        console.log('init: bindings-child component');
     }
 
     ngOnDestroy() {
-        console.log('destroy: bindings-sub component');
+        console.log('destroy: bindings-child component');
     }
 
     refresh() {

@@ -10,7 +10,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Bindings } from './bindings/bindings.component';
-import { BindingsSub } from './bindings/bindings-sub/bindings-sub.component';
+import { BindingsChild } from './bindings/bindings-child/bindings-child.component';
 import { ErrorComponent } from './error/error.component';
 import { DataSharingComponent } from './data-sharing/data-sharing.component';
 import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
@@ -26,7 +26,7 @@ import { DataSharingMediatorService } from './shared/data-sharing-mediator.servi
     HeroDetailComponent,
     DashboardComponent,
     Bindings,
-    BindingsSub,
+    BindingsChild,
     ErrorComponent,
     DataSharingComponent,
     DataSharingSibblingComponent

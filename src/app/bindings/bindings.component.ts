@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, OnDestroy, AfterViewInit } from '@angular
 import { random } from 'lodash';
 import { IJsonPlaceholder } from './IJsonPlaceholder';
 import { JsonPlaceholderService } from './jsonPlaceholder.service';
-import { BindingsSub } from './bindings-sub/bindings-sub.component';
+import { BindingsChild } from './bindings-child/bindings-child.component';
 
 @Component({
     selector: 'bindings',
@@ -11,7 +11,7 @@ import { BindingsSub } from './bindings-sub/bindings-sub.component';
 })
 export class Bindings implements OnInit, OnDestroy, AfterViewInit {
 
-    @ViewChild(BindingsSub) bindingsSub: BindingsSub;
+    @ViewChild(BindingsChild) bindingsSub: BindingsChild;
 
     constructor(
         private jsonPlaceholderService: JsonPlaceholderService
