@@ -5,6 +5,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { Bindings } from './bindings/bindings.component';
+import { CustomEventsComponent } from './custom-events/custom-events.component';
 
 const routes: Routes = [
     {
@@ -27,6 +28,10 @@ const routes: Routes = [
     {
         path: 'bindings',
         component: Bindings
+    },
+    {
+        path: 'custom-events',
+        component: CustomEventsComponent
     }
 ];
 

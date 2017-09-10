@@ -7,7 +7,7 @@ import { Hero } from '../shared/hero';
 import { HeroService } from '../shared/hero.service';
 
 @Component({
-    selector: 'hero-detail',
+    selector: 'my-hero-detail',
     templateUrl: './hero-detail.component.html'
 })
 export class HeroDetailComponent implements OnInit {

@@ -1,0 +1,8 @@
+@import 'settings/settings';
+@import 'my-settings';
+
+nav {
+    a + a {
+        margin-left: $my-gutter-sm;
+    }
+}

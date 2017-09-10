@@ -12,6 +12,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { Bindings } from './bindings/bindings.component';
 import { BindingsSub } from './bindings/bindings-sub/bindings-sub.component';
 import { ErrorComponent } from './error/error.component';
+import { CustomEventsComponent } from './custom-events/custom-events.component';
+import { CustomEventsSubComponent } from './custom-events/custom-events-sub/custom-events-sub.component';
+
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
 
@@ -23,7 +26,9 @@ import { ErrorService } from './shared/error.service';
     DashboardComponent,
     Bindings,
     BindingsSub,
-    ErrorComponent
+    ErrorComponent,
+    CustomEventsComponent,
+    CustomEventsSubComponent
   ],
   imports: [
     BrowserModule,

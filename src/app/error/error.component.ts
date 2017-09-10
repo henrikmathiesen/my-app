@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ErrorService } from 'app/shared/error.service';
 
 @Component({
-    selector: 'error',
+    selector: 'my-error',
     templateUrl: './error.component.html',
     styles: ['button.alert { margin:0 }']
 })
