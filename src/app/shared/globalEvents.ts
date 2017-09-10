@@ -1,3 +1,3 @@
 export class GlobalEvents {
-    static CUSTOM_EVENT = 'CUSTOM_EVENT';
+    static readonly CUSTOM_EVENT = 'CUSTOM_EVENT';
 }
