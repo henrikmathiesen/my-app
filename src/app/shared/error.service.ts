@@ -5,7 +5,7 @@ export class ErrorService {
 
     private showErrorSubscriber: any;
 
-    publishShowError() {
+    private publishShowError() {
         this.showErrorSubscriber();
     }
 
