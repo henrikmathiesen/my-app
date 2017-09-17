@@ -14,6 +14,8 @@ import { BindingsChild } from './bindings/bindings-child/bindings-child.componen
 import { ErrorComponent } from './error/error.component';
 import { DataSharingComponent } from './data-sharing/data-sharing.component';
 import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
+import { Games } from './games/games.component';
+import { ListUsers, ListGames, ListReviews } from './games/lists';
 
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
@@ -29,7 +31,11 @@ import { DataSharingMediatorService } from './shared/data-sharing-mediator.servi
     BindingsChild,
     ErrorComponent,
     DataSharingComponent,
-    DataSharingSibblingComponent
+    DataSharingSibblingComponent,
+    Games,
+    ListUsers,
+    ListGames,
+    ListReviews
   ],
   imports: [
     BrowserModule,
