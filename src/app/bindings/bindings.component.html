@@ -12,4 +12,7 @@
     <h3>Title: {{ jsonData.title }}</h3>
     <p>Body: {{ jsonData.body }}</p>
 </div>
+<p>
+    <span #theSpan [class.true-that]="1 == 1" [ngClass]="{'foo': 2 == 2, 'bar': 2 == 4 }">@ViewChild DOM Element</span>
+</p>
 <bindings-child [jsonData]="jsonData" (change)="change($event)"></bindings-child>

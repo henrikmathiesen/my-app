@@ -23,7 +23,7 @@ export class BindingsChild implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.testingViewChild = 'testing';
+        this.testingViewChild = 'hello from bindings child via @ViewChild';
         console.log('init: bindings-child component');
     }
 
