@@ -38,7 +38,6 @@ export class Bindings implements OnInit, OnDestroy, AfterViewInit {
     ngAfterViewInit() {
         // Here we can access the data from the sub component via @ViewChild, but changes in subcomponent does not propogate upwards. Need @Output for that.
         console.log('bindingsChild', this.bindingsChild.testingViewChild);                                      // 3
-
     }
 
     ngOnDestroy() {
