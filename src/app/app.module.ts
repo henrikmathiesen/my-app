@@ -20,6 +20,7 @@ import { ListUsers, ListGames, ListReviews } from './games/lists';
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
 import { DataSharingMediatorService } from './shared/data-sharing-mediator.service';
+import { ConstantsApiService } from './shared/constants-api.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { DataSharingMediatorService } from './shared/data-sharing-mediator.servi
   providers: [
     HeroService, // if we need the service in many components we put it here, instead of local providers in @Component
     ErrorService,
-    DataSharingMediatorService
+    DataSharingMediatorService,
+    ConstantsApiService
   ],
   bootstrap: [AppComponent]
 })
