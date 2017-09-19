@@ -12,6 +12,10 @@
         <input id="hero-name-debug" type="text" [value]="hero.name">
     </div>
     <div>
+        <label for="hero-name-test-route-change">route change test: </label> 
+        <input id="hero-name-test-route-change" type="text" [(ngModel)]="testRouteChangeBindings">
+    </div>
+    <div>
         <button class="my-link-text" (click)="goBack()">Back</button>
     </div>
 </div>
