@@ -14,9 +14,10 @@ export class ListUsers implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.getGamesEntitiesService.get(this.constantsApiService.getGamesEntities().users)
-            .then(data => {
-                console.log(data);
-            });
+        // This will cause a cross domain ajax exception right now
+        // this.getGamesEntitiesService.get(this.constantsApiService.getGamesEntities().users)
+        //     .then(data => {
+        //         console.log(data);
+        //     });
     }
 }
