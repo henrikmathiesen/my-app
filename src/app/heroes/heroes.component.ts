@@ -3,6 +3,11 @@ import { Router } from '@angular/router';
 import { Hero } from '../shared/Hero';
 import { HeroService } from '../shared/hero.service';
 
+enum UseInViewEnum {
+  lorem = 1,
+  ipsum = 2
+}
+
 @Component({
   selector: 'my-heroes',
   templateUrl: './heroes.component.html',
@@ -23,6 +28,11 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[];
 
   selectedHero: Hero;
+
+
+  // Both of these work
+  //useInViewEnum: typeof UseInViewEnum = UseInViewEnum;
+  useInViewEnum = UseInViewEnum;
 
   ngOnInit() {
     this.heroService.getHeroes()
