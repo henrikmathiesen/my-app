@@ -4,8 +4,8 @@ import { Hero } from '../shared/Hero';
 import { HeroService } from '../shared/hero.service';
 
 enum UseInViewEnum {
-  lorem = 1,
-  ipsum = 2
+  Lorem = 1,
+  Ipsum = 2
 }
 
 @Component({

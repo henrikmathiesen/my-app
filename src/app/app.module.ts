@@ -14,8 +14,12 @@ import { BindingsChild } from './bindings/bindings-child/bindings-child.componen
 import { ErrorComponent } from './error/error.component';
 import { DataSharingComponent } from './data-sharing/data-sharing.component';
 import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
+
+import { FormTemplateDriven } from './form-template-driven/form-template-driven.component';
+
 import { Games } from './games/games.component';
 import { ListUsers, ListGames, ListReviews } from './games/lists';
+
 
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
@@ -33,6 +37,7 @@ import { ConstantsApiService } from './shared/constants-api.service';
     ErrorComponent,
     DataSharingComponent,
     DataSharingSibblingComponent,
+    FormTemplateDriven,
     Games,
     ListUsers,
     ListGames,
