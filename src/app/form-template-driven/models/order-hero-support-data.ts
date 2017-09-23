@@ -6,6 +6,12 @@ export enum Powers {
     CanFly
 }
 
+export enum FoodPreferences {
+    Pizza,
+    Pasta,
+    ApplePie
+}
+
 export class OrderHeroSupportData {
     static powers: string[] = [
         'Really Smart',
@@ -14,4 +20,10 @@ export class OrderHeroSupportData {
         'Weather Changer',
         'Can Fly'
     ];
+
+    static foodPreferences: string[] = [
+        'Pizza',
+        'Pasta',
+        'Apple Pie'
+    ]
 }

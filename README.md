@@ -12,6 +12,8 @@ use --prod (should extract css and minify)
 
 https://www.youtube.com/watch?v=I317BhehZKM , share data between components
 
+http://blog.angular-university.io/angular-2-ngfor/ , ngFor (index,odd,even,first,last)
+
 ## CLI info
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.

@@ -1,17 +1,43 @@
-<form>
+<form #heroForm="ngForm">
     <div class="grid-x grid-margin-x">
         <div class="cell medium-6">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" [(ngModel)]="model.name" required>
         </div>
         <div class="cell medium-6">
-            <label for="alt">Alter Ego</label>
-            <input type="text" id="alt" name="alt">
+            <label for="alter-ego">Alter Ego</label>
+            <input type="text" id="alter-ego" name="alter-ego" [(ngModel)]="model.alterEgo">
         </div>
     </div>
     <div class="grid-x grid-margin-x">
+        <div class="cell medium-6">
+            <label for="power"></label>
+            <select id="power" name="power" required [(ngModel)]="model.power">
+                <option *ngFor="let power of powers" [value]="power">{{power}}</option>
+            </select>
+        </div>
+        <div class="cell medium-6">
+            <div class="grid-x grid-margin-x">
+                <div class="cell small-6">
+                    <legend>Food Preference</legend>
+                    <div *ngFor="let food of foodPreferences let i = index">
+                        <input type="radio" id="food-preference-{{i}}" name="food-preference" [value]="food" [(ngModel)]="model.foodPreference" required>
+                        <label for="food-preference-{{i}}">{{food}}</label>
+                    </div>
+                </div>
+                <div class="cell small-6">
+                    <legend>Other Stuff</legend>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="grid-x">
         <div class="cell medium-offset-3 medium-6 large-offset-4 large-4">
             <button type="submit" class="success button expanded">Submit</button>
         </div>
     </div>
 </form>
+<div>
+    {{debug}}
+</div>
