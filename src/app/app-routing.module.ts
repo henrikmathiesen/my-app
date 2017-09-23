@@ -7,6 +7,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { Bindings } from './bindings/bindings.component';
 import { DataSharingComponent } from './data-sharing/data-sharing.component';
 import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
+import { FormTemplateDriven } from './form-template-driven/form-template-driven.component';
 import { Games } from './games/games.component';
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
     {
         path: 'data-sharing-sibbling',
         component: DataSharingSibblingComponent
+    },
+    {
+        path: 'form-template-driven',
+        component: FormTemplateDriven
     },
     {
         path: 'games',
