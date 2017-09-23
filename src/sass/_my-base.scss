@@ -1,6 +1,12 @@
 body {
     //background-color: $my-color-background;
     background-color: $white;
+}
+
+.my-site-container {
+    max-width: $global-width;
+    margin-left: auto;
+    margin-right: auto;
     padding: $my-gutter-md;
 }
 

@@ -18,16 +18,28 @@
         </div>
         <div class="cell medium-6">
             <div class="grid-x grid-margin-x">
-                <div class="cell small-6">
+                <fieldset class="cell small-6">
                     <legend>Food Preference</legend>
                     <div *ngFor="let food of foodPreferences let i = index">
                         <input type="radio" id="food-preference-{{i}}" name="food-preference" [value]="food" [(ngModel)]="model.foodPreference" required>
                         <label for="food-preference-{{i}}">{{food}}</label>
                     </div>
-                </div>
-                <div class="cell small-6">
-                    <legend>Other Stuff</legend>
-                </div>
+                </fieldset>
+                <fieldset class="cell small-6">
+                    <div class="flex-container align-right">
+                        <div>
+                            <legend>Other Stuff</legend>
+                            <div>
+                                <input type="checkbox" id="is-crazy" name="is-crazy" [(ngModel)]="model.isCrazy">
+                                <label for="is-crazy">Crazy?</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="is-nice" name="is-nice" [(ngModel)]="model.isNice">
+                                <label for="is-nice">Nice?</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
             </div>
 
         </div>
@@ -40,4 +52,9 @@
 </form>
 <div>
     {{debug}}
+</div>
+<div class="grid-x grid-padding-x align-justify">
+    <!-- Aligned to the edges -->
+    <div class="cell small-4">Aligned to</div>
+    <div class="cell small-4">the edges</div>
 </div>
