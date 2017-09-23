@@ -29,11 +29,7 @@ export class HeroForm {
     }
 
     onSubmit() {
+        console.log(this.model);
         this.submited = true;
-    }
-
-    // TODO: debugging
-    get debug(){
-        return JSON.stringify(this.model);
     }
 }
