@@ -16,6 +16,7 @@ import { DataSharingComponent } from './data-sharing/data-sharing.component';
 import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
 
 import { FormTemplateDriven } from './form-template-driven/form-template-driven.component';
+import { HeroForm } from './form-template-driven/hero-form/hero-form.component';
 
 import { Games } from './games/games.component';
 import { ListUsers, ListGames, ListReviews } from './games/lists';
@@ -38,6 +39,7 @@ import { ConstantsApiService } from './shared/constants-api.service';
     DataSharingComponent,
     DataSharingSibblingComponent,
     FormTemplateDriven,
+    HeroForm,
     Games,
     ListUsers,
     ListGames,
