@@ -4,4 +4,5 @@ export class OrderHero {
     power: string;
     alterEgo?: string;
     isCrazy: boolean;
+    isNice: boolean;
 }

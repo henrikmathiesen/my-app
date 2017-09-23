@@ -20,6 +20,7 @@ export class FormTemplateDriven {
         this.model.power = OrderHeroSupportData.powers[Powers.SuperHot];
         this.model.alterEgo = 'Terrier';
         this.model.isCrazy = true;
+        this.model.isNice = false;
         
         this.submited = false;
     }
