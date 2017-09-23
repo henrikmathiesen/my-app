@@ -1,1 +1,10 @@
-// TODO
+form {
+    .ng-valid[required] {
+        border-left: 6px solid $my-color-success !important;
+    }
+        
+    .ng-invalid  {
+        border-left: 6px solid $my-color-danger !important;
+    }
+}
+

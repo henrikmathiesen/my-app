@@ -1,11 +1,6 @@
 @import 'my-settings';
 @import 'util/util';
 
-h1 {
-    color: $my-color-primary;
-    font-size:rem-calc(48px);
-}
-
 .selected {
     background-color: #CFD8DC !important;
     color: white;

@@ -1,7 +1,7 @@
 <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="grid-x grid-margin-x">
         <div class="cell medium-6">
-            <label for="name">Name</label>
+            <label for="name">Name (required)</label>
             <input type="text" id="name" name="name" [(ngModel)]="model.name" required>
         </div>
         <div class="cell medium-6">
@@ -11,15 +11,21 @@
     </div>
     <div class="grid-x grid-margin-x">
         <div class="cell medium-6">
-            <label for="power"></label>
-            <select id="power" name="power" required [(ngModel)]="model.power">
-                <option *ngFor="let power of powers" [value]="power">{{power}}</option>
-            </select>
+            <div>
+                <label for="power">Power (required)</label>
+                <select id="power" name="power" required [(ngModel)]="model.power">
+                    <option *ngFor="let power of powers" [value]="power">{{power}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="code">Code (required, min 4 char)</label>
+                <input type="text" id="code" name="code" [(ngModel)]="model.code" required minlength="4">
+            </div>
         </div>
         <div class="cell medium-6">
             <div class="grid-x grid-margin-x">
                 <fieldset class="cell small-6">
-                    <legend>Food Preference</legend>
+                    <legend>Food Preference (required)</legend>
                     <div *ngFor="let food of foodPreferences; let i = index">
                         <input type="radio" id="food-preference-{{i}}" name="food-preference" [value]="food" [(ngModel)]="model.foodPreference" required>
                         <label for="food-preference-{{i}}">{{food}}</label>
@@ -46,7 +52,7 @@
     </div>
     <div class="grid-x">
         <div class="cell medium-offset-3 medium-6 large-offset-4 large-4">
-            <button type="submit" class="success button expanded">Submit</button>
+            <button type="submit" class="success button expanded" [disabled]="!heroForm.form.valid">Submit</button>
         </div>
     </div>
 </form>
