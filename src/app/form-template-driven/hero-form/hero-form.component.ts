@@ -29,7 +29,7 @@ export class HeroForm {
     }
 
     onSubmit() {
-        console.log(this.model);
+        console.log('HeroForm, onSubmit', this.model);
         this.submited = true;
     }
 }

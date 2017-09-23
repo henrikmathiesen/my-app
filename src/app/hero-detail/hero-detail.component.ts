@@ -11,14 +11,14 @@ import { HeroService } from '../shared/hero.service';
     templateUrl: './hero-detail.component.html'
 })
 export class HeroDetailComponent implements OnInit, OnDestroy {
+    hero: Hero;
+    testRouteChangeBindings: string;
+
     constructor(
         private heroService: HeroService,
         private route: ActivatedRoute,
         private location: Location
     ) { }
-
-    hero: Hero;
-    testRouteChangeBindings: string;
 
     ngOnInit() {
         console.log('HeroDetailComponent ngOnInit');

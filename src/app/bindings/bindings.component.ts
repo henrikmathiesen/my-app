@@ -14,11 +14,11 @@ export class Bindings implements OnInit, OnDestroy, AfterViewInit {
     @ViewChild(BindingsChild) bindingsChild: BindingsChild;                                                     // 2)
     @ViewChild('theSpan') theSpan: ElementRef;                                                                  // A
 
+    jsonData: IJsonPlaceholder;
+
     constructor(
         private jsonPlaceholderService: JsonPlaceholderService
     ) { }
-
-    jsonData: IJsonPlaceholder;
 
     private getRandomInt(): number {
         return random(1, 100);

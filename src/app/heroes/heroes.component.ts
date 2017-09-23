@@ -15,11 +15,6 @@ enum UseInViewEnum {
 })
 export class HeroesComponent implements OnInit {
 
-  constructor(
-    private heroService: HeroService,
-    private router: Router
-  ) { }
-
   hero: Hero = {
     id: null,
     name: null
@@ -29,10 +24,14 @@ export class HeroesComponent implements OnInit {
 
   selectedHero: Hero;
 
-
   // Both of these work
   //useInViewEnum: typeof UseInViewEnum = UseInViewEnum;
   useInViewEnum = UseInViewEnum;
+
+  constructor(
+    private heroService: HeroService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.heroService.getHeroes()
