@@ -22,7 +22,8 @@
                 <input type="text" id="code" name="code" [(ngModel)]="model.code" 
                         [required]="supportData.codeRule.isRequired"
                         [minlength]="supportData.codeRule.minlength"
-                        [disabled]="supportData.codeRule.isDisabled">
+                        [disabled]="supportData.codeRule.isDisabled"
+                        hero-form-validation [currentModel]="model" [supportData]="supportData">
             </div>
         </div>
         <div class="cell medium-6">

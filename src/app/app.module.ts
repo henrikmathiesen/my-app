@@ -26,6 +26,8 @@ import { ErrorService } from './shared/error.service';
 import { DataSharingMediatorService } from './shared/data-sharing-mediator.service';
 import { ConstantsApiService } from './shared/constants-api.service';
 
+import { HeroFormValidationDirective } from './form-template-driven/validation-directive/hero-form-validation.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,9 @@ import { ConstantsApiService } from './shared/constants-api.service';
     GamesComponent,
     ListUsersComponent,
     ListGamesComponent,
-    ListReviewsComponent
+    ListReviewsComponent,
+
+    HeroFormValidationDirective
   ],
   imports: [
     BrowserModule,
