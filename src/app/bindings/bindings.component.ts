@@ -2,16 +2,16 @@ import { Component, OnInit, ViewChild, OnDestroy, AfterViewInit, ElementRef } fr
 import { random } from 'lodash';
 import { IJsonPlaceholder } from './IJsonPlaceholder';
 import { JsonPlaceholderService } from './jsonPlaceholder.service';
-import { BindingsChild } from './bindings-child/bindings-child.component';                                      // 1) Can access sub component via ViewChild
+import { BindingsChildComponent } from './bindings-child/bindings-child.component';                                      // 1) Can access sub component via ViewChild
 
 @Component({
     selector: 'bindings',
     templateUrl: './bindings.component.html',
     providers: [JsonPlaceholderService]
 })
-export class Bindings implements OnInit, OnDestroy, AfterViewInit {
+export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
 
-    @ViewChild(BindingsChild) bindingsChild: BindingsChild;                                                     // 2)
+    @ViewChild(BindingsChildComponent) bindingsChild: BindingsChildComponent;                                   // 2)
     @ViewChild('theSpan') theSpan: ElementRef;                                                                  // A
 
     jsonData: IJsonPlaceholder;

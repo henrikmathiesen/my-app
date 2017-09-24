@@ -9,17 +9,17 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { Bindings } from './bindings/bindings.component';
-import { BindingsChild } from './bindings/bindings-child/bindings-child.component';
+import { BindingsComponent } from './bindings/bindings.component';
+import { BindingsChildComponent } from './bindings/bindings-child/bindings-child.component';
 import { ErrorComponent } from './error/error.component';
 import { DataSharingComponent } from './data-sharing/data-sharing.component';
 import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
 
-import { FormTemplateDriven } from './form-template-driven/form-template-driven.component';
-import { HeroForm } from './form-template-driven/hero-form/hero-form.component';
+import { FormTemplateDrivenComponent } from './form-template-driven/form-template-driven.component';
+import { HeroFormComponent } from './form-template-driven/hero-form/hero-form.component';
 
-import { Games } from './games/games.component';
-import { ListUsers, ListGames, ListReviews } from './games/lists';
+import { GamesComponent } from './games/games.component';
+import { ListUsersComponent, ListGamesComponent, ListReviewsComponent } from './games/lists';
 
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
@@ -32,17 +32,17 @@ import { ConstantsApiService } from './shared/constants-api.service';
     HeroesComponent,
     HeroDetailComponent,
     DashboardComponent,
-    Bindings,
-    BindingsChild,
+    BindingsComponent,
+    BindingsChildComponent,
     ErrorComponent,
     DataSharingComponent,
     DataSharingSibblingComponent,
-    FormTemplateDriven,
-    HeroForm,
-    Games,
-    ListUsers,
-    ListGames,
-    ListReviews
+    FormTemplateDrivenComponent,
+    HeroFormComponent,
+    GamesComponent,
+    ListUsersComponent,
+    ListGamesComponent,
+    ListReviewsComponent
   ],
   imports: [
     BrowserModule,

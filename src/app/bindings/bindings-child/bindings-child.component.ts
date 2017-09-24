@@ -7,7 +7,7 @@ import { JsonPlaceholderService } from '../jsonPlaceholder.service';
     selector: 'bindings-child',
     templateUrl: './bindings-child.component.html'
 })
-export class BindingsChild implements OnInit, OnDestroy {
+export class BindingsChildComponent implements OnInit, OnDestroy {
 
     @Input() jsonData: IJsonPlaceholder; // = { id: 0, body: 'default', title: 'default', userId: 0 }; Can set default value on @Input() , can also map to another [name] by @Input('name')
     @Output() change: EventEmitter<IJsonPlaceholder> = new EventEmitter<IJsonPlaceholder>(); // it will only emit an event to the immediate parent component.

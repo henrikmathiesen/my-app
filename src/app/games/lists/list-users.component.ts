@@ -7,7 +7,7 @@ import { ConstantsApiService } from 'app/shared/constants-api.service';
     templateUrl: './list-users.component.html',
     providers: [GetGamesEntitiesService, ConstantsApiService]
 })
-export class ListUsers implements OnInit {
+export class ListUsersComponent implements OnInit {
     constructor(
         private getGamesEntitiesService: GetGamesEntitiesService,
         private constantsApiService: ConstantsApiService

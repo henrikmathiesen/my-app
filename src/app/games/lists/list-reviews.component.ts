@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
     selector: 'my-list-reviews',
     templateUrl: './list-reviews.component.html'
 })
-export class ListReviews {
+export class ListReviewsComponent {
     
 }

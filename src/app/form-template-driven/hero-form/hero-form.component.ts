@@ -7,7 +7,7 @@ import { OrderHeroSupportData, Powers, FoodPreferences, PropertyRule } from '../
     selector: 'hero-form',
     templateUrl: './hero-form.component.html'
 })
-export class HeroForm {
+export class HeroFormComponent {
     @ViewChild('heroForm') heroForm: NgForm;
 
     supportData: OrderHeroSupportData;

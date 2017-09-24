@@ -4,11 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { Bindings } from './bindings/bindings.component';
+import { BindingsComponent } from './bindings/bindings.component';
 import { DataSharingComponent } from './data-sharing/data-sharing.component';
 import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
-import { FormTemplateDriven } from './form-template-driven/form-template-driven.component';
-import { Games } from './games/games.component';
+import { FormTemplateDrivenComponent } from './form-template-driven/form-template-driven.component';
+import { GamesComponent } from './games/games.component';
 
 const routes: Routes = [
     {
@@ -30,7 +30,7 @@ const routes: Routes = [
     },
     {
         path: 'bindings',
-        component: Bindings
+        component: BindingsComponent
     },
     {
         path: 'data-sharing',
@@ -42,11 +42,11 @@ const routes: Routes = [
     },
     {
         path: 'form-template-driven',
-        component: FormTemplateDriven
+        component: FormTemplateDrivenComponent
     },
     {
         path: 'games',
-        component: Games
+        component: GamesComponent
     }
 ];
 
