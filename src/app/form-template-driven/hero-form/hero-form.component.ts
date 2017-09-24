@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { OrderHero } from '../models/order-hero';
-import { OrderHeroSupportData, Powers, FoodPreferences } from '../models/order-hero-support-data';
+import { OrderHeroSupportData, Powers, FoodPreferences, PropertyRule } from '../models/order-hero-support-data';
 
 @Component({
     selector: 'hero-form',
@@ -10,32 +10,45 @@ import { OrderHeroSupportData, Powers, FoodPreferences } from '../models/order-h
 export class HeroForm {
     @ViewChild('heroForm') heroForm: NgForm;
 
-    powers: string[];
-    foodPreferences: string[];
+    supportData: OrderHeroSupportData;
     model: OrderHero;
     submited: boolean;
 
     constructor() {
-        this.powers = OrderHeroSupportData.powers;
-        this.foodPreferences = OrderHeroSupportData.foodPreferences;
-
-        this.model = new OrderHero();
-        this.model.id = 5;
-        this.model.name = 'SkyDog';
-        this.model.code = null;
-        this.model.power = OrderHeroSupportData.powers[Powers.SuperHot];
-        this.model.foodPreference = OrderHeroSupportData.foodPreferences[FoodPreferences.Pasta];
-        this.model.alterEgo = 'Terrier';
-        this.model.isCrazy = true;
-        this.model.isNice = false;
-
+        this.setUpModel();
+        this.setUpSupportData();
         this.submited = false;
     }
 
     onSubmit() {
-        console.log('HeroForm, onSubmit', this.model);
+        // We make a copy, because clearNullFields() will clear properties on model before console.log() prints
+        const postModel = Object.assign({}, this.model);
+        console.log('HeroForm, onSubmit', postModel);
+
         this.submited = true;
         this.clearNullFields();
+    }
+
+    private setUpModel() {
+        this.model = new OrderHero();
+        this.model.id = 5;
+        this.model.name = 'SkyDog';
+        this.model.code = null;
+        this.model.power = OrderHeroSupportData.staticPowers[Powers.SuperHot];
+        this.model.foodPreference = OrderHeroSupportData.staticFoodPreferences[FoodPreferences.Pasta];
+        this.model.alterEgo = 'Terrier';
+        this.model.isCrazy = true;
+        this.model.isNice = false;
+    }
+
+    private setUpSupportData() {
+        this.supportData = new OrderHeroSupportData();
+        this.supportData.codeRule = new PropertyRule();
+        this.supportData.codeRule.isDisabled = false;
+        this.supportData.codeRule.isRequired = true;
+        this.supportData.codeRule.minlength = 4;
+        this.supportData.powers = OrderHeroSupportData.staticPowers;
+        this.supportData.foodPreferences = OrderHeroSupportData.staticFoodPreferences;
     }
 
     private clearNullFields() {

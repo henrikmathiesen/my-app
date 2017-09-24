@@ -14,7 +14,7 @@
             <div>
                 <label for="power">Power (required)</label>
                 <select id="power" name="power" required [(ngModel)]="model.power">
-                    <option *ngFor="let power of powers" [value]="power">{{power}}</option>
+                    <option *ngFor="let power of supportData.powers" [value]="power">{{power}}</option>
                 </select>
             </div>
             <div>
@@ -26,7 +26,7 @@
             <div class="grid-x grid-margin-x">
                 <fieldset class="cell small-6">
                     <legend>Food Preference (required)</legend>
-                    <div *ngFor="let food of foodPreferences; let i = index">
+                    <div *ngFor="let food of supportData.foodPreferences; let i = index">
                         <input type="radio" id="food-preference-{{i}}" name="food-preference" [value]="food" [(ngModel)]="model.foodPreference" required>
                         <label for="food-preference-{{i}}">{{food}}</label>
                     </div>

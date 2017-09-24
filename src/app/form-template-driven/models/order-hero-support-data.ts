@@ -12,8 +12,14 @@ export enum FoodPreferences {
     ApplePie
 }
 
+export class PropertyRule {
+    isRequired: boolean;
+    isDisabled: boolean;
+    minlength: number;
+}
+
 export class OrderHeroSupportData {
-    static powers: string[] = [
+    static readonly staticPowers: string[] = [
         'Really Smart',
         'Super Flexible',
         'Super Hot',
@@ -21,9 +27,13 @@ export class OrderHeroSupportData {
         'Can Fly'
     ];
 
-    static foodPreferences: string[] = [
+    static readonly staticFoodPreferences: string[] = [
         'Pizza',
         'Pasta',
         'Apple Pie'
     ]
+
+    powers: string[];
+    foodPreferences: string[];
+    codeRule: PropertyRule;
 }
