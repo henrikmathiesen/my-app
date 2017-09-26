@@ -21,6 +21,8 @@ import { HeroFormComponent } from './form-template-driven/hero-form/hero-form.co
 import { GamesComponent } from './games/games.component';
 import { ListUsersComponent, ListGamesComponent, ListReviewsComponent } from './games/lists';
 
+import { EsriComponent } from './esri/esri.component';
+
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
 import { DataSharingMediatorService } from './shared/data-sharing-mediator.service';
@@ -45,6 +47,7 @@ import { HeroFormValidationDirective } from './form-template-driven/validation-d
     ListUsersComponent,
     ListGamesComponent,
     ListReviewsComponent,
+    EsriComponent,
 
     HeroFormValidationDirective
   ],
