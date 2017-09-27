@@ -1,8 +1,9 @@
 @import 'settings/settings';
-@import 'my-settings';
+@import 'my-settings';                  // This overides foundation settings
 
 @import 'foundation';
-@include foundation-everything(true); // use flexbox mode, everything includes xy-grid (but does not include flex-grid nor float-grid)
+@include foundation-everything(true);   // Use flexbox mode, everything includes xy-grid (but does not include flex-grid nor float-grid)
+@import 'font-awesome';                 // $fa-font-path in my-setting above will override setting file in font-awesome, since they use !default
 
 @import 'my-base';
 @import 'my-form';

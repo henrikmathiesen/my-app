@@ -6,6 +6,9 @@ $white:#FFF; // just a test
 // Seams to have no effect? Maybe it gets overridden by foundation-everything(true), also note that true is default
 // It could be that the variable will have effect if we use each foundation mixin seperatly
 
+// Font Awesome
+$fa-font-path: '~font-awesome/fonts';
+
 // App
 
 $my-color-background: #ecf0f1;

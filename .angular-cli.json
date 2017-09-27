@@ -24,6 +24,7 @@
       "stylePreprocessorOptions":{
         "includePaths": [
           "../node_modules/foundation-sites/scss",
+          "../node_modules/font-awesome/scss",
           "./sass"
         ]
       },
