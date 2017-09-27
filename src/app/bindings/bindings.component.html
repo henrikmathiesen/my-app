@@ -13,6 +13,7 @@
     <p>Body: {{ jsonData.body }}</p>
 </div>
 <p>
+    <!-- previously we used expressions like 2 == 2 and 2 == 4 in these class directives, but prod build failed (must only use properties? And booleans?) -->
     <span #theSpan [class.true-that]="true" [ngClass]="{'foo': true, 'bar': false }">@ViewChild DOM Element</span><br />
     spans classes: <mark>{{theSpan.className}}</mark>
 </p>
