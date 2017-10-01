@@ -1,5 +1,5 @@
 import { Directive, Input } from '@angular/core';
-import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, inject } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 
@@ -85,9 +85,15 @@ describe('dashboard.component', () => {
             instance = fixture.componentInstance;
             nativeElement = fixture.nativeElement;
 
+            // If we need a service provided by the component's own injector, in this case the components injector gets services from TestingModule above(?) and its own providers array
             heroService = fixture.debugElement.injector.get(HeroService);
             router = fixture.debugElement.injector.get(Router);
         });
+
+        // Can also inject like this, TODO: what is the difference, look into i
+        // beforeEach(inject([Router], (_router: Router) => {
+        // }));
+
 
         it('starts with no heroes in view model and no heroes rendered in DOM', () => {
             expect(instance.heroes).toBeFalsy();
