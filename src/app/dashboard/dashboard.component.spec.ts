@@ -8,20 +8,7 @@ import { DashboardComponent } from './dashboard.component';
 import { AppModule } from '../app.module';
 import { HeroService } from '../shared/hero.service';
 
-@Directive({
-    selector: '[routerLink]',
-    host: {
-        '(click)': 'onClick()'
-    }
-})
-class RouterLinkStubDirective {
-    @Input('routerLink') linkParams: any;
-    navigatedTo: any = null;
-
-    onClick() {
-        this.navigatedTo = this.linkParams;
-    }
-}
+class DummyComponent { }
 
 describe('dashboard.component', () => {
     const heroes: Hero[] = [
@@ -71,13 +58,26 @@ describe('dashboard.component', () => {
         let instance: DashboardComponent;
         let nativeElement: HTMLElement;
         let heroService: HeroService;
+        let router: Router;
 
         // 2) Can also use beforeEach(async(()=>{})); , when that is needed I dont know right (it is not needed for using a spy on aync function in beforeEach)
+        // - When compiling async it might be needed, see https://angular.io/guide/testing#test-a-routed-component , .compileComponents().then(()
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [RouterTestingModule],
-                declarations: [DashboardComponent, RouterLinkStubDirective],
-                providers: [HeroService]
+                imports: [
+                    RouterTestingModule.withRoutes([
+                        {
+                            path: 'detail/:id',
+                            component: DummyComponent
+                        }
+                    ])
+                ],
+                declarations: [
+                    DashboardComponent
+                ],
+                providers: [
+                    HeroService
+                ]
             })
                 .compileComponents();
 
@@ -86,11 +86,12 @@ describe('dashboard.component', () => {
             nativeElement = fixture.nativeElement;
 
             heroService = fixture.debugElement.injector.get(HeroService);
+            router = fixture.debugElement.injector.get(Router);
         });
 
         it('starts with no heroes in view model and no heroes rendered in DOM', () => {
             expect(instance.heroes).toBeFalsy();
-            expect(nativeElement.getElementsByClassName('cell').length).toEqual(0);
+            expect(nativeElement.querySelectorAll('a').length).toEqual(0);
             expect(nativeElement.innerHTML.indexOf('Bertil')).toEqual(-1);
         });
 
@@ -112,7 +113,7 @@ describe('dashboard.component', () => {
 
             expect(heroService.getHeroes).toHaveBeenCalled();
             expect(instance.heroes.length).toBeTruthy();
-            expect(nativeElement.getElementsByClassName('cell').length).not.toEqual(0);
+            expect(nativeElement.querySelectorAll('a').length).not.toEqual(0);
             expect(nativeElement.innerHTML.indexOf('Bertil')).not.toEqual(-1);
         }));
 
@@ -129,32 +130,25 @@ describe('dashboard.component', () => {
 
                 fixture.detectChanges();
 
-                const cellForTheOneHero = nativeElement.getElementsByClassName('cell')[0];
-                const linkForTheOneHero = cellForTheOneHero.getElementsByClassName('my-link-text')[0];
+                const linkForTheOneHero = nativeElement.querySelector('a');
 
+                expect(linkForTheOneHero.innerHTML).toContain('Henry');
                 expect(linkForTheOneHero.getAttribute('ng-reflect-router-link')).toContain('/detail,5');
             });
 
             it('should navigate when user clicks on a link', () => {
+                spyOn(router, 'navigateByUrl');
+
                 instance.heroes = heroes;
 
                 fixture.detectChanges();
 
-                const cellForTheOneHero = nativeElement.getElementsByClassName('cell')[0];
-                const linkForTheOneHero = cellForTheOneHero.getElementsByClassName('my-link-text')[0];
+                const linkForTheOneHero = nativeElement.querySelector('a');
 
-                const test = document.querySelector('button');
-                const testToo = document.getElementsByClassName('foo');
-                //test.click
+                linkForTheOneHero.click();
 
-                //nativeElement.querySelector('my').click
-
-            });
-
-            it('should navigate when user focus a link and presses enter', () => {
-
+                expect(router.navigateByUrl).toHaveBeenCalled();
             });
         })
-
     });
 });
