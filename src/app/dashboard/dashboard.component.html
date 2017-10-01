@@ -1,8 +1,13 @@
 <h2>Top Heroes</h2>
 <div class="grid-x grid-margin-x">
     <div class="cell medium-4" *ngFor="let hero of heroes">
-        <h4 class="callout my-link-text" [routerLink]="['/detail', hero.id]" (keyup.enter)="goToDetail(hero.id)">
-            {{hero.name}}
+        <h4 class="callout">
+            <a [routerLink]="['/detail', hero.id]">{{hero.name}}</a>
         </h4>
     </div>
 </div>
+
+
+<!-- 
+    (keyup.enter)="goToDetail(hero.id)" , necessary if no a/button
+-->

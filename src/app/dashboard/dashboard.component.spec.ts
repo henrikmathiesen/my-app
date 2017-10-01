@@ -116,7 +116,45 @@ describe('dashboard.component', () => {
             expect(nativeElement.innerHTML.indexOf('Bertil')).not.toEqual(-1);
         }));
 
-        // TODO: test that they are rendered as links and that navigation happens when users click on them
+        describe('renders heroes as links to their detail view', () => {
+            const heroes: Hero[] = [
+                {
+                    id: 5,
+                    name: 'Henry'
+                }
+            ];
+
+            it('should render links', () => {
+                instance.heroes = heroes;
+
+                fixture.detectChanges();
+
+                const cellForTheOneHero = nativeElement.getElementsByClassName('cell')[0];
+                const linkForTheOneHero = cellForTheOneHero.getElementsByClassName('my-link-text')[0];
+
+                expect(linkForTheOneHero.getAttribute('ng-reflect-router-link')).toContain('/detail,5');
+            });
+
+            it('should navigate when user clicks on a link', () => {
+                instance.heroes = heroes;
+
+                fixture.detectChanges();
+
+                const cellForTheOneHero = nativeElement.getElementsByClassName('cell')[0];
+                const linkForTheOneHero = cellForTheOneHero.getElementsByClassName('my-link-text')[0];
+
+                const test = document.querySelector('button');
+                const testToo = document.getElementsByClassName('foo');
+                //test.click
+
+                //nativeElement.querySelector('my').click
+
+            });
+
+            it('should navigate when user focus a link and presses enter', () => {
+
+            });
+        })
 
     });
 });
