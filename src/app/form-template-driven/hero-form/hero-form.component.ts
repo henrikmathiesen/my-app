@@ -27,6 +27,10 @@ export class HeroFormComponent {
 
         this.submited = true;
         this.clearNullFields();
+
+        // ENABLE / DISABLE WHOLE FORM
+        //this.heroForm.control.disable();
+        //this.heroForm.control.enable();
     }
 
     private setUpModel() {
