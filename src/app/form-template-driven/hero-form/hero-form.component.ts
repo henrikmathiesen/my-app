@@ -28,7 +28,7 @@ export class HeroFormComponent {
         this.submited = true;
         this.clearNullFields();
 
-        // ENABLE / DISABLE WHOLE FORM
+        // ENABLE / DISABLE WHOLE TEMPLATE DRIVEN FORM
         //this.heroForm.control.disable();
         //this.heroForm.control.enable();
     }
