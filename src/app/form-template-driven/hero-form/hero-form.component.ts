@@ -5,7 +5,8 @@ import { OrderHeroSupportData, Powers, FoodPreferences, PropertyRule } from '../
 
 @Component({
     selector: 'hero-form',
-    templateUrl: './hero-form.component.html'
+    templateUrl: './hero-form.component.html',
+    styleUrls: ['./hero-form.component.scss']
 })
 export class HeroFormComponent {
     @ViewChild('heroForm') heroForm: NgForm;
@@ -31,6 +32,7 @@ export class HeroFormComponent {
         // ENABLE / DISABLE WHOLE TEMPLATE DRIVEN FORM
         //this.heroForm.control.disable();
         //this.heroForm.control.enable();
+        console.log(this.heroForm.disabled); // true/false
     }
 
     private setUpModel() {

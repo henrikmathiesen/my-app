@@ -1,0 +1,15 @@
+// Style a component if it is sub component inside another specific component
+
+// This wont work
+// hero-form {
+//     form {
+//         border-bottom: 1px solid grey;
+//     }
+// }
+
+// This does work. host-context can be any selector in that specific component
+:host-context(form-template-driven) { 
+    form {
+        border-bottom: 1px solid grey;
+    }
+}
