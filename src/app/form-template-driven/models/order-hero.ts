@@ -4,6 +4,7 @@ export class OrderHero {
     code: string;
     power: string;
     foodPreference: string;
+    description:string;
     alterEgo?: string;
     isCrazy: boolean;
     isNice: boolean;

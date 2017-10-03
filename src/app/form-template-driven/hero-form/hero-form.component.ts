@@ -32,7 +32,7 @@ export class HeroFormComponent {
         // ENABLE / DISABLE WHOLE TEMPLATE DRIVEN FORM
         //this.heroForm.control.disable();
         //this.heroForm.control.enable();
-        console.log(this.heroForm.disabled); // true/false
+        console.log('this.heroForm.disabled', this.heroForm.disabled); // true/false
     }
 
     private setUpModel() {
@@ -42,6 +42,7 @@ export class HeroFormComponent {
         this.model.code = null;
         this.model.power = OrderHeroSupportData.staticPowers[Powers.SuperHot];
         this.model.foodPreference = OrderHeroSupportData.staticFoodPreferences[FoodPreferences.Pasta];
+        this.model.description = 'Give me all you got';
         this.model.alterEgo = 'Terrier';
         this.model.isCrazy = true;
         this.model.isNice = false;
@@ -59,5 +60,6 @@ export class HeroFormComponent {
 
     private clearNullFields() {
         this.heroForm.controls['code'].reset();
+        this.heroForm.controls['description'].reset();
     }
 }

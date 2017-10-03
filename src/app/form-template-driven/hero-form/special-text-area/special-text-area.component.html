@@ -1,0 +1,9 @@
+<div class="grid-x">
+    <div class="cell medium-12">
+        <label for="description"></label>
+        <textarea #descriptionFormControl="ngModel" id="description" name="description" cols="30" rows="10" [(ngModel)]="model.description"></textarea>
+        <div>
+            <button class="my-link-text" (click)="disableForm()">Disable the form from this child component</button>
+        </div>
+    </div>
+</div>

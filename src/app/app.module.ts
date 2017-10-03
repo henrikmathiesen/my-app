@@ -17,6 +17,7 @@ import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-shari
 
 import { FormTemplateDrivenComponent } from './form-template-driven/form-template-driven.component';
 import { HeroFormComponent } from './form-template-driven/hero-form/hero-form.component';
+import { SpecialTextAreaComponent } from './form-template-driven/hero-form/special-text-area/special-text-area.component';
 
 import { GamesComponent } from './games/games.component';
 import { ListUsersComponent, ListGamesComponent, ListReviewsComponent } from './games/lists';
@@ -41,6 +42,7 @@ import { HeroFormValidationDirective } from './form-template-driven/validation-d
     DataSharingSibblingComponent,
     FormTemplateDrivenComponent,
     HeroFormComponent,
+    SpecialTextAreaComponent,
     GamesComponent,
     ListUsersComponent,
     ListGamesComponent,
