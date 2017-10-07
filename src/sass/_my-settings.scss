@@ -9,11 +9,16 @@ $white:#FFF; // just a test
 // Font Awesome
 $fa-font-path: '~font-awesome/fonts';
 
-// App
+// APP
 
+// Colors
 $my-color-background: #ecf0f1;
 $my-color-success: darkgreen;
 $my-color-danger: maroon;
+$my-color-alice: aliceblue;
+
+// Typography
+$my-font-weight-bold: 600;
 
 // Gutter
 $my-gutter-sm: rem-calc(10px);

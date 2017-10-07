@@ -5,4 +5,9 @@ nav {
     a + a {
         margin-left: $my-gutter-sm;
     }
+
+    a.active {
+        background-color: $my-color-alice;
+        font-weight: $my-font-weight-bold;
+    }
 }
