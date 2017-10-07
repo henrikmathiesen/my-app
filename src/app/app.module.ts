@@ -19,6 +19,8 @@ import { FormTemplateDrivenComponent } from './form-template-driven/form-templat
 import { HeroFormComponent } from './form-template-driven/hero-form/hero-form.component';
 import { SpecialTextAreaComponent } from './form-template-driven/hero-form/special-text-area/special-text-area.component';
 
+import {FormReactiveComponent } from './form-reactive/form-reactive.component';
+
 import { GamesComponent } from './games/games.component';
 import { ListUsersComponent, ListGamesComponent, ListReviewsComponent } from './games/lists';
 
@@ -43,6 +45,7 @@ import { HeroFormValidationDirective } from './form-template-driven/validation-d
     FormTemplateDrivenComponent,
     HeroFormComponent,
     SpecialTextAreaComponent,
+    FormReactiveComponent,
     GamesComponent,
     ListUsersComponent,
     ListGamesComponent,
