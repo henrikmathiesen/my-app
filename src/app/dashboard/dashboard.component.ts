@@ -9,6 +9,7 @@ import { Hero } from '../shared/hero';
 })
 export class DashboardComponent implements OnInit {
     heroes: Hero[];
+    containerBool: boolean = true;
 
     constructor(
         //private router: Router,
