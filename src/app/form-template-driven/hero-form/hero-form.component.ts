@@ -24,7 +24,17 @@ export class HeroFormComponent {
     onSubmit() {
         // We make a copy, because clearNullFields() will clear properties on model before console.log() prints
         const postModel = Object.assign({}, this.model);
-        console.log('HeroForm, onSubmit', postModel);
+        const values = Object.assign({}, this.heroForm.value);
+        console.log('HeroForm, onSubmit', postModel, values);
+
+        /*
+            IMPORTANT
+            - It is not best practice to use two way binding the way we have done in the view [(ngModel)]
+            - It is better to use [ngModel] as a one way binding, if we want to set fiels with values
+            - The posted form data can be get by using this.heroForm.value
+            - Allthough note that the name attributes will be used as properties on the object, so snake case is not recommended (food-preference)
+            https://toddmotto.com/angular-2-forms-template-driven#ngmodel-ngmodel-and-ngmodel
+        */
 
         this.submited = true;
         this.clearNullFields();
