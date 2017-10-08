@@ -52,12 +52,12 @@
     </div>
     <div class="grid-x grid-margin-x" ngModelGroup="account" #userAccountFormGroup="ngModelGroup">
         <div class="cell medium-6">
-            <label for="email">Email (required)</label>
-            <input type="email" id="email" name="email" [(ngModel)]="model.email" required>
+            <label for="email">Email (required, email)</label>
+            <input type="email" id="email" name="email" [(ngModel)]="model.email" required email>
         </div>
         <div class="cell medium-6">
-            <label for="confirmEmail">Confirm Email (required)</label>
-            <input type="email" id="confirmEmail" name="confirmEmail" [(ngModel)]="model.confirmEmail" required>
+            <label for="confirmEmail">Confirm Email (required, email)</label>
+            <input type="email" id="confirmEmail" name="confirmEmail" [(ngModel)]="model.confirmEmail" required email>
         </div>
     </div>
     <special-text-area [form]="heroForm" [model]="model"></special-text-area>
