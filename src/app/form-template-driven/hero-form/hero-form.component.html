@@ -19,11 +19,8 @@
             </div>
             <div>
                 <label for="code">Code (required, min 4 char)</label>
-                <input type="text" id="code" name="code" [(ngModel)]="model.code" 
-                        [required]="supportData.codeRule.isRequired"
-                        [minlength]="supportData.codeRule.minlength"
-                        [disabled]="supportData.codeRule.isDisabled"
-                        hero-form-validation [currentModel]="model" [supportData]="supportData">
+                <input type="text" id="code" name="code" [(ngModel)]="model.code" [required]="supportData.codeRule.isRequired" [minlength]="supportData.codeRule.minlength"
+                    [disabled]="supportData.codeRule.isDisabled" hero-form-validation [currentModel]="model" [supportData]="supportData">
             </div>
         </div>
         <div class="cell medium-6">
@@ -51,6 +48,16 @@
                     </div>
                 </fieldset>
             </div>
+        </div>
+    </div>
+    <div class="grid-x grid-margin-x" ngModelGroup="account" #userAccountFormGroup="ngModelGroup">
+        <div class="cell medium-6">
+            <label for="email">Email (required)</label>
+            <input type="email" id="email" name="email" [(ngModel)]="model.email" required>
+        </div>
+        <div class="cell medium-6">
+            <label for="confirmEmail">Confirm Email (required)</label>
+            <input type="email" id="confirmEmail" name="confirmEmail" [(ngModel)]="model.confirmEmail" required>
         </div>
     </div>
     <special-text-area [form]="heroForm" [model]="model"></special-text-area>

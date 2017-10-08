@@ -8,4 +8,6 @@ export class OrderHero {
     alterEgo?: string;
     isCrazy: boolean;
     isNice: boolean;
+    email:string;
+    confirmEmail:string;
 }
