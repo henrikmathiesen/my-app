@@ -15,12 +15,8 @@ import { ErrorComponent } from './error/error.component';
 import { DataSharingComponent } from './data-sharing/data-sharing.component';
 import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
 
-import { FormTemplateDrivenComponent } from './form-template-driven/form-template-driven.component';
-import { HeroFormComponent } from './form-template-driven/hero-form/hero-form.component';
-import { SpecialTextAreaComponent } from './form-template-driven/hero-form/special-text-area/special-text-area.component';
-
-import {FormReactiveComponent } from './form-reactive/form-reactive.component';
-import { SimpleFormComponent } from './form-reactive/simple-form/simple-form.component';
+import { FormTemplateDrivenComponent, HeroFormComponent, SpecialTextAreaComponent, HeroFormValidationDirective } from './form-template-driven';
+import { FormReactiveComponent, SimpleFormComponent } from './form-reactive'; 
 
 import { GamesComponent } from './games/games.component';
 import { ListUsersComponent, ListGamesComponent, ListReviewsComponent } from './games/lists';
@@ -30,7 +26,6 @@ import { ErrorService } from './shared/error.service';
 import { DataSharingMediatorService } from './shared/data-sharing-mediator.service';
 import { ConstantsApiService } from './shared/constants-api.service';
 
-import { HeroFormValidationDirective } from './form-template-driven/validation-directive/hero-form-validation.directive';
 
 @NgModule({
   declarations: [
