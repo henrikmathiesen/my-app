@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';        // 1 module for Template Driven Form and 1 for Reactive Form
 import { HttpModule }    from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,7 @@ import { HeroFormComponent } from './form-template-driven/hero-form/hero-form.co
 import { SpecialTextAreaComponent } from './form-template-driven/hero-form/special-text-area/special-text-area.component';
 
 import {FormReactiveComponent } from './form-reactive/form-reactive.component';
+import { SimpleFormComponent } from './form-reactive/simple-form/simple-form.component';
 
 import { GamesComponent } from './games/games.component';
 import { ListUsersComponent, ListGamesComponent, ListReviewsComponent } from './games/lists';
@@ -46,6 +47,7 @@ import { HeroFormValidationDirective } from './form-template-driven/validation-d
     HeroFormComponent,
     SpecialTextAreaComponent,
     FormReactiveComponent,
+    SimpleFormComponent,
     GamesComponent,
     ListUsersComponent,
     ListGamesComponent,
@@ -56,6 +58,7 @@ import { HeroFormValidationDirective } from './form-template-driven/validation-d
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppRoutingModule
   ],
