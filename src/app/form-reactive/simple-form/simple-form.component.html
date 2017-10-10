@@ -1,3 +1,8 @@
-<div>
-    Am I so simple?
-</div>
+<form (ngSubmit)="onSubmit()">
+    <div class="grid-x grid-margin-x">
+        <div class="cell medium-12">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" [formControl]="name">
+        </div>
+    </div>
+</form>
