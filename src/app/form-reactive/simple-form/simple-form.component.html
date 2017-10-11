@@ -1,8 +1,16 @@
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" [formGroup]="simpleForm"> <!-- Seems to be needed to do things with the form -->
     <div class="grid-x grid-margin-x">
-        <div class="cell medium-12">
+        <div class="cell medium-6">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" [formControl]="name">
+            <input type="text" id="name" name="name" [formControl]="nameControl">
+        </div>
+        <div class="cell medium-6">
+            <div>
+                <button type="button" class="my-link-text" (click)="disableForm()">Disable Form</button>
+            </div>
+            <div>
+                <button type="button" class="my-link-text" (click)="checkFormValid()">Check if form is valid</button>
+            </div>
         </div>
     </div>
 </form>

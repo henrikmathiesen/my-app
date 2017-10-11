@@ -1,18 +1,34 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';    // These are different that for Template Driven Forms
+import { FormControl, FormGroup } from '@angular/forms';    // These are different than for Template Driven Forms
 
 @Component({
     selector: 'simple-form',
     templateUrl: './simple-form.component.html'
 })
 export class SimpleFormComponent {
-    name: FormControl;
+    simpleForm: FormGroup;
+    nameControl: FormControl;
 
-    constructor(){
-        this.name = new FormControl();
+    constructor() {
+        this.nameControl = new FormControl();
+
+        this.simpleForm = new FormGroup({
+            'nameControl': this.nameControl
+        });
+    }
+
+    disableForm() {
+        console.log('disable form');
+    }
+
+    checkFormValid(){
+        console.log('check if form is valid');
     }
 
     onSubmit() {
-        console.log('submit', this.name);
+        console.log('submit');
+        console.log('this.nameControl.value', this.nameControl.value);
+        console.log('this.simpleForm', this.simpleForm);
+        console.log('/submit');
     }
 }
