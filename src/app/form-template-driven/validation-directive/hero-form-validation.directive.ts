@@ -8,7 +8,7 @@ import { OrderHeroSupportData } from '../models/order-hero-support-data';
 @Directive({ selector: '[hero-form-validation]' })
 export class HeroFormValidationDirective implements OnInit, OnDestroy {
 
-    @Input() currentModel: OrderHero;
+    @Input() model: OrderHero;
     @Input() supportData: OrderHeroSupportData;
 
     private subject: Subject<any> = new Subject();
@@ -32,7 +32,7 @@ export class HeroFormValidationDirective implements OnInit, OnDestroy {
 
     private log() {
         console.log('keyup', { 
-            currentModel: this.currentModel, 
+            model: this.model, 
             supportData: this.supportData 
         });
 
