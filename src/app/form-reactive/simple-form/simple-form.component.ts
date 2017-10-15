@@ -30,5 +30,8 @@ export class SimpleFormComponent {
         console.log('this.nameControl.value', this.nameControl.value);
         console.log('this.simpleForm', this.simpleForm);
         console.log('/submit');
+
+        // TODO: Get a FormControl in a sub FormGroup (we dont have sub FormGroups yet)
+        //this.simpleForm.get(['subFormGroup', 'controlInSubFormGroup']);
     }
 }
