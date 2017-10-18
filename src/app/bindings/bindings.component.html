@@ -17,4 +17,4 @@
     <span #theSpan [class.true-that]="true" [ngClass]="{'foo': true, 'bar': false }">@ViewChild DOM Element</span><br />
     spans classes: <mark>{{theSpan.className}}</mark>
 </p>
-<bindings-child [jsonData]="jsonData" (change)="change($event)"></bindings-child>
+<my-bindings-child [jsonData]="jsonData" (change)="change($event)"></my-bindings-child>

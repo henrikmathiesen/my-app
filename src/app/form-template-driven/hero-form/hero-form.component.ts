@@ -4,7 +4,7 @@ import { OrderHero } from '../models/order-hero';
 import { OrderHeroSupportData, Powers, FoodPreferences, PropertyRule } from '../models/order-hero-support-data';
 
 @Component({
-    selector: 'hero-form',
+    selector: 'my-hero-form',
     templateUrl: './hero-form.component.html',
     styleUrls: ['./hero-form.component.scss']
 })

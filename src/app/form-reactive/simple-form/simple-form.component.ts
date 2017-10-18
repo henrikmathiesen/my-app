@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';    // These are different than for Template Driven Forms
 
 @Component({
-    selector: 'simple-form',
+    selector: 'my-simple-form',
     templateUrl: './simple-form.component.html'
 })
 export class SimpleFormComponent {

@@ -3,7 +3,7 @@ import { NgForm, NgModel } from '@angular/forms';
 import { OrderHero } from '../../models/order-hero';
 
 @Component({
-    selector: 'special-text-area',
+    selector: 'my-special-text-area',
     templateUrl: './special-text-area.component.html'
 })
 export class SpecialTextAreaComponent implements OnInit {

@@ -8,7 +8,7 @@ interface ISimpleChanges extends SimpleChanges {
 }
 
 @Component({
-    selector: 'bindings-child',
+    selector: 'my-bindings-child',
     templateUrl: './bindings-child.component.html'
 })
 export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {

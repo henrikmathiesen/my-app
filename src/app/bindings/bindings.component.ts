@@ -5,7 +5,7 @@ import { JsonPlaceholderService } from './jsonPlaceholder.service';
 import { BindingsChildComponent } from './bindings-child/bindings-child.component';                                      // 1) Can access sub component via ViewChild
 
 @Component({
-    selector: 'bindings',
+    selector: 'my-bindings',
     templateUrl: './bindings.component.html',
     providers: [JsonPlaceholderService]
 })
