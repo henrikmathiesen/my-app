@@ -1,4 +1,6 @@
-@import 'settings/settings';
+// paths resolved via stylePreprocessorOptions in .angular-cli.json
+
+@import 'settings/settings';            // Foundation settings
 @import 'my-settings';                  // This overides foundation settings
 
 @import 'foundation';
