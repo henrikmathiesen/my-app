@@ -57,7 +57,9 @@ export class LittleMoreFormComponent implements OnInit, IModel {
     this.validate = post.validate;
   }
 
-  showValidationError(name: string) {
-    return !this.littleMoreForm.controls[name].valid && this.littleMoreForm.controls[name].touched;
+  showValidationError(formControlName: string) {
+    // Can use either of these
+    //return !this.littleMoreForm.controls[name].valid && this.littleMoreForm.controls[name].touched;
+    return !this.littleMoreForm.get(formControlName).valid && this.littleMoreForm.get(formControlName).touched;
   }
 }
