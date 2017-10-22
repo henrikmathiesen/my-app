@@ -1,9 +1,9 @@
 // paths resolved via stylePreprocessorOptions in .angular-cli.json
 
-@import 'settings/settings';            // Foundation settings
+@import 'settings/settings';            // Foundation settings (this is NOT imported in vendor foundation.scss)
 @import 'my-settings';                  // This overides foundation settings
 
-@import 'foundation';
+@import 'foundation';                   // Vendor foundation.scss will import util
 @include foundation-everything(true);   // Use flexbox mode, everything includes xy-grid (but does not include flex-grid nor float-grid)
 @import 'font-awesome';                 // $fa-font-path in my-setting above will override setting file in font-awesome, since they use !default
 
