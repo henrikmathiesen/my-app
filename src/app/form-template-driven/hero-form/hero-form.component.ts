@@ -53,6 +53,9 @@ export class HeroFormComponent {
         //this.heroForm.control.disable();
         //this.heroForm.control.enable();
         console.log('this.heroForm.disabled', this.heroForm.disabled); // true/false
+
+        // .control and .form are the same (a little confusing)
+        console.log('this.heroForm.control === this.heroForm.form', this.heroForm.control === this.heroForm.form);
     }
 
     private setUpModel() {
