@@ -9,7 +9,6 @@ import { DataSharingComponent } from './data-sharing/data-sharing.component';
 import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
 import { FormTemplateDrivenComponent } from './form-template-driven/form-template-driven.component';
 import { FormReactiveComponent } from './form-reactive/form-reactive.component';
-import { GamesComponent } from './games/games.component';
 
 const routes: Routes = [
     {
@@ -48,10 +47,6 @@ const routes: Routes = [
     {
         path: 'form-reactive',
         component: FormReactiveComponent
-    },
-    {
-        path: 'games',
-        component: GamesComponent
     }
 ];
 

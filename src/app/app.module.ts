@@ -18,9 +18,6 @@ import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-shari
 import { FormTemplateDrivenComponent, HeroFormComponent, SpecialTextAreaComponent, HeroFormValidationDirective } from './form-template-driven';
 import { FormReactiveComponent, SimpleFormComponent } from './form-reactive'; 
 
-import { GamesComponent } from './games/games.component';
-import { ListUsersComponent, ListGamesComponent, ListReviewsComponent } from './games/lists';
-
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
 import { DataSharingMediatorService } from './shared/data-sharing-mediator.service';
@@ -43,11 +40,6 @@ import { ConstantsApiService } from './shared/constants-api.service';
     SpecialTextAreaComponent,
     FormReactiveComponent,
     SimpleFormComponent,
-    GamesComponent,
-    ListUsersComponent,
-    ListGamesComponent,
-    ListReviewsComponent,
-
     HeroFormValidationDirective
   ],
   imports: [
