@@ -1,1 +1,39 @@
+<!--
+  The star before ngIf tells Angular to treat the div as a ng-template (syntax sugar for <ng-template ngIf="">)
+  In the second tag we dont use the same syntax, but we need a connection to the ngIf, therefor we must use <ng-template>
+-->
 
+<h3>Little More Form</h3>
+
+<div *ngIf="!name; else formInfo">
+  <form [formGroup]="littleMoreForm" (ngSubmit)="onSubmit()">
+    <div class="grid-x grid-margin-x">
+      <div class="cell medium-12">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" formControlName="name">
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <textarea id="description" formControlName="description"></textarea>
+        </div>
+        <div>
+          <input type="checkbox" id="validate" formControlName="validate">
+          <label for="validate">Minimum of 3 characters</label>
+        </div>
+        <div class="text-right">
+          <button type="submit" class="success button" [disabled]="!littleMoreForm.valid">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<ng-template #formInfo>
+  <div class="grid-x grid-margin-x">
+    <div class="cell medium-12">
+      <h3>{{ name }}</h3>
+      <p>{{ description }}</p>
+    </div>
+  </div>
+</ng-template>
