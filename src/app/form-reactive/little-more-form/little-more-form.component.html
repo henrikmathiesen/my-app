@@ -12,10 +12,12 @@
         <div>
           <label for="name">Name</label>
           <input type="text" id="name" formControlName="name">
+          <div class="callout alert" *ngIf="showValidationError('name')">{{ validationMessages.name }}</div>
         </div>
         <div>
           <label for="description">Description</label>
           <textarea id="description" formControlName="description"></textarea>
+          <div class="callout alert" *ngIf="showValidationError('description')">{{ validationMessages.description }}</div>
         </div>
         <div>
           <input type="checkbox" id="validate" formControlName="validate">

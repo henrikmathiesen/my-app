@@ -18,10 +18,12 @@ export class SimpleFormComponent {
     }
 
     disableForm() {
+        // TODO
         console.log('disable form');
     }
 
     checkFormValid(){
+        // TODO
         console.log('check if form is valid');
     }
 
