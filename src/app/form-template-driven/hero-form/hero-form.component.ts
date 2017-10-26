@@ -58,6 +58,24 @@ export class HeroFormComponent {
         console.log('this.heroForm.control === this.heroForm.form', this.heroForm.control === this.heroForm.form);
     }
 
+    disableFormControl(name: string, formGroup?: NgModelGroup) {
+        if(formGroup) {
+            this.heroForm.getFormGroup(formGroup).controls[name].disable();
+        }
+        else {
+            this.heroForm.controls[name].disable();
+        }
+    }
+
+    enableFormControl(name: string, formGroup?: NgModelGroup) {
+        if(formGroup) {
+            this.heroForm.getFormGroup(formGroup).controls[name].enable();
+        }
+        else {
+            this.heroForm.controls[name].enable();
+        }
+    }
+
     private setUpModel() {
         this.model = new OrderHero();
         this.model.id = 5;

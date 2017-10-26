@@ -1,6 +1,10 @@
 <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="grid-x grid-margin-x">
         <div class="cell medium-6">
+            <div>
+                <button class="my-link-text" type="button" (click)="disableFormControl('name')">Disable name</button>
+                <button class="my-link-text" type="button" (click)="enableFormControl('name')">Enable name</button>
+            </div>
             <label for="name">Name (required)</label>
             <input type="text" id="name" name="name" [(ngModel)]="model.name" required>
         </div>
@@ -52,6 +56,10 @@
     </div>
     <div class="grid-x grid-margin-x" ngModelGroup="account" #userAccountFormGroup="ngModelGroup">
         <div class="cell medium-6">
+            <div>
+                <button class="my-link-text" type="button" (click)="disableFormControl('email', userAccountFormGroup)">Disable email</button>
+                <button class="my-link-text" type="button" (click)="enableFormControl('email', userAccountFormGroup)">Enable email</button>
+            </div>
             <label for="email">Email (required, email)</label>
             <input type="email" id="email" name="email" [(ngModel)]="model.email" required email>
         </div>
