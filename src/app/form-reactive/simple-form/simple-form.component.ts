@@ -18,13 +18,12 @@ export class SimpleFormComponent {
     }
 
     disableForm() {
-        // TODO
-        console.log('disable form');
+        this.simpleForm.disable();
+        //this.simpleForm.enable();
     }
 
-    checkFormValid(){
-        // TODO
-        console.log('check if form is valid');
+    checkFormValid() {
+        console.log('this.simpleForm.valid', this.simpleForm.valid);
     }
 
     onSubmit() {
