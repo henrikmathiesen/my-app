@@ -62,4 +62,17 @@ export class LittleMoreFormComponent implements OnInit, IModel {
     //return !this.littleMoreForm.controls[name].valid && this.littleMoreForm.controls[name].touched;
     return !this.littleMoreForm.get(formControlName).valid && this.littleMoreForm.get(formControlName).touched;
   }
+
+  disableFormControl(name: string) {
+    this.littleMoreForm.get(name).disable();
+  }
+
+  enableFormControl(name: string) {
+    this.littleMoreForm.get(name).enable();
+  }
+
+  setFormControlValid(name: string) {
+    this.littleMoreForm.get(name).clearValidators();
+    this.littleMoreForm.get(name).updateValueAndValidity();
+  }
 }

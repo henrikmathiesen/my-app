@@ -10,6 +10,11 @@
     <div class="grid-x grid-margin-x">
       <div class="cell medium-12">
         <div>
+            <div>
+                <button class="my-link-text" type="button" (click)="disableFormControl('name')">Disable name</button>
+                <button class="my-link-text" type="button" (click)="enableFormControl('name')">Enable name</button>
+                <button class="my-link-text" type="button" (click)="setFormControlValid('name')">Set name valid</button>
+            </div>
           <label for="name">Name</label>
           <input type="text" id="name" formControlName="name">
           <div class="callout alert" *ngIf="showValidationError('name')">{{ validationMessages.name }}</div>
