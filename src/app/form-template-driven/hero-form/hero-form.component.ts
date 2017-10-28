@@ -101,7 +101,7 @@ export class HeroFormComponent {
 
     private clearNullFields() {
         this.heroForm.controls['code'].reset();
-        this.heroForm.controls['description'].reset();
+        this.heroForm.controls['description'].reset();  // is in a sub component
 
         // This wont work since email is in a formGroup
         // this.heroForm.controls['email'].reset();
