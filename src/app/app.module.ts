@@ -15,7 +15,7 @@ import { ErrorComponent } from './error/error.component';
 import { DataSharingComponent } from './data-sharing/data-sharing.component';
 import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
 
-import { FormTemplateDrivenComponent, HeroFormComponent, SpecialTextAreaComponent, HeroFormValidationDirective } from './form-template-driven';
+import { FormTemplateDrivenComponent, HeroFormComponent, HeroFormDescriptionComponent, HeroFormValidationDirective } from './form-template-driven';
 import { 
   FormReactiveComponent, 
   SimpleFormComponent, 
@@ -44,7 +44,7 @@ import { ConstantsApiService } from './shared/constants-api.service';
     DataSharingSibblingComponent,
     FormTemplateDrivenComponent,
     HeroFormComponent,
-    SpecialTextAreaComponent,
+    HeroFormDescriptionComponent,
     FormReactiveComponent,
     SimpleFormComponent,
     LittleMoreFormComponent,

@@ -4,9 +4,9 @@ import { OrderHero } from '../../models/order-hero';
 
 @Component({
     selector: 'my-special-text-area',
-    templateUrl: './special-text-area.component.html'
+    templateUrl: './hero-form-description.component.html'
 })
-export class SpecialTextAreaComponent implements OnInit {
+export class HeroFormDescriptionComponent implements OnInit {
     @Input() form: NgForm;
     @Input() model: OrderHero; // Send in an object else bindings wont work. This binds both ways.
     @ViewChild('descriptionFormControl') descriptionFormControl: NgModel;
