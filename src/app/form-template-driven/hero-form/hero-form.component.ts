@@ -107,8 +107,11 @@ export class HeroFormComponent {
         // this.heroForm.controls['email'].reset();
 
         // We can get to the formGroup by using a ViewChild NgModelGroup 
-        // (if formGroup was in a sub component, we would have to add it, like we do in special-text-area.component for a control)
         this.heroForm.getFormGroup(this.userAccountFormGroup).controls['email'].reset();
         this.heroForm.getFormGroup(this.userAccountFormGroup).controls['confirmEmail'].reset();
+
+        // (if formGroup was in a sub component, we would have to add it, like we do in special-text-area.component for a control)
+        // But with: this.form.addFormGroup();
+        // Then: this.heroForm.getFormGroup(referenceToFormGroup).reset();
     }
 }
