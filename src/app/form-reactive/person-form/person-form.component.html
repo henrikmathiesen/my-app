@@ -18,6 +18,6 @@
     </fieldset>
     <my-person-form-address></my-person-form-address>
     <div class="text-right">
-        <button type="submit" class="button success">Submit</button>
+        <button type="submit" class="button success" [disabled]="!personForm.valid">Submit</button>
     </div>
 </form>
