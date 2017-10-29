@@ -1,8 +1,8 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LittleMoreFormSetupFormService } from './services/little-more-form-setup-form.service';
+import { LittleMoreFormSupportDataService } from './services/little-more-form-support-data.service';
 import { LittleMoreFormValidateFormControlChangesService } from './services/little-more-form-validate-form-control-changes.service';
-import { LittleFormSupportDataService } from './services/little-more-form-support-data.service';
 
 interface IModel {
   name: string;
@@ -18,7 +18,12 @@ export interface ILittleFormValidationMessages {
 @Component({
   selector: 'my-little-more-form',
   templateUrl: './little-more-form.component.html',
-  styles: ['.alert { margin-top:-16px }']
+  styles: ['.alert { margin-top:-16px }'],
+  providers: [
+    LittleMoreFormSetupFormService,
+    LittleMoreFormSupportDataService,
+    LittleMoreFormValidateFormControlChangesService
+  ]
 })
 export class LittleMoreFormComponent implements OnInit, IModel {
   @ViewChild('formInfo') formInfo: any;
@@ -35,12 +40,12 @@ export class LittleMoreFormComponent implements OnInit, IModel {
 
   constructor(
     private littleFormSetupFormService: LittleMoreFormSetupFormService,
-    private handleValidateFormControlChangesService: LittleMoreFormValidateFormControlChangesService,
-    private littleFormSupportDataService: LittleFormSupportDataService
+    private littleMoreFormSupportDataService: LittleMoreFormSupportDataService,
+    private handleValidateFormControlChangesService: LittleMoreFormValidateFormControlChangesService
   ) {
     this.littleMoreForm = this.littleFormSetupFormService.setup();
-    this.validationMessages.name = this.littleFormSupportDataService.getNameValidationMessages().default;
-    this.validationMessages.description = this.littleFormSupportDataService.getDescriptionValidationMessage();
+    this.validationMessages.name = this.littleMoreFormSupportDataService.getNameValidationMessages().default;
+    this.validationMessages.description = this.littleMoreFormSupportDataService.getDescriptionValidationMessage();
   }
 
   ngOnInit() {

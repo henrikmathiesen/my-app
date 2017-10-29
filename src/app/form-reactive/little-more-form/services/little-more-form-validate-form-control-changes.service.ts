@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
-import { LittleFormSupportDataService } from './little-more-form-support-data.service';
+import { LittleMoreFormSupportDataService } from './little-more-form-support-data.service';
 import { ILittleFormValidationMessages } from '../little-more-form.component';
 
 @Injectable()
@@ -10,7 +10,7 @@ export class LittleMoreFormValidateFormControlChangesService {
     private validationMessages: ILittleFormValidationMessages;
 
     constructor(
-        private littleFormSupportDataService: LittleFormSupportDataService
+        private littleMoreFormSupportDataService: LittleMoreFormSupportDataService
     ){}
 
     valueChanges(littleMoreForm: FormGroup, validationMessages: ILittleFormValidationMessages) {
@@ -35,7 +35,7 @@ export class LittleMoreFormValidateFormControlChangesService {
             Validators.minLength(3)
         ]);
 
-        this.validationMessages.name = this.littleFormSupportDataService.getNameValidationMessages().validated;
+        this.validationMessages.name = this.littleMoreFormSupportDataService.getNameValidationMessages().validated;
     }
 
     private defaultNameFormControlValidationRules() {
@@ -43,7 +43,7 @@ export class LittleMoreFormValidateFormControlChangesService {
             Validators.required
         ]);
 
-        this.validationMessages.name = this.littleFormSupportDataService.getNameValidationMessages().default;
+        this.validationMessages.name = this.littleMoreFormSupportDataService.getNameValidationMessages().default;
     }
 
 }

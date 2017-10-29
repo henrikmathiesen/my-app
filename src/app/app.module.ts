@@ -21,10 +21,6 @@ import {
   SimpleFormComponent, 
   LittleMoreFormComponent, 
   PersonFormComponent,
-  LittleMoreFormSetupFormService, 
-  LittleMoreFormValidateFormControlChangesService, 
-  LittleFormSupportDataService,
-  PersonFormSetupFormService
 } from './form-reactive'; 
 
 import { HeroService } from './shared/hero.service';
@@ -65,10 +61,6 @@ import { ConstantsApiService } from './shared/constants-api.service';
     ErrorService,
     DataSharingMediatorService,
     ConstantsApiService,
-    LittleMoreFormSetupFormService,
-    LittleMoreFormValidateFormControlChangesService,
-    LittleFormSupportDataService,
-    PersonFormSetupFormService
   ],
   bootstrap: [AppComponent]
 })

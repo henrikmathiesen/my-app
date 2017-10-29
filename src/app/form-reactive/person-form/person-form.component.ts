@@ -4,7 +4,10 @@ import { PersonFormSetupFormService } from './services/person-form-setup-form.se
 
 @Component({
     selector: 'my-person-form',
-    templateUrl: './person-form.component.html'
+    templateUrl: './person-form.component.html',
+    providers: [
+        PersonFormSetupFormService
+    ]
 })
 export class PersonFormComponent {
 
