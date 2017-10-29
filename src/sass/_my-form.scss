@@ -1,13 +1,18 @@
 form {
-    .ng-valid[required] {
-        border-left: 6px solid $my-color-success !important;
+    // This will only work for valid template driven form controls, since they have attributes like [required]
+    // .ng-valid[required] {
+    //     border-left: 6px solid $my-color-success !important;
+    // }
+
+    .ng-valid {
+        border-left: 6px solid $my-color-success;
     }
         
     .ng-invalid  {
-        border-left: 6px solid $my-color-danger !important;
+        border-left: 6px solid $my-color-danger;
     }
 
-    [ngmodelgroup].ng-invalid {
+    [ngmodelgroup].ng-invalid, fieldset {
         border-left: 0 !important;
     }
 }

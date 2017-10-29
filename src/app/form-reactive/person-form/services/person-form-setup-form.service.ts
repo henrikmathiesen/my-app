@@ -8,9 +8,7 @@ export class PersonFormSetupFormService {
     constructor(
         private formBuilder: FormBuilder,
         private personFormConstantsService: PersonFormConstantsService
-    ) {
-
-    }
+    ) {}
 
     setup() {
         return this.formBuilder.group({

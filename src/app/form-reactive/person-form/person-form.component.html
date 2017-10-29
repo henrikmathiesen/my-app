@@ -1,7 +1,7 @@
 <h3>Person Form</h3>
 
-<form [formGroup]="personForm" (ngSubmit)="onSubmit()">
-    <my-person-form-check-validity [personForm]="personForm"></my-person-form-check-validity>
+<form [formGroup]="personFormGroup" (ngSubmit)="onSubmit()">
+    <my-person-form-check-validity [personFormGroup]="personFormGroup"></my-person-form-check-validity>
     <fieldset>
         <div>
             <label for="firstName">First Name</label>
@@ -16,8 +16,8 @@
             <input type="text" id="nickName" formControlName="nickName">
         </div>
     </fieldset>
-    <my-person-form-address></my-person-form-address>
+    <my-person-form-address [parentFormGroup]="personFormGroup"></my-person-form-address>
     <div class="text-right">
-        <button type="submit" class="button success" [disabled]="!personForm.valid">Submit</button>
+        <button type="submit" class="button success" [disabled]="!personFormGroup.valid">Submit</button>
     </div>
 </form>

@@ -6,13 +6,13 @@ import { FormGroup } from '@angular/forms';
     templateUrl: './person-form-check-validity.component.html'
 })
 export class PersonFormCheckValidityComponent {
-    @Input() personForm: FormGroup;
+    @Input() personFormGroup: FormGroup;
 
     formControlIsValid(formControlName: string) {
-        console.log(`${formControlName} valid`, this.personForm.get(formControlName).valid);
+        console.log(`${formControlName} valid`, this.personFormGroup.get(formControlName).valid);
     }
 
     formIsValid() {
-        console.log('personForm.valid', this.personForm.valid);
+        console.log('personForm.valid', this.personFormGroup.valid);
     }
 }

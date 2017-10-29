@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { PersonFormSetupFormService } from './services/person-form-setup-form.service';
 import { PersonFormConstantsService } from './services/person-form-constants.service';
-import { IPersonModel } from './models/person-form-model';
+import { IPersonFormModel } from './models/person-form-model';
 
 @Component({
     selector: 'my-person-form',
@@ -14,18 +14,18 @@ import { IPersonModel } from './models/person-form-model';
 })
 export class PersonFormComponent {
 
-    personForm: FormGroup;
+    personFormGroup: FormGroup;
 
     constructor(
         private personFormSetupFormService: PersonFormSetupFormService
     ) {
-        this.personForm = this.personFormSetupFormService.setup();
+        this.personFormGroup = this.personFormSetupFormService.setup();
     }
 
     onSubmit() {
-        const post = this.personForm.value as IPersonModel;
+        const post = this.personFormGroup.value as IPersonFormModel;
 
-        console.log('this.personForm', this.personForm);
+        console.log('this.personForm', this.personFormGroup);
         console.log('this.personForm.value', post);
     }
 
