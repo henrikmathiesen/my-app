@@ -1,13 +1,7 @@
 <h3>Person Form</h3>
 
 <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
-    <div>
-        <h4>Check validity</h4>
-        <a (click)="formIsValid()">Form</a> |
-        <a (click)="formControlIsValid('firstName')">First Name</a> |
-        <a (click)="formControlIsValid('lastName')">Last Name</a> |
-        <a (click)="formControlIsValid('nickName')">Nickname</a>
-    </div>
+    <person-form-check-validity [personForm]="personForm"></person-form-check-validity>
     <div>
         <label for="firstName">First Name</label>
         <input type="text" id="firstName" formControlName="firstName">
@@ -20,7 +14,7 @@
         <label for="nickName">Nickname</label>
         <input type="text" id="nickName" formControlName="nickName">
     </div>
-    <div>
+    <div class="text-right">
         <button type="submit" class="button success">Submit</button>
     </div>
 </form>

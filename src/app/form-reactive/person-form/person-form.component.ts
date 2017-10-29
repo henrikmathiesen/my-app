@@ -22,14 +22,6 @@ export class PersonFormComponent {
         this.personForm = this.personFormSetupFormService.setup();
     }
 
-    formControlIsValid(formControlName: string) {
-        console.log(`${formControlName} valid`, this.personForm.get(formControlName).valid);
-    }
-
-    formIsValid() {
-        console.log('personForm.valid', this.personForm.valid);
-    }
-
     onSubmit() {
         const post = this.personForm.value as IPersonModel;
 
