@@ -1,19 +1,22 @@
 <h3>Person Form</h3>
 
 <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
-    <person-form-check-validity [personForm]="personForm"></person-form-check-validity>
-    <div>
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" formControlName="firstName">
-    </div>
-    <div>
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" formControlName="lastName">
-    </div>
-    <div>
-        <label for="nickName">Nickname</label>
-        <input type="text" id="nickName" formControlName="nickName">
-    </div>
+    <my-person-form-check-validity [personForm]="personForm"></my-person-form-check-validity>
+    <fieldset>
+        <div>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" formControlName="firstName">
+        </div>
+        <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" formControlName="lastName">
+        </div>
+        <div>
+            <label for="nickName">Nickname</label>
+            <input type="text" id="nickName" formControlName="nickName">
+        </div>
+    </fieldset>
+    <my-person-form-address></my-person-form-address>
     <div class="text-right">
         <button type="submit" class="button success">Submit</button>
     </div>

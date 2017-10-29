@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-    selector: 'person-form-check-validity',
+    selector: 'my-person-form-check-validity',
     templateUrl: './person-form-check-validity.component.html'
 })
 export class PersonFormCheckValidityComponent {

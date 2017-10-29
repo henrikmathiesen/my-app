@@ -21,7 +21,8 @@ import {
   SimpleFormComponent, 
   LittleMoreFormComponent, 
   PersonFormComponent,
-  PersonFormCheckValidityComponent
+  PersonFormCheckValidityComponent,
+  PersonFormAddressComponent
 } from './form-reactive'; 
 
 import { HeroService } from './shared/hero.service';
@@ -49,6 +50,7 @@ import { ConstantsApiService } from './shared/constants-api.service';
     LittleMoreFormComponent,
     PersonFormComponent,
     PersonFormCheckValidityComponent,
+    PersonFormAddressComponent,
     HeroFormValidationDirective
   ],
   imports: [
