@@ -13,7 +13,6 @@ export class PersonFormSetupFormService {
     }
 
     setup() {
-
         return this.formBuilder.group({
             [this.personFormConstantsService.getFormControlNames().firstName]: this.getFirstNameSupportData(),
             [this.personFormConstantsService.getFormControlNames().lastName]: this.getLastNameSupportData(),
