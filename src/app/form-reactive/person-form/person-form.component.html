@@ -1,5 +1,17 @@
 <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
     <div>
-        <label for="">First Name</label>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" formControlName="firstName">
+    </div>
+    <div>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" formControlName="lastName">
+    </div>
+    <div>
+        <label for="nickName">Nickname</label>
+        <input type="text" id="nickName" formControlName="nickName">
+    </div>
+    <div>
+        <button type="submit" class="button success">Submit</button>
     </div>
 </form>
