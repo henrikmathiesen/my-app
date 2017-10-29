@@ -20,10 +20,11 @@ import {
   FormReactiveComponent, 
   SimpleFormComponent, 
   LittleMoreFormComponent, 
-  NameFormComponent,
+  PersonFormComponent,
   LittleMoreFormSetupFormService, 
   LittleMoreFormValidateFormControlChangesService, 
-  LittleFormSupportDataService 
+  LittleFormSupportDataService,
+  PersonFormSetupFormService
 } from './form-reactive'; 
 
 import { HeroService } from './shared/hero.service';
@@ -49,7 +50,7 @@ import { ConstantsApiService } from './shared/constants-api.service';
     FormReactiveComponent,
     SimpleFormComponent,
     LittleMoreFormComponent,
-    NameFormComponent,
+    PersonFormComponent,
     HeroFormValidationDirective
   ],
   imports: [
@@ -66,7 +67,8 @@ import { ConstantsApiService } from './shared/constants-api.service';
     ConstantsApiService,
     LittleMoreFormSetupFormService,
     LittleMoreFormValidateFormControlChangesService,
-    LittleFormSupportDataService
+    LittleFormSupportDataService,
+    PersonFormSetupFormService
   ],
   bootstrap: [AppComponent]
 })
