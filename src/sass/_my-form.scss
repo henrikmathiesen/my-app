@@ -5,14 +5,14 @@ form {
     // }
 
     .ng-valid {
-        border-left: 6px solid $my-color-success;
+        border-left: 6px solid $my-color-success !important;
     }
         
     .ng-invalid  {
-        border-left: 6px solid $my-color-danger;
+        border-left: 6px solid $my-color-danger !important;
     }
 
-    [ngmodelgroup].ng-invalid, fieldset {
+    [ngmodelgroup].ng-invalid, fieldset.ng-invalid {
         border-left: 0 !important;
     }
 }
