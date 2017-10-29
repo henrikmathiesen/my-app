@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { PersonFormConstantsService } from '../../services/person-form-constants.service';
+import { PersonFormAddressConstantsService } from './person-form-address-constants.service';
 
 @Injectable()
 export class PersonFormAddressSetupFormService {
 
     constructor(
         private formBuilder: FormBuilder,
-        private personFormConstantsService: PersonFormConstantsService
+        private personFormAddressConstantsService: PersonFormAddressConstantsService
     ) { }
 
     setup() {
         return this.formBuilder.group({
-            [this.personFormConstantsService.getFormControlNames().address.street]: this.getSupportData(),
-            [this.personFormConstantsService.getFormControlNames().address.postalCode]: this.getPostalSupportData(),
-            [this.personFormConstantsService.getFormControlNames().address.city]: this.getSupportData(),
+            [this.personFormAddressConstantsService.getFormControlNames().street]: this.getSupportData(),
+            [this.personFormAddressConstantsService.getFormControlNames().postalCode]: this.getPostalSupportData(),
+            [this.personFormAddressConstantsService.getFormControlNames().city]: this.getSupportData(),
         });
     }
 
     addFormGroupToParent(thisFormGroup: FormGroup, parentFormGroup: FormGroup) {
-        parentFormGroup.addControl(this.personFormConstantsService.getFormControlNames()._address, thisFormGroup);
+        parentFormGroup.addControl(this.personFormAddressConstantsService.getFormControlNames().address, thisFormGroup);
     }
 
     private getSupportData() {

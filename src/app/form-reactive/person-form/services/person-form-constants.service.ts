@@ -7,13 +7,7 @@ export class PersonFormConstantsService {
         return {
             firstName: 'firstName',
             lastName: 'lastName',
-            nickName: 'nickName',
-            _address: 'address',
-            address: {
-                street: 'street',
-                postalCode: 'postalCode',
-                city: 'city'
-            }
+            nickName: 'nickName'
         }
     }
 

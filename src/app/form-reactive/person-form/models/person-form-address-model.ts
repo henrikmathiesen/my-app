@@ -1,5 +1,5 @@
 export interface IPersonFormAddressModel {
     street: string;
-    postalCode: number;
+    postalCode: string;
     city: string;
 }
