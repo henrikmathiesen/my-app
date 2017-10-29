@@ -8,8 +8,17 @@ import { FormGroup } from '@angular/forms';
 export class PersonFormCheckValidityComponent {
     @Input() personFormGroup: FormGroup;
 
-    formControlIsValid(formControlName: string, formGroup: FormGroup) {
-        console.log(`${formControlName} valid`, this.personFormGroup.get(formControlName).valid);
+    formControlIsValid(formControlName: string, formGroupName: string = null) {
+        let formControlIsValid: boolean;
+
+        if (!formGroupName) {
+            formControlIsValid = this.personFormGroup.get(formControlName).valid;
+        }
+        else {
+            formControlIsValid = this.personFormGroup.get([formGroupName, formControlName]).valid;
+        }
+
+        console.log(`${formControlName} valid`, formControlIsValid);
     }
 
     formIsValid() {
