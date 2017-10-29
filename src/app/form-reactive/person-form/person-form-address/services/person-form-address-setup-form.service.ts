@@ -18,7 +18,7 @@ export class PersonFormAddressSetupFormService {
         });
     }
 
-    addToParentForm(thisFormGroup: FormGroup, parentFormGroup: FormGroup) {
+    addFormGroupToParent(thisFormGroup: FormGroup, parentFormGroup: FormGroup) {
         parentFormGroup.addControl(this.personFormConstantsService.getFormControlNames()._address, thisFormGroup);
     }
 

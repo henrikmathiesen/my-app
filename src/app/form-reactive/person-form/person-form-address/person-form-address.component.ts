@@ -18,6 +18,6 @@ export class PersonFormAddressComponent implements OnInit {
     }
 
     ngOnInit(){
-        this.personFormAddressSetupFormService.addToParentForm(this.personFormAddressGroup, this.parentFormGroup);
+        this.personFormAddressSetupFormService.addFormGroupToParent(this.personFormAddressGroup, this.parentFormGroup);
     }
 }
