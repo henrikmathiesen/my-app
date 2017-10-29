@@ -1,4 +1,13 @@
+<h3>Person Form</h3>
+
 <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+    <div>
+        <h4>Check validity</h4>
+        <a (click)="formIsValid()">Form</a> |
+        <a (click)="formControlIsValid('firstName')">First Name</a> |
+        <a (click)="formControlIsValid('lastName')">Last Name</a> |
+        <a (click)="formControlIsValid('nickName')">Nickname</a>
+    </div>
     <div>
         <label for="firstName">First Name</label>
         <input type="text" id="firstName" formControlName="firstName">
