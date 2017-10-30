@@ -12,17 +12,13 @@ export class PersonFormSetupFormService {
 
     setup() {
         return this.formBuilder.group({
-            [this.personFormConstantsService.getFormControlNames().firstName]: this.getFirstNameSupportData(),
-            [this.personFormConstantsService.getFormControlNames().lastName]: this.getLastNameSupportData(),
+            [this.personFormConstantsService.getFormControlNames().firstName]: this.getSupportData(),
+            [this.personFormConstantsService.getFormControlNames().lastName]: this.getSupportData(),
             [this.personFormConstantsService.getFormControlNames().nickName]: this.getNickNameSupportData()
         })
     }
 
-    private getFirstNameSupportData() {
-        return [null, Validators.required];
-    }
-
-    private getLastNameSupportData() {
+    private getSupportData() {
         return [null, Validators.required];
     }
 
