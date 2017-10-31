@@ -2,16 +2,7 @@
     <h4>Check validity</h4>
     <button class="my-link-text" (click)="formIsValid()">Form</button> |
     <button class="my-link-text" (click)="formControlIsValid()" [disabled]="selectableControl == null">Check Selected Control</button>
-    <!-- <a (click)="formControlIsValid('firstName')">First Name</a> |
-    <a (click)="formControlIsValid('lastName')">Last Name</a> |
-    <a (click)="formControlIsValid('nickName')">Nickname</a> |
-    
-    <a (click)="formControlIsValid('street', 'address')">Street</a> |
-    <a (click)="formControlIsValid('postalCode', 'address')">Postal Code</a> |
-    <a (click)="formControlIsValid('city', 'address')">City</a> -->
-
-
-    <select class="my-no-validation-color" [(ngModel)]="selectedControlIndex" (change)="onSelectControl()">
+    <select [(ngModel)]="selectedControlIndex" (change)="onSelectControl()">
         <option [value]="-1">Select Control</option>
         <option *ngFor="let sc of selectableControls; let i = index" [value]="i">{{ sc.label }}</option>
     </select>
