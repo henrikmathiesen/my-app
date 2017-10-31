@@ -17,17 +17,32 @@ import { PersonFormCheckValiditySetupService } from './services/person-form-chec
 export class PersonFormCheckValidityComponent {
     @Input() personFormGroup: FormGroup;
     selectableControls: Array<PersonFormCheckValiditySelectableControlModel>;
+    selectableControl: PersonFormCheckValiditySelectableControlModel;
+    selectedControlIndex: number;
 
     constructor(
         private personFormCheckValiditySetupService: PersonFormCheckValiditySetupService
-    ){
+    ) {
         this.selectableControls = this.personFormCheckValiditySetupService.setupSelectableControls();
+        this.selectedControlIndex = -1;
     }
 
-    formControlIsValid(formControlName: string, formGroupName: string = null) {
+    onSelectControl() {
+        if (this.selectedControlIndex < 0) {
+            this.selectableControl = null;
+            return;
+        }
+
+        this.selectableControl = this.selectableControls[this.selectedControlIndex];
+    }
+
+    formControlIsValid() {
+        const formControlName = this.selectableControl.formControlName;
+        const formGroupName = this.selectableControl.formGroupName;
+
         let formControlIsValid: boolean;
 
-        if (!formGroupName) {
+        if (formGroupName == null) {
             formControlIsValid = this.personFormGroup.get(formControlName).valid;
         }
         else {

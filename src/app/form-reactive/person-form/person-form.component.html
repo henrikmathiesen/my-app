@@ -1,7 +1,7 @@
 <h3>Person Form</h3>
 
+<my-person-form-check-validity [personFormGroup]="personFormGroup"></my-person-form-check-validity>
 <form [formGroup]="personFormGroup" (ngSubmit)="onSubmit()">
-    <my-person-form-check-validity [personFormGroup]="personFormGroup"></my-person-form-check-validity>
     <fieldset>
         <div>
             <label for="firstName">First Name</label>

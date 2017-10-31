@@ -7,9 +7,14 @@
     color: $anchor-color;
     text-decoration: none;
     cursor: pointer;
-}
 
-.my-link-text:hover, 
-.my-link-text:focus {
-    color: $anchor-color-hover
+    &:hover,
+    &:focus {
+        color: $anchor-color-hover
+    }
+
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
 }
