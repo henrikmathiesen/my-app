@@ -1,7 +1,7 @@
 <div>
     <h4>Check validity</h4>
     <button class="my-link-text" (click)="formIsValid()">Form</button> |
-    <button class="my-link-text" (click)="formControlIsValid()" [disabled]="selectableControl == null">Check Selected Control</button>
+    <button class="my-link-text" (click)="formControlIsValid()" [disabled]="selectedControl == null">Check Selected Control</button>
     <select [(ngModel)]="selectedControlIndex" (change)="onSelectControl()">
         <option [value]="-1">Select Control</option>
         <option *ngFor="let sc of selectableControls; let i = index" [value]="i">{{ sc.label }}</option>
