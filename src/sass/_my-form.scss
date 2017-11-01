@@ -12,7 +12,8 @@ form {
         border-left: 6px solid $my-color-danger !important;
     }
 
-    [ngmodelgroup].ng-invalid, fieldset.ng-invalid, fieldset.ng-valid {
+    [ngmodelgroup].ng-invalid, [ngmodelgroup].ng-valid,
+    fieldset.ng-invalid, fieldset.ng-valid {
         border-left: 0 !important;
     }
 }
