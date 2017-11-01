@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm, NgModelGroup } from '@angular/forms';
 import { OrderHero } from '../models/order-hero';
-import { OrderHeroSupportData, Powers, FoodPreferences, PropertyRule } from '../models/order-hero-support-data';
+import { OrderHeroSupportData } from '../models/order-hero-support-data';
 import { HeroFormSetupService } from './services/hero-form-setup.service';
 
 @Component({
@@ -16,13 +16,15 @@ export class HeroFormComponent {
     @ViewChild('heroForm') heroForm: NgForm;
     @ViewChild('userAccountFormGroup') userAccountFormGroup: NgModelGroup;
 
-    supportData: OrderHeroSupportData;
     model: OrderHero;
+    supportData: OrderHeroSupportData;
     submited: boolean;
 
-    constructor() {
-        this.setUpModel();
-        this.setUpSupportData();
+    constructor(
+        private heroFormSetupService: HeroFormSetupService
+    ) {
+        this.model = this.heroFormSetupService.setupModel();
+        this.supportData = this.heroFormSetupService.setupSupportData();
         this.submited = false;
     }
 
@@ -78,29 +80,6 @@ export class HeroFormComponent {
         else {
             this.heroForm.controls[name].enable();
         }
-    }
-
-    private setUpModel() {
-        this.model = new OrderHero();
-        this.model.id = 5;
-        this.model.name = 'SkyDog';
-        this.model.code = null;
-        this.model.power = OrderHeroSupportData.staticPowers[Powers.SuperHot];
-        this.model.foodPreference = OrderHeroSupportData.staticFoodPreferences[FoodPreferences.Pasta];
-        this.model.description = 'Give me all you got';
-        this.model.alterEgo = 'Terrier';
-        this.model.isCrazy = true;
-        this.model.isNice = false;
-    }
-
-    private setUpSupportData() {
-        this.supportData = new OrderHeroSupportData();
-        this.supportData.codeRule = new PropertyRule();
-        this.supportData.codeRule.isDisabled = false;
-        this.supportData.codeRule.isRequired = true;
-        this.supportData.codeRule.minlength = 4;
-        this.supportData.powers = OrderHeroSupportData.staticPowers;
-        this.supportData.foodPreferences = OrderHeroSupportData.staticFoodPreferences;
     }
 
     private clearNullFields() {
