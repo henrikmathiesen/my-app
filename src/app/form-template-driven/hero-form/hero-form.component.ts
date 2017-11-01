@@ -2,11 +2,15 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm, NgModelGroup } from '@angular/forms';
 import { OrderHero } from '../models/order-hero';
 import { OrderHeroSupportData, Powers, FoodPreferences, PropertyRule } from '../models/order-hero-support-data';
+import { HeroFormSetupService } from './services/hero-form-setup.service';
 
 @Component({
     selector: 'my-hero-form',
     templateUrl: './hero-form.component.html',
-    styleUrls: ['./hero-form.component.scss']
+    styleUrls: ['./hero-form.component.scss'],
+    providers: [
+        HeroFormSetupService
+    ]
 })
 export class HeroFormComponent {
     @ViewChild('heroForm') heroForm: NgForm;
