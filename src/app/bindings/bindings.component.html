@@ -6,7 +6,7 @@
 <p>
     Refresh does propagate down.
 </p>
-<div *ngIf="jsonData">
+<div *ngIf="jsonData"> <!-- Else template exception since jsonData is async. Could also do jsonData?.userId etc -->
     <h3>User Id: {{ jsonData.userId }}</h3>
     <h3>Id: {{ jsonData.id }}</h3>
     <h3>Title: {{ jsonData.title }}</h3>
