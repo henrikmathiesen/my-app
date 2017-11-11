@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { NavComponent } from './nav/nav.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -36,6 +37,7 @@ import { ConstantsApiService } from './shared/constants-api.service';
 @NgModule({
   declarations: [
     AppComponent,
+    NavComponent,
     HeroesComponent,
     HeroDetailComponent,
     DashboardComponent,
