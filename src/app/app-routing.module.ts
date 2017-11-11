@@ -26,10 +26,6 @@ const routes: Routes = [
         component: HeroesComponent
     },
     {
-        path: 'detail/:id',
-        component: HeroDetailComponent
-    },
-    {
         path: 'bindings',
         component: BindingsComponent
     },
@@ -52,7 +48,11 @@ const routes: Routes = [
     {
         path: 'rxjs',
         component: RxJsComponent
-    }
+    },
+    {
+        path: 'detail/:id',
+        component: HeroDetailComponent
+    },
 ];
 
 const routerConfig = RouterModule.forRoot(routes, {
