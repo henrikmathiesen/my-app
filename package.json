@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:henry": "ng serve --env=henry",
     "build": "ng build",
     "build:prod": "ng build --prod",
     "serve:build": "http-server ./dist -p 1337",

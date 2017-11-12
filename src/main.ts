@@ -8,4 +8,6 @@ if (environment.production) {
   enableProdMode();
 }
 
+console.log(environment.env);
+
 platformBrowserDynamic().bootstrapModule(AppModule);

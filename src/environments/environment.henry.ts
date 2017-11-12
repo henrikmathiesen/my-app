@@ -1,6 +1,6 @@
 import { IEnvironment } from './IEnvironment';
 
 export const environment: IEnvironment = {
-  production: true,
-  env: 'production'
+    production: false,
+    env: 'henry'
 };
