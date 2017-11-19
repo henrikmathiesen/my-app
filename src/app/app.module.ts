@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AnotherSharedModule } from './another-module-shared/another-shared.module';            // A1) Another Module
+import { AnotherModule } from './another-module/another.module';                                // B1) Import another module with exported component
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -19,14 +20,14 @@ import { DataSharingComponent } from './data-sharing/data-sharing.component';
 import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
 
 import { FormTemplateDrivenComponent, HeroFormComponent, HeroFormDescriptionComponent, HeroFormValidationDirective } from './form-template-driven';
-import { 
-  FormReactiveComponent, 
-  SimpleFormComponent, 
-  LittleMoreFormComponent, 
+import {
+  FormReactiveComponent,
+  SimpleFormComponent,
+  LittleMoreFormComponent,
   PersonFormComponent,
   PersonFormCheckValidityComponent,
   PersonFormAddressComponent
-} from './form-reactive'; 
+} from './form-reactive';
 
 import { RxJsComponent } from './rxjs/rxjs.component';
 
@@ -37,6 +38,16 @@ import { ConstantsApiService } from './shared/constants-api.service';
 
 
 @NgModule({
+  // Modules (we can use functionality from them in this module)
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
+    AppRoutingModule,
+    AnotherSharedModule,                            // A2) We import it here, then we can inject an instance of another-shared.service (provided in another-shared.module) in components in this module (see app.component)
+    AnotherModule                                   // B2) Now we can use the exported component in this module, also routing to a component in that module works
+  ],
   // Components, Directives, Pipes (always Module wide)
   declarations: [
     AppComponent,
@@ -61,18 +72,9 @@ import { ConstantsApiService } from './shared/constants-api.service';
     RxJsComponent,
     HeroFormValidationDirective
   ],
-  // Modules (we can use functionality from them in this module)
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-    AppRoutingModule,
-    AnotherSharedModule                             // A2) We import it here, then we can inject an instance of another-shared.service (provided in another-shared.module) in components in this module (see app.component)
-  ],
   // Services (Module wide, can also import in a Component, the provider provides an instance)
   providers: [
-    HeroService,                                    // if we need the service in many components we put it here, instead of local providers in @Component
+    HeroService,                                    // If we need the service in many components we put it here, instead of local providers in @Component (for local provider: remember that multiple instances of the component will ge a different service instances)
     ErrorService,
     DataSharingMediatorService,
     ConstantsApiService,
@@ -80,3 +82,5 @@ import { ConstantsApiService } from './shared/constants-api.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// Beware of multiple providers, if importing a module with providers in several modules: https://angular.io/guide/ngmodule#the-core-module
