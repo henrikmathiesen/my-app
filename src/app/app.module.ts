@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';        // 1 module for Template Driven Form and 1 for Reactive Form
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';                              // 1 module for Template Driven Form and 1 for Reactive Form
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { AnotherSharedModule } from './another-module-shared/another-shared.module';            // A1) Another Module
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -63,10 +65,11 @@ import { ConstantsApiService } from './shared/constants-api.service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AnotherSharedModule                             // A2) We import it here, then we can inject an instance of another-shared.service (provided in another-shared.module) in components in this module (see app.component)
   ],
   providers: [
-    HeroService, // if we need the service in many components we put it here, instead of local providers in @Component
+    HeroService,                                    // if we need the service in many components we put it here, instead of local providers in @Component
     ErrorService,
     DataSharingMediatorService,
     ConstantsApiService,
