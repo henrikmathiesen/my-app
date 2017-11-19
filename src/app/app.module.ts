@@ -37,6 +37,7 @@ import { ConstantsApiService } from './shared/constants-api.service';
 
 
 @NgModule({
+  // Components, Directives, Pipes (always Module wide)
   declarations: [
     AppComponent,
     NavComponent,
@@ -60,6 +61,7 @@ import { ConstantsApiService } from './shared/constants-api.service';
     RxJsComponent,
     HeroFormValidationDirective
   ],
+  // Modules (we can use functionality from them in this module)
   imports: [
     BrowserModule,
     FormsModule,
@@ -68,6 +70,7 @@ import { ConstantsApiService } from './shared/constants-api.service';
     AppRoutingModule,
     AnotherSharedModule                             // A2) We import it here, then we can inject an instance of another-shared.service (provided in another-shared.module) in components in this module (see app.component)
   ],
+  // Services (Module wide, can also import in a Component, the provider provides an instance)
   providers: [
     HeroService,                                    // if we need the service in many components we put it here, instead of local providers in @Component
     ErrorService,
