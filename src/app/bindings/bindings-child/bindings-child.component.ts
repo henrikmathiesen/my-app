@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
-import { random } from 'lodash';
+import random from 'lodash.random';
 import { IJsonPlaceholder } from '../IJsonPlaceholder';
 import { JsonPlaceholderService } from '../jsonPlaceholder.service';
 

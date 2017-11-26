@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, OnDestroy, AfterViewInit, ElementRef } from '@angular/core';
-import { random } from 'lodash';
+import random from 'lodash.random'
 import { IJsonPlaceholder } from './IJsonPlaceholder';
 import { JsonPlaceholderService } from './jsonPlaceholder.service';
 import { BindingsChildComponent } from './bindings-child/bindings-child.component';                                      // 1) Can access sub component via ViewChild

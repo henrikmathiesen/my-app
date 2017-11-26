@@ -16,6 +16,8 @@ http://blog.angular-university.io/angular-2-ngfor/ , ngFor (index,odd,even,first
 
 https://www.youtube.com/watch?v=bo1Wu0aiigU , reactive form
 
+https://www.npmjs.com/package/source-map-explorer , very useful ...
+
 ## CLI info
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
