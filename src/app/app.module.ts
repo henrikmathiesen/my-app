@@ -73,8 +73,10 @@ import { ConstantsApiService } from './shared/constants-api.service';
     HeroFormValidationDirective
   ],
   // Services (Module wide, can also import in a Component, the provider provides an instance)
+  // If we need the service in many components we put it here, instead of local providers in @Component (for local provider: remember that multiple instances of the component will ge a different service instances)
+  // UPDATE: These are actually registered with the root injector, so all non lazy loaded modules will get an instance of these
   providers: [
-    HeroService,                                    // If we need the service in many components we put it here, instead of local providers in @Component (for local provider: remember that multiple instances of the component will ge a different service instances)
+    HeroService,
     ErrorService,
     DataSharingMediatorService,
     ConstantsApiService,
