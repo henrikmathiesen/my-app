@@ -74,7 +74,15 @@ import { ConstantsApiService } from './shared/constants-api.service';
   ],
   // Services (Module wide, can also import in a Component, the provider provides an instance)
   // If we need the service in many components we put it here, instead of local providers in @Component (for local provider: remember that multiple instances of the component will ge a different service instances)
-  // UPDATE: These are actually registered with the root injector, so all non lazy loaded modules will get an instance of these
+  // UPDATE: 
+  // - These are actually registered with the root injector, so all modules will get an instance of these. The same is true for providers in other modules.
+  // - Beware, if we provide a service in a lazy loaded module, Angular creates a new injector for that module and registers it there, that service instance is only available to that module and it will be a seperate instance
+  // - Beware, if we import a module with providers into a lazy loaded module, those services gets registered with the new injector also and same problem as above will hapen, https://angular.io/guide/ngmodule-faq#q-why-bad
+  // - If we provide a service in 2 eager loaded modules, Angular will only create one instance
+  // BEST PRACTICE
+  // - Use an eager loaded core.module with all application wide services in a provider (gets registered with the root injector), import it in app.module (lazy loaded modules can then use these also)
+  // - Use local providers in feature modules, for structure puropose (even though services here are technically registered in the root injector)
+  // - For shared components, directive and pipes, use a shared.module and put them there, import the shared module in feature modules that need it
   providers: [
     HeroService,
     ErrorService,
