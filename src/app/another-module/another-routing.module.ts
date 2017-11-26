@@ -4,6 +4,7 @@ import { AnotherComponent } from './another-component/another.component'
 
 const routes: Routes = [
     {
+        // not lazy loaded
         path: 'another-module',
         component: AnotherComponent
     }
