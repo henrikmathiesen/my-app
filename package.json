@@ -10,6 +10,7 @@
     "build:prod": "ng build --prod",
     "build:prod:sm": "ng build --prod --sourcemaps=true",
     "serve:build": "http-server ./dist -p 1337",
+    "copy:foo": "cpx \"node_modules/foo/skins/**/*\" src/assets/vendor/foo/skins",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

@@ -18,7 +18,7 @@ https://www.youtube.com/watch?v=bo1Wu0aiigU , reactive form
 
 https://www.npmjs.com/package/source-map-explorer , very useful ...
 
-https://www.npmjs.com/package/cpx , useful for copy whole directory, "copy:foo": "cpx \"node_modules/foo/skins/**/*\" src/assets/vendor/foo/skins"
+https://www.npmjs.com/package/cpx , useful for copy whole directory, see package json 
 
 ## CLI info
 
