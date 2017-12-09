@@ -1,23 +1,23 @@
 import { Component, OnInit, ViewChild, OnDestroy, AfterViewInit, ElementRef } from '@angular/core';
 import random from 'lodash.random'
-import { IJsonPlaceholder } from './IJsonPlaceholder';
-import { JsonPlaceholderService } from './jsonPlaceholder.service';
+import { IPost } from 'app/shared/models/post.interface';
+import { PostByIdService } from './post-by-id.service';
 import { BindingsChildComponent } from './bindings-child/bindings-child.component';                                      // 1) Can access sub component via ViewChild
 
 @Component({
     selector: 'my-bindings',
     templateUrl: './bindings.component.html',
-    providers: [JsonPlaceholderService]
+    providers: [PostByIdService]
 })
 export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
 
     @ViewChild(BindingsChildComponent) bindingsChild: BindingsChildComponent;                                   // 2)
     @ViewChild('theSpan') theSpan: ElementRef;                                                                  // A
 
-    jsonData: IJsonPlaceholder;
+    jsonData: IPost;
 
     constructor(
-        private jsonPlaceholderService: JsonPlaceholderService
+        private jsonPlaceholderService: PostByIdService
     ) { }
 
     private getRandomInt(): number {
@@ -50,7 +50,7 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
         });
     }
 
-    change(event: IJsonPlaceholder) {
+    change(event: IPost) {
         this.jsonData = event;
     }
 }

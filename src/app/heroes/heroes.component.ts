@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Hero } from '../shared/Hero';
+import { Hero } from '../shared/models/Hero';
 import { HeroService } from '../shared/hero.service';
 
 enum UseInViewEnum {

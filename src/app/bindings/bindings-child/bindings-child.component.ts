@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import random from 'lodash.random';
-import { IJsonPlaceholder } from '../IJsonPlaceholder';
-import { JsonPlaceholderService } from '../jsonPlaceholder.service';
+import { IPost } from 'app/shared/models/post.interface';
+import { PostByIdService } from '../post-by-id.service';
 
 interface ISimpleChanges extends SimpleChanges {
     jsonData: SimpleChange;
@@ -13,13 +13,13 @@ interface ISimpleChanges extends SimpleChanges {
 })
 export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
 
-    @Input() jsonData: IJsonPlaceholder; // = { id: 0, body: 'default', title: 'default', userId: 0 }; Can set default value on @Input() , can also map to another [name] by @Input('name')
-    @Output() change: EventEmitter<IJsonPlaceholder> = new EventEmitter<IJsonPlaceholder>(); // it will only emit an event to the immediate parent component.
+    @Input() jsonData: IPost; // = { id: 0, body: 'default', title: 'default', userId: 0 }; Can set default value on @Input() , can also map to another [name] by @Input('name')
+    @Output() change: EventEmitter<IPost> = new EventEmitter<IPost>(); // it will only emit an event to the immediate parent component.
 
     testingViewChild: string;
 
     constructor(
-        private jsonPlaceholderService: JsonPlaceholderService
+        private jsonPlaceholderService: PostByIdService
     ) { }
 
     private getRandomInt(): number {
