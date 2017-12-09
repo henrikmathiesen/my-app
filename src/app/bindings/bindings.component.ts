@@ -17,7 +17,7 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
     post: IPost;
 
     constructor(
-        private jsonPlaceholderService: PostByIdService
+        private postByIdService: PostByIdService
     ) { }
 
     private getRandomInt(): number {
@@ -30,7 +30,7 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
         // Can manipulate DOM elements like this. Allthough should we?
         (this.theSpan.nativeElement as HTMLElement).classList.add('test');                                        // B
 
-        this.jsonPlaceholderService.get(this.getRandomInt()).then(data => {
+        this.postByIdService.get(this.getRandomInt()).then(data => {
             this.post = data
         });
     }
@@ -45,7 +45,7 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     refresh() {
-        this.jsonPlaceholderService.get(this.getRandomInt()).then(data => {
+        this.postByIdService.get(this.getRandomInt()).then(data => {
             this.post = data;
         });
     }

@@ -19,7 +19,7 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
     testingViewChild: string;
 
     constructor(
-        private jsonPlaceholderService: PostByIdService
+        private postByIdService: PostByIdService
     ) { }
 
     private getRandomInt(): number {
@@ -43,7 +43,7 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     refresh() {
-        this.jsonPlaceholderService.get(this.getRandomInt()).then(data => {
+        this.postByIdService.get(this.getRandomInt()).then(data => {
             this.post = data;
             this.change.emit(data);
         });

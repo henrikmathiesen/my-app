@@ -9,6 +9,9 @@ import { IPost } from 'app/shared/models/post.interface';
     ]
 })
 export class PagingComponent implements OnInit {
+    
+    posts: IPost[];
+
     constructor(
         postsService: PostsService
     ) { }
