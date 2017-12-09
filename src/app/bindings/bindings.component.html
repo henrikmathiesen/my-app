@@ -1,18 +1,18 @@
 <h2>Bindings - Component</h2>
 
-<div [hidden]="!jsonData">
+<div [hidden]="!post">
     <div>
         <button class="button" (click)="refresh()">Refresh data</button>
     </div>
     <p>
         Refresh does propagate down.
     </p>
-    <div *ngIf="jsonData">
-        <!-- Else template exception since jsonData is async. Could also do jsonData?.userId etc -->
-        <h3>User Id: {{ jsonData.userId }}</h3>
-        <h3>Id: {{ jsonData.id }}</h3>
-        <h3>Title: {{ jsonData.title }}</h3>
-        <p>Body: {{ jsonData.body }}</p>
+    <div *ngIf="post">
+        <!-- Else template exception since post is async. Could also do post?.userId etc -->
+        <h3>User Id: {{ post.userId }}</h3>
+        <h3>Id: {{ post.id }}</h3>
+        <h3>Title: {{ post.title }}</h3>
+        <p>Body: {{ post.body }}</p>
     </div>
     <p>
         <!-- previously we used expressions like 2 == 2 and 2 == 4 in these class directives, but prod build failed (must only use properties? And booleans?) -->
@@ -20,5 +20,5 @@
         <br /> spans classes:
         <mark>{{theSpan.className}}</mark>
     </p>
-    <my-bindings-child [jsonData]="jsonData" (change)="change($event)"></my-bindings-child>
+    <my-bindings-child [post]="post" (change)="change($event)"></my-bindings-child>
 </div>

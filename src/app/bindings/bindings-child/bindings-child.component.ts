@@ -4,7 +4,7 @@ import { IPost } from 'app/shared/models/post.interface';
 import { PostByIdService } from '../post-by-id.service';
 
 interface ISimpleChanges extends SimpleChanges {
-    jsonData: SimpleChange;
+    post: SimpleChange;
 }
 
 @Component({
@@ -13,7 +13,7 @@ interface ISimpleChanges extends SimpleChanges {
 })
 export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
 
-    @Input() jsonData: IPost; // = { id: 0, body: 'default', title: 'default', userId: 0 }; Can set default value on @Input() , can also map to another [name] by @Input('name')
+    @Input() post: IPost; // = { id: 0, body: 'default', title: 'default', userId: 0 }; Can set default value on @Input() , can also map to another [name] by @Input('name')
     @Output() change: EventEmitter<IPost> = new EventEmitter<IPost>(); // it will only emit an event to the immediate parent component.
 
     testingViewChild: string;
@@ -33,8 +33,8 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
 
     ngOnChanges(changes: ISimpleChanges) {
         // We can listen for changes in @Inputs an act on them like this
-        if (changes.jsonData) {
-            console.log('changes.jsonData', changes.jsonData);
+        if (changes.post) {
+            console.log('changes.post', changes.post);
         }
     }
 
@@ -44,7 +44,7 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
 
     refresh() {
         this.jsonPlaceholderService.get(this.getRandomInt()).then(data => {
-            this.jsonData = data;
+            this.post = data;
             this.change.emit(data);
         });
     }

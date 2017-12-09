@@ -14,7 +14,7 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
     @ViewChild(BindingsChildComponent) bindingsChild: BindingsChildComponent;                                   // 2)
     @ViewChild('theSpan') theSpan: ElementRef;                                                                  // A
 
-    jsonData: IPost;
+    post: IPost;
 
     constructor(
         private jsonPlaceholderService: PostByIdService
@@ -31,7 +31,7 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
         (this.theSpan.nativeElement as HTMLElement).classList.add('test');                                        // B
 
         this.jsonPlaceholderService.get(this.getRandomInt()).then(data => {
-            this.jsonData = data
+            this.post = data
         });
     }
 
@@ -46,11 +46,11 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
 
     refresh() {
         this.jsonPlaceholderService.get(this.getRandomInt()).then(data => {
-            this.jsonData = data;
+            this.post = data;
         });
     }
 
     change(event: IPost) {
-        this.jsonData = event;
+        this.post = event;
     }
 }

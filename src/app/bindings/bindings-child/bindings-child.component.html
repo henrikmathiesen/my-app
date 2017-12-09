@@ -6,9 +6,9 @@
 <p>
     Refresh does NOT propagate up. For that to work we need to set up @Output with EventEmitter. Or use @ViewChild.
 </p>
-<div *ngIf="jsonData">
-    <h3>User Id: {{ jsonData.userId }}</h3>
-    <h3>Id: {{ jsonData.id }}</h3>
-    <h3>Title: {{ jsonData.title }}</h3>
-    <p>Body: {{ jsonData.body }}</p>
+<div *ngIf="post">
+    <h3>User Id: {{ post.userId }}</h3>
+    <h3>Id: {{ post.id }}</h3>
+    <h3>Title: {{ post.title }}</h3>
+    <p>Body: {{ post.body }}</p>
 </div>
