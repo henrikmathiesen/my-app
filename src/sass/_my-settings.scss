@@ -1,6 +1,5 @@
 // Override Foundation settings
-
-$white:#FFF; // just a test
+// $white:#FFF; // just a test
 
 // $global-flexbox: false; 
 // Seams to have no effect? Maybe it gets overridden by foundation-everything(true), also note that true is default
@@ -19,6 +18,7 @@ $my-color-alice: aliceblue;
 
 // Typography
 $my-font-weight-bold: 600;
+$my-font-size-small: 14px;
 
 // Gutter
 $my-gutter-sm: rem-calc(10px);

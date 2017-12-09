@@ -2,6 +2,9 @@
 @import 'my-settings';
 
 nav {
+
+    font-size: $small-font-size;
+
     a + a {
         margin-left: $my-gutter-sm;
     }
@@ -10,4 +13,5 @@ nav {
         background-color: $my-color-alice;
         font-weight: $my-font-weight-bold;
     }
+    
 }
