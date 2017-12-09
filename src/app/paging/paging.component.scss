@@ -1,0 +1,14 @@
+@import 'my-component-dependencies';
+
+.post + .post {
+    margin-top: $my-gutter-md;
+}
+
+.post {
+    background-color: $my-color-background;
+    padding: $my-gutter-md;
+
+    p {
+        margin-bottom: 0;
+    }
+}

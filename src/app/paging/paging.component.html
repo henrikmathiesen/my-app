@@ -5,3 +5,10 @@
     and the JSON Placeholder API.
     We start with in memory paging.
 </p>
+<div>
+    <div class="post" *ngFor="let post of posts">
+        <h3>User ID: {{ post.userId }}</h3>
+        <h4>{{ post.title }}</h4>
+        <p>{{ post.body }}</p>
+    </div>
+</div>
