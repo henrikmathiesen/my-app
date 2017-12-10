@@ -5,7 +5,10 @@
     and the JSON Placeholder API. We start with in memory paging.
 </p>
 <div>
-    <div class="my-post" *ngFor="let post of posts | paginate: { itemsPerPage: paginationSettings.itemsPerPage, currentPage: paginationSettings.currentPage }">
+    <div class="my-filter">
+        Filter: <input type="text" class="my-filter-query" [(ngModel)]="filterQuery" />
+    </div>
+    <div class="my-post" *ngFor="let post of posts | filterBy: ['title', 'body']: filterQuery | paginate: { itemsPerPage: paginationSettings.itemsPerPage, currentPage: paginationSettings.currentPage }">
         <h3>User ID: {{ post.userId }}</h3>
         <h4>{{ post.title }}</h4>
         <p>{{ post.body }}</p>

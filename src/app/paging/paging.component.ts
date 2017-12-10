@@ -29,6 +29,7 @@ export class PagingComponent implements OnInit {
             20
         ]
     }
+    filterQuery: string = '';
 
     constructor(
         private postsService: PostsService

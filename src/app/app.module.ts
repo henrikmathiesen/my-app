@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';                              // 1 module for Template Driven Form and 1 for Reactive Form
 import { HttpModule } from '@angular/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgArrayPipesModule } from 'ngx-pipes';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -47,6 +48,7 @@ import { ConstantsApiService } from './shared/constants-api.service';
     ReactiveFormsModule,
     HttpModule,
     NgxPaginationModule,
+    NgArrayPipesModule,
     AppRoutingModule,
     AnotherSharedModule,                            // A2) We import it here, then we can inject an instance of another-shared.service (provided in another-shared.module) in components in this module (see app.component)
     AnotherModule                                   // B2) Now we can use the exported component in this module, also routing to a component in that module works

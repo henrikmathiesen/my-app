@@ -1,5 +1,14 @@
 @import 'my-component-dependencies';
 
+.my-filter {
+    margin-bottom: $my-gutter-md;;
+}
+
+.my-filter-query {
+    display: inline-block;
+    width: auto;
+}
+
 .my-post + .my-post {
     margin-top: $my-gutter-md;
 }
