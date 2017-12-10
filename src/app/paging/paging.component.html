@@ -14,6 +14,8 @@
     </div>
     <div>
         <pagination-controls (pageChange)="paginationSettings.currentPage = $event"></pagination-controls>
-        
+        <select [(ngModel)]="paginationSettings.itemsPerPage">
+            <option *ngFor="let nr of paginationSettings.selectableItemsPerPage;" [value]="nr">{{ nr }}</option>
+        </select>
     </div>
 </div>

@@ -4,6 +4,10 @@ import { PaginationInstance } from 'ngx-pagination';
 import { PostsService } from './posts.service';
 import { IPost } from 'app/shared/models/post.interface';
 
+interface IPaginationInstance extends PaginationInstance {
+    selectableItemsPerPage:number[];
+}
+
 @Component({
     templateUrl: './paging.component.html',
     styleUrls: [
@@ -16,9 +20,14 @@ import { IPost } from 'app/shared/models/post.interface';
 export class PagingComponent implements OnInit {
     
     posts: IPost[];
-    paginationSettings: PaginationInstance = {
-        itemsPerPage: 5,
-        currentPage: 1
+    paginationSettings: IPaginationInstance = {
+        itemsPerPage: 10,
+        currentPage: 1,
+        selectableItemsPerPage: [
+            5,
+            10,
+            20
+        ]
     }
 
     constructor(
