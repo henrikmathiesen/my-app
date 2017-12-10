@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PaginationInstance } from 'ngx-pagination';
+
 import { PostsService } from './posts.service';
 import { IPost } from 'app/shared/models/post.interface';
 
@@ -14,6 +16,10 @@ import { IPost } from 'app/shared/models/post.interface';
 export class PagingComponent implements OnInit {
     
     posts: IPost[];
+    paginationSettings: PaginationInstance = {
+        itemsPerPage: 5,
+        currentPage: 1
+    }
 
     constructor(
         private postsService: PostsService
