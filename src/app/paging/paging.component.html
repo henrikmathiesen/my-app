@@ -2,19 +2,17 @@
 <p>
     We are going to get data and page it, using
     <a href="https://www.npmjs.com/package/ngx-pagination">ngx-pagination</a>
-    and the JSON Placeholder API.
-    We start with in memory paging.
+    and the JSON Placeholder API. We start with in memory paging.
 </p>
 <div>
-    <div class="post" 
-        *ngFor="let post of posts | paginate: { itemsPerPage: paginationSettings.itemsPerPage, currentPage: paginationSettings.currentPage }">
+    <div class="my-post" *ngFor="let post of posts | paginate: { itemsPerPage: paginationSettings.itemsPerPage, currentPage: paginationSettings.currentPage }">
         <h3>User ID: {{ post.userId }}</h3>
         <h4>{{ post.title }}</h4>
         <p>{{ post.body }}</p>
     </div>
-    <div>
-        <pagination-controls (pageChange)="paginationSettings.currentPage = $event"></pagination-controls>
-        <select [(ngModel)]="paginationSettings.itemsPerPage">
+    <div class="my-pagination-controls">
+        <pagination-controls class="my-pagination-controls--pager" (pageChange)="paginationSettings.currentPage = $event"></pagination-controls>
+        <select class="my-pagination-controls--items-per-page" [(ngModel)]="paginationSettings.itemsPerPage">
             <option *ngFor="let nr of paginationSettings.selectableItemsPerPage;" [value]="nr">{{ nr }}</option>
         </select>
     </div>

@@ -21,7 +21,7 @@ export class PagingComponent implements OnInit {
     
     posts: IPost[];
     paginationSettings: IPaginationInstance = {
-        itemsPerPage: 10,
+        itemsPerPage: 5,
         currentPage: 1,
         selectableItemsPerPage: [
             5,

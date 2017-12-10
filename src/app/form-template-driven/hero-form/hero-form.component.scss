@@ -1,4 +1,4 @@
-// Style a component if it is sub component inside another specific component
+// Style a component if it is a sub component inside another specific component
 
 // This wont work
 // hero-form {
@@ -8,7 +8,8 @@
 // }
 
 // This does work. host-context can be any selector in that specific component
-:host-context(form-template-driven) { 
+// https://angular.io/guide/component-styles
+:host-context(my-form-template-driven) { 
     form {
         border-bottom: 1px solid grey;
     }

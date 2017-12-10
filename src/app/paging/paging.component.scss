@@ -1,15 +1,53 @@
 @import 'my-component-dependencies';
 
-.post + .post {
+.my-post + .my-post {
     margin-top: $my-gutter-md;
 }
 
-.post {
+.my-post {
     background-color: $my-color-background;
     padding: $my-gutter-md;
     min-height: 150px;
 
     p {
         margin-bottom: 0;
+    }
+}
+
+.my-pagination-controls {
+    margin-top: $my-gutter-md;
+    text-align: center;
+    font-size: $small-font-size;
+
+    @include breakpoint(medium) {
+        font-size: $global-font-size;
+    }
+}
+
+.my-pagination-controls--pager {
+    // https://angular.io/guide/component-styles
+    /deep/ {
+        .ngx-pagination {
+            @include breakpoint(medium) { 
+                display: inline-block;
+            }
+
+            .pagination-previous,
+            .pagination-next {
+                display: none;
+                
+                @include breakpoint(medium) { 
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+.my-pagination-controls--items-per-page {
+    @include breakpoint(medium) {
+        width: auto;
+        position: relative;
+        top: 2px;
     }
 }
