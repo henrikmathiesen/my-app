@@ -11,6 +11,7 @@ import { FormTemplateDrivenComponent } from './form-template-driven/form-templat
 import { FormReactiveComponent } from './form-reactive/form-reactive.component';
 import { RxJsComponent } from './rxjs/rxjs.component';
 import { PagingComponent } from './paging/paging.component';
+import { EcaihbceComponent } from './ecaihbce/ecaihbce.component';
 
 const routes: Routes = [
     {
@@ -53,6 +54,10 @@ const routes: Routes = [
     {
         path: 'paging',
         component: PagingComponent
+    },
+    {
+        path: 'ecaihbce',
+        component: EcaihbceComponent
     },
     {
         path: 'detail/:id',

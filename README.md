@@ -20,6 +20,8 @@ https://www.npmjs.com/package/source-map-explorer , very useful ...
 
 https://www.npmjs.com/package/cpx , useful for copy whole directory, see package json 
 
+https://blog.angularindepth.com/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4  
+
 ## CLI info
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.

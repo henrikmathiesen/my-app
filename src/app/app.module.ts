@@ -33,6 +33,7 @@ import {
 
 import { RxJsComponent } from './rxjs/rxjs.component';
 import { PagingComponent } from './paging/paging.component';
+import { EcaihbceComponent } from './ecaihbce/ecaihbce.component';
 
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
@@ -76,6 +77,7 @@ import { ConstantsApiService } from './shared/constants-api.service';
     PersonFormAddressComponent,
     RxJsComponent,
     PagingComponent,
+    EcaihbceComponent,
     
     HeroFormValidationDirective
   ],
