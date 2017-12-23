@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PaginationInstance } from 'ngx-pagination';
 
 import { Hero } from 'app/shared/models/hero';
@@ -39,10 +39,15 @@ export class PagingComponent implements OnInit {
     }
 
     showingCount(filteredHeroes: Hero[]) {
-        //console.log(filteredHeroes);
-
         if (!filteredHeroes) {
             return;
         }
+
+        const nrOfItems = filteredHeroes.length;
+        const maxNrOfItemsInPagedPages = this.paginationSettings.currentPage * this.paginationSettings.itemsPerPage;
+        const offset = maxNrOfItemsInPagedPages - nrOfItems;
+        const showingNow = (offset < 0) ? this.paginationSettings.itemsPerPage : (this.paginationSettings.itemsPerPage - offset);
+
+        return showingNow;
     }
 }
