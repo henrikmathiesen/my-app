@@ -19,7 +19,7 @@ export class SimpleFormComponent {
 
     disableForm() {
         this.simpleForm.disable();
-        //this.simpleForm.enable();
+        // this.simpleForm.enable();
     }
 
     checkFormValid() {
@@ -33,6 +33,6 @@ export class SimpleFormComponent {
         console.log('/submit');
 
         // TODO: Get a FormControl in a sub FormGroup (we dont have sub FormGroups yet)
-        //this.simpleForm.get(['subFormGroup', 'controlInSubFormGroup']);
+        // this.simpleForm.get(['subFormGroup', 'controlInSubFormGroup']);
     }
 }

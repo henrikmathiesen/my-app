@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
     selector: 'my-form-template-driven',
     templateUrl: './form-template-driven.component.html'
 })
-export class FormTemplateDrivenComponent {
-    
-}
+export class FormTemplateDrivenComponent { }

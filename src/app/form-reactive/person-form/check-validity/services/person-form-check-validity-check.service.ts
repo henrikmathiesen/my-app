@@ -13,8 +13,7 @@ export class PersonFormCheckValidityCheckService {
 
         if (formGroupName == null) {
             formControlIsValid = personFormGroup.get(formControlName).valid;
-        }
-        else {
+        } else {
             formControlIsValid = personFormGroup.get([formGroupName, formControlName]).valid;
         }
 

@@ -31,7 +31,7 @@ export class OrderHeroSupportData {
         'Pizza',
         'Pasta',
         'Apple Pie'
-    ]
+    ];
 
     powers: string[];
     foodPreferences: string[];

@@ -17,6 +17,7 @@ interface IPaginationInstance extends PaginationInstance {
 export class PagingComponent implements OnInit {
 
     heroes: Hero[];
+
     paginationSettings: IPaginationInstance = {
         itemsPerPage: 5,
         currentPage: 1,
@@ -25,9 +26,10 @@ export class PagingComponent implements OnInit {
             10,
             20
         ]
-    }
-    filterQuery: string = '';
-    orderByQuery: string = 'name';
+    };
+
+    filterQuery = '';
+    orderByQuery = 'name';
 
     constructor(
         private heroService: HeroService
@@ -52,7 +54,7 @@ export class PagingComponent implements OnInit {
         return showingNow;
     }
 
-    orderByName(){
-        this.orderByQuery = (this.orderByQuery.indexOf('-') < 0) ? ('-'+this.orderByQuery) : (this.orderByQuery.split('-')[1]);
+    orderByName() {
+        this.orderByQuery = (this.orderByQuery.indexOf('-') < 0) ? ('-' + this.orderByQuery) : (this.orderByQuery.split('-')[1]);
     }
 }

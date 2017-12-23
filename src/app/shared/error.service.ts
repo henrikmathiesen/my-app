@@ -9,7 +9,7 @@ export class ErrorService {
         this.showErrorSubscriber();
     }
 
-    subscribeShowError(subscriber){
+    subscribeShowError(subscriber) {
         this.showErrorSubscriber = subscriber;
     }
 

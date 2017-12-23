@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
     selector: 'my-form-reactive',
     templateUrl: './form-reactive.component.html'
 })
-export class FormReactiveComponent {
-    
-}
+export class FormReactiveComponent { }

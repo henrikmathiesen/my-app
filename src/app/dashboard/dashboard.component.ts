@@ -8,16 +8,16 @@ import { Hero } from '../shared/models/hero';
 })
 export class DashboardComponent implements OnInit {
     heroes: Hero[];
-    containerBool: boolean = true;
+    containerBool = true;
 
     constructor(
-        //private router: Router,
+        // private router: Router,
         private heroService: HeroService
-    ) {}
+    ) { }
 
     ngOnInit() {
         this.heroService.getHeroes()
-            .then(heroes => this.heroes = heroes.slice(0,5));
+            .then(heroes => this.heroes = heroes.slice(0, 5));
     }
 
     // necessary if no a/button

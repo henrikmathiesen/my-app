@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, OnDestroy, AfterViewInit, ElementRef } from '@angular/core';
-import random from 'lodash.random'
+import random from 'lodash.random';
 
 import { IPost } from 'app/shared/models/post.interface';
 import { PostsService } from 'app/shared/posts.service';
@@ -30,7 +30,7 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
         (this.theSpan.nativeElement as HTMLElement).classList.add('test');                                        // B) And manipulate it (Allthough should we?)
 
         this.postsService.getPost(this.getRandomInt()).then(data => {
-            this.post = data
+            this.post = data;
         });
     }
 

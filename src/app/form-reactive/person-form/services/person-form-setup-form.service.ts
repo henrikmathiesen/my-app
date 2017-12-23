@@ -15,7 +15,7 @@ export class PersonFormSetupFormService {
             [this.personFormConstantsService.getFormControlNames().firstName]: this.getSupportData(),
             [this.personFormConstantsService.getFormControlNames().lastName]: this.getSupportData(),
             [this.personFormConstantsService.getFormControlNames().nickName]: this.getNickNameSupportData()
-        })
+        });
     }
 
     private getSupportData() {
@@ -23,7 +23,7 @@ export class PersonFormSetupFormService {
     }
 
     private getNickNameSupportData() {
-        return ['Henry', null]
+        return ['Henry', null];
     }
 
 }

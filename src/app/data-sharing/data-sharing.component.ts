@@ -8,7 +8,7 @@ import { ISubscription } from 'rxjs/Subscription';
 })
 export class DataSharingComponent implements OnInit, OnDestroy {
     message: string;
-    subscription: ISubscription
+    subscription: ISubscription;
 
     constructor(
         private dataSharingMediatorService: DataSharingMediatorService
@@ -18,7 +18,7 @@ export class DataSharingComponent implements OnInit, OnDestroy {
         this.subscription = this.dataSharingMediatorService.currentMessage.subscribe(message => this.message = message);
     }
 
-    ngOnDestroy(){
+    ngOnDestroy() {
         this.subscription.unsubscribe();
     }
 

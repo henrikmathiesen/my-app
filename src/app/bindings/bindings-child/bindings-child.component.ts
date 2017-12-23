@@ -3,7 +3,7 @@ import random from 'lodash.random';
 
 import { IPost } from 'app/shared/models/post.interface';
 import { PostsService } from 'app/shared/posts.service';
-//import { BindingsComponent } from '../bindings.component';                          // 1) Can import parent component
+// import { BindingsComponent } from '../bindings.component';                          // 1) Can import parent component
 
 interface ISimpleChanges extends SimpleChanges {
     post: SimpleChange;
@@ -21,7 +21,7 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
     testingViewChild: string;
 
     constructor(
-        //private bindingsComponent: BindingsComponent,                                 // 2) We inject it here
+        // private bindingsComponent: BindingsComponent,                                // 2) We inject it here
                                                                                         // --- WE DO NOT go any further with this since this creates circular depencies
                                                                                         // where parent imports child and child imports parent.
                                                                                         // We can communicate to parent via EventEmitter instead
@@ -52,7 +52,7 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
         this.postsService.getPost(this.getRandomInt()).then(data => {
             this.post = data;
             this.change.emit(data);
-            //this.bindingsComponent.change(data);                                        // 3) Could use parents method here
+            // this.bindingsComponent.change(data);                                       // 3) Could use parents method here
         });
 
     }

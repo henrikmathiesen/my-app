@@ -5,7 +5,7 @@ import 'rxjs/add/operator/debounceTime';
 import { OrderHero } from '../models/order-hero';
 import { OrderHeroSupportData } from '../models/order-hero-support-data';
 
-@Directive({ selector: '[hero-form-validation]' })
+@Directive({ selector: '[myHeroFormValidation]' })
 export class HeroFormValidationDirective implements OnInit, OnDestroy {
 
     @Input() model: OrderHero;
@@ -14,7 +14,7 @@ export class HeroFormValidationDirective implements OnInit, OnDestroy {
     private subject: Subject<any> = new Subject();
     private subscription: ISubscription;
 
-    //constructor(private el: ElementRef) {}
+    // constructor(private el: ElementRef) {}
 
     ngOnInit() {
         this.subscription = this.subject
@@ -31,9 +31,9 @@ export class HeroFormValidationDirective implements OnInit, OnDestroy {
     }
 
     private log() {
-        console.log('keyup', { 
-            model: this.model, 
-            supportData: this.supportData 
+        console.log('keyup', {
+            model: this.model,
+            supportData: this.supportData
         });
 
         this.supportData.codeRule.isDisabled = true;

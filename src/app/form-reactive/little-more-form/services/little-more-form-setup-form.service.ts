@@ -19,7 +19,7 @@ export class LittleMoreFormSetupFormService {
                 Validators.maxLength(this.littleMoreFormSupportDataService.getDescriptionLengths().maxLength)
             ])],
             'validate': [false]
-        })
+        });
     }
 
 }

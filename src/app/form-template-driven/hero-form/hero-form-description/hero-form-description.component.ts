@@ -20,7 +20,7 @@ export class HeroFormDescriptionComponent implements OnInit {
 
     disableForm() {
         this.form.control.disable();
-        //this.form.control.enable();
+        // this.form.control.enable();
         console.log('this.form.valid', this.form.valid); // not valid after disable
         console.log('this.form.value', this.form.value); // can get the values like this
     }

@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed, fakeAsync, tick, inject } from '@angular/cor
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 
-import { Hero } from '../shared/hero';
+import { Hero } from '../shared/models/hero';
 import { DashboardComponent } from './dashboard.component';
 import { AppModule } from '../app.module';
 import { HeroService } from '../shared/hero.service';
@@ -124,7 +124,7 @@ describe('dashboard.component', () => {
         }));
 
         describe('renders heroes as links to their detail view', () => {
-            const heroes: Hero[] = [
+            const someHeroes: Hero[] = [
                 {
                     id: 5,
                     name: 'Henry'
@@ -132,7 +132,7 @@ describe('dashboard.component', () => {
             ];
 
             it('should render links', () => {
-                instance.heroes = heroes;
+                instance.heroes = someHeroes;
 
                 fixture.detectChanges();
 
@@ -145,7 +145,7 @@ describe('dashboard.component', () => {
             it('should navigate when user clicks on a link', () => {
                 spyOn(router, 'navigateByUrl');
 
-                instance.heroes = heroes;
+                instance.heroes = someHeroes;
 
                 fixture.detectChanges();
 
@@ -155,6 +155,6 @@ describe('dashboard.component', () => {
 
                 expect(router.navigateByUrl).toHaveBeenCalled();
             });
-        })
+        });
     });
 });

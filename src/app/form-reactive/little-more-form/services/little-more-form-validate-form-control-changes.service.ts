@@ -11,7 +11,7 @@ export class LittleMoreFormValidateFormControlChangesService {
 
     constructor(
         private littleMoreFormSupportDataService: LittleMoreFormSupportDataService
-    ){}
+    ) { }
 
     valueChanges(littleMoreForm: FormGroup, validationMessages: ILittleFormValidationMessages) {
         this.littleMoreForm = littleMoreForm;
@@ -20,8 +20,7 @@ export class LittleMoreFormValidateFormControlChangesService {
         this.littleMoreForm.get('validate').valueChanges.subscribe((value: boolean) => {
             if (value === true) {
                 this.extendNameFormControlValidationRules();
-            }
-            else {
+            } else {
                 this.defaultNameFormControlValidationRules();
             }
 

@@ -56,8 +56,8 @@ export class HeroFormComponent {
         this.clearNullFields();
 
         // ENABLE / DISABLE WHOLE TEMPLATE DRIVEN FORM
-        //this.heroForm.control.disable();
-        //this.heroForm.control.enable();
+        // this.heroForm.control.disable();
+        // this.heroForm.control.enable();
         console.log('this.heroForm.disabled', this.heroForm.disabled); // true/false
 
         // .control and .form are the same (a little confusing)
@@ -65,19 +65,17 @@ export class HeroFormComponent {
     }
 
     disableFormControl(name: string, formGroup?: NgModelGroup) {
-        if(formGroup) {
+        if (formGroup) {
             this.heroForm.getFormGroup(formGroup).controls[name].disable();
-        }
-        else {
+        } else {
             this.heroForm.controls[name].disable();
         }
     }
 
     enableFormControl(name: string, formGroup?: NgModelGroup) {
-        if(formGroup) {
+        if (formGroup) {
             this.heroForm.getFormGroup(formGroup).controls[name].enable();
-        }
-        else {
+        } else {
             this.heroForm.controls[name].enable();
         }
     }
@@ -89,7 +87,7 @@ export class HeroFormComponent {
         // This wont work since email is in a formGroup
         // this.heroForm.controls['email'].reset();
 
-        // We can get to the formGroup by using a ViewChild NgModelGroup 
+        // We can get to the formGroup by using a ViewChild NgModelGroup
         this.heroForm.getFormGroup(this.userAccountFormGroup).controls['email'].reset();
         this.heroForm.getFormGroup(this.userAccountFormGroup).controls['confirmEmail'].reset();
 

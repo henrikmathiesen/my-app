@@ -4,10 +4,10 @@ export class OrderHero {
     code: string;
     power: string;
     foodPreference: string;
-    description:string;
+    description: string;
     alterEgo?: string;
     isCrazy: boolean;
     isNice: boolean;
-    email:string;
-    confirmEmail:string;
+    email: string;
+    confirmEmail: string;
 }

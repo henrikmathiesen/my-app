@@ -18,14 +18,14 @@ export class HeroesComponent implements OnInit {
   hero: Hero = {
     id: null,
     name: null
-  }
+  };
 
   heroes: Hero[];
 
   selectedHero: Hero;
 
   // Both of these work
-  //useInViewEnum: typeof UseInViewEnum = UseInViewEnum;
+  // useInViewEnum: typeof UseInViewEnum = UseInViewEnum;
   useInViewEnum = UseInViewEnum;
 
   constructor(
@@ -42,7 +42,7 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   }
 
-  gotoDetail(){
+  gotoDetail() {
     this.router.navigate(['/detail', this.selectedHero.id]);
   }
 }

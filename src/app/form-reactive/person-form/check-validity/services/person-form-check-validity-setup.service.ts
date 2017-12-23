@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
 import { PersonFormCheckValiditySelectableControlModel } from '../models/person-form-check-validity-selectable-control-model';
 import { PersonFormConstantsService } from '../../services/person-form-constants.service';
 import { PersonFormAddressConstantsService } from '../../person-form-address/services/person-form-address-constants.service';
@@ -9,7 +9,7 @@ export class PersonFormCheckValiditySetupService {
     constructor(
         private personFormConstantsService: PersonFormConstantsService,
         private PersonFormAddressConstantsService: PersonFormAddressConstantsService
-    ){}
+    ) { }
 
     setupSelectableControls(): Array<PersonFormCheckValiditySelectableControlModel> {
         const firstName = new PersonFormCheckValiditySelectableControlModel();

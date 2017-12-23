@@ -79,12 +79,11 @@ import { ConstantsApiService } from './shared/constants-api.service';
     RxJsComponent,
     PagingComponent,
     EcaihbceComponent,
-    
     HeroFormValidationDirective
   ],
   // Services (Module wide, can also import in a Component, the provider provides an instance)
   // If we need the service in many components we put it here, instead of local providers in @Component (for local provider: remember that multiple instances of the component will ge a different service instances)
-  // UPDATE: 
+  // UPDATE:
   // - These are actually registered with the root injector, so all modules will get an instance of these. The same is true for providers in other modules.
   // - Beware, if we provide a service in a lazy loaded module, Angular creates a new injector for that module and registers it there, that service instance is only available to that module and it will be a seperate instance
   // - Beware, if we import a module with providers into a lazy loaded module, those services gets registered with the new injector also and same problem as above will hapen, https://angular.io/guide/ngmodule-faq#q-why-bad

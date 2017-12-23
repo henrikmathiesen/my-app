@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { OrderHero } from '../../models/order-hero';
 import { OrderHeroSupportData, Powers, FoodPreferences, PropertyRule } from '../../models/order-hero-support-data';
 
-Injectable()
+@Injectable()
 export class HeroFormSetupService {
-    
-    setupModel():OrderHero {
+
+    setupModel(): OrderHero {
         const model = new OrderHero();
-        
+
         model.id = 5;
         model.name = 'SkyDog';
         model.code = null;

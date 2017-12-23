@@ -28,7 +28,7 @@ export class PersonFormAddressSetupFormService {
 
     private getPostalSupportData() {
         return [null, Validators.compose([
-            Validators.required, 
+            Validators.required,
             Validators.maxLength(5)
         ])];
     }

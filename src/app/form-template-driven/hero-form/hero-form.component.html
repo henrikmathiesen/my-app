@@ -24,7 +24,7 @@
             <div>
                 <label for="code">Code (required, min 4 char)</label>
                 <input type="text" id="code" name="code" [(ngModel)]="model.code" [required]="supportData.codeRule.isRequired" [minlength]="supportData.codeRule.minlength"
-                    [disabled]="supportData.codeRule.isDisabled" hero-form-validation [model]="model" [supportData]="supportData">
+                    [disabled]="supportData.codeRule.isDisabled" myHeroFormValidation [model]="model" [supportData]="supportData">
             </div>
         </div>
         <div class="cell medium-6">

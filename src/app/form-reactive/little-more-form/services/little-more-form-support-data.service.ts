@@ -6,17 +6,17 @@ export class LittleMoreFormSupportDataService {
         return {
             minLength: 30,
             maxLength: 500
-        }
+        };
     }
 
-    getNameValidationMessages(){
+    getNameValidationMessages() {
         return {
             default: 'You must enter a name',
             validated: 'Must be 3 characters'
-        }
+        };
     }
 
-    getDescriptionValidationMessage(){
+    getDescriptionValidationMessage() {
         return `Must be ${this.getDescriptionLengths().minLength} to ${this.getDescriptionLengths().maxLength} characters`;
     }
 

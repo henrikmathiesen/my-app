@@ -14,7 +14,7 @@ import { AnotherComponent } from './another-component/another.component';
     ],
     // These are available to modules importing this module
     exports: [
-        //AnotherComponent , we dont need to export it since we only navigate to it (we dont use its selector directly in other modules)
+        // AnotherComponent , we dont need to export it since we only navigate to it (we dont use its selector directly in other modules)
     ],
 })
 export class AnotherModule { }

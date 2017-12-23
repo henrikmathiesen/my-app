@@ -10,7 +10,7 @@ export class AppComponent {
 
   constructor(
     private anotherSharedService: AnotherSharedService
-  ){
+  ) {
     console.log('this.anotherSharedService.getSomething()', this.anotherSharedService.getSomething());
   }
 }

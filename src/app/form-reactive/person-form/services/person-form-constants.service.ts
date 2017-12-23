@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class PersonFormConstantsService {
 
-    getFormControlNames(){
+    getFormControlNames() {
         return {
             firstName: 'firstName',
             lastName: 'lastName',
             nickName: 'nickName'
-        }
+        };
     }
 
 }
