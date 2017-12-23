@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PaginationInstance } from 'ngx-pagination';
 
-import { PostsService } from './posts.service';
 import { IPost } from 'app/shared/models/post.interface';
+import { PostsService } from 'app/shared/posts.service';
 
 interface IPaginationInstance extends PaginationInstance {
     selectableItemsPerPage:number[];
@@ -36,7 +36,7 @@ export class PagingComponent implements OnInit {
     ) { }
 
     ngOnInit() { 
-        this.postsService.get().then(data => {
+        this.postsService.getPosts().then(data => {
             this.posts = data;
         });
     }

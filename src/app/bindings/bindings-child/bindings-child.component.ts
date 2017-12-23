@@ -1,7 +1,8 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import random from 'lodash.random';
+
 import { IPost } from 'app/shared/models/post.interface';
-import { PostByIdService } from '../post-by-id.service';
+import { PostsService } from 'app/shared/posts.service';
 //import { BindingsComponent } from '../bindings.component';                          // 1) Can import parent component
 
 interface ISimpleChanges extends SimpleChanges {
@@ -24,7 +25,7 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
                                                                                         // --- WE DO NOT go any further with this since this creates circular depencies
                                                                                         // where parent imports child and child imports parent.
                                                                                         // We can communicate to parent via EventEmitter instead
-        private postByIdService: PostByIdService
+        private postsService: PostsService
     ) { }
 
     private getRandomInt(): number {
@@ -48,7 +49,7 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     refresh() {
-        this.postByIdService.get(this.getRandomInt()).then(data => {
+        this.postsService.getPost(this.getRandomInt()).then(data => {
             this.post = data;
             this.change.emit(data);
             //this.bindingsComponent.change(data);                                        // 3) Could use parents method here

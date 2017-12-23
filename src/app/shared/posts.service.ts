@@ -15,11 +15,18 @@ export class PostsService {
         private constantsApiService: ConstantsApiService
     ) { }
 
-    get(): Promise<IPost[]> {
+    getPosts(): Promise<IPost[]> {
         return this.http.get(this.constantsApiService.getJsonPlaceHolderUrl())
             .toPromise()
             .then(data => data.json())  // this is necessary in this version of Http (but wont be in next version)
-            .catch(error => this.errorService.rejectPromise('post.service', error, true));
+            .catch(error => this.errorService.rejectPromise('posts.service', error, true));
+    }
+
+    getPost(id: number): Promise<IPost> {
+        return this.http.get(this.constantsApiService.getJsonPlaceHolderUrl() + id)
+            .toPromise()
+            .then(data => data.json())  // this is necessary in this version of Http (but wont be in next version)
+            .catch(error => this.errorService.rejectPromise('posts.service', error, true));
     }
 
 }

@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild, OnDestroy, AfterViewInit, ElementRef } from '@angular/core';
 import random from 'lodash.random'
+
 import { IPost } from 'app/shared/models/post.interface';
-import { PostByIdService } from './post-by-id.service';
+import { PostsService } from 'app/shared/posts.service';
 import { BindingsChildComponent } from './bindings-child/bindings-child.component';                              // 1) Can import sub component
 
 @Component({
     selector: 'my-bindings',
-    templateUrl: './bindings.component.html',
-    providers: [PostByIdService]
+    templateUrl: './bindings.component.html'
 })
 export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
 
@@ -17,7 +17,7 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
     post: IPost;
 
     constructor(
-        private postByIdService: PostByIdService
+        private postsService: PostsService
     ) { }
 
     private getRandomInt(): number {
@@ -29,7 +29,7 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
 
         (this.theSpan.nativeElement as HTMLElement).classList.add('test');                                        // B) And manipulate it (Allthough should we?)
 
-        this.postByIdService.get(this.getRandomInt()).then(data => {
+        this.postsService.getPost(this.getRandomInt()).then(data => {
             this.post = data
         });
     }
@@ -44,7 +44,7 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     refresh() {
-        this.postByIdService.get(this.getRandomInt()).then(data => {
+        this.postsService.getPost(this.getRandomInt()).then(data => {
             this.post = data;
         });
     }
