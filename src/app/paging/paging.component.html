@@ -2,26 +2,20 @@
 <p>
     We are going to get data and page it, using
     <a href="https://www.npmjs.com/package/ngx-pagination">ngx-pagination</a>
-    and the JSON Placeholder API. We start with in memory paging. We then added a
-    filter with <a href="https://www.npmjs.com/package/ngx-pipes#filterby">ngx-pipes#filterby</a>.
+    Filter with <a href="https://www.npmjs.com/package/ngx-pipes#filterby">ngx-pipes#filterby</a>.
 </p>
 <div>
     <div class="my-filter">
         Filter: <input type="text" class="my-filter__query" [(ngModel)]="filterQuery" />
     </div>
-    <div>
-        <div>
-            Total count: {{ heroes?.length }}
-        </div>
-        <div>
-            Filtered count: {{ (heroes | filterBy: ['id', 'name']: filterQuery)?.length }}
-        </div>
-        <div>
-            Showing count: {{ showingCount((heroes | filterBy: ['id', 'name']: filterQuery)) }}
-        </div>
-        <br><br>
+    <div class="my-info">
+        Total: {{ heroes?.length }}&nbsp;&nbsp;&nbsp;&nbsp;
+        Filtered: {{ (heroes | filterBy: ['id', 'name']: filterQuery)?.length }}&nbsp;&nbsp;&nbsp;&nbsp;
+        Showing: {{ showingCount((heroes | filterBy: ['id', 'name']: filterQuery)) }}&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="my-link-text" (click)="orderByName()">Toggle Order by Name</button>
     </div>
-    <div class="my-hero" *ngFor="let hero of heroes | filterBy: ['id', 'name']: filterQuery | paginate: { itemsPerPage: paginationSettings.itemsPerPage, currentPage: paginationSettings.currentPage }">
+    <div class="my-hero" 
+        *ngFor="let hero of heroes | filterBy: ['id', 'name']: filterQuery | paginate: { itemsPerPage: paginationSettings.itemsPerPage, currentPage: paginationSettings.currentPage }">
         <h3>ID: {{ hero.id }}</h3>
         <h4>{{ hero.name }}</h4>
     </div>
