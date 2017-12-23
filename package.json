@@ -1,6 +1,7 @@
 {
   "name": "my-app",
   "version": "0.0.0",
+  "homepage": "https://henrikmathiesen.github.io/my-app",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -8,12 +9,14 @@
     "start:henry": "ng serve --env=henry",
     "build:aot": "ng build --aot",
     "build:prod": "ng build --prod",
+    "build:prod:gh": "ng build --prod --base-href /my-app/",
     "build:prod:sm": "ng build --prod --sourcemaps=true",
-    "serve:build": "http-server ./dist -p 1337",
+    "serve:build:prod": "http-server ./dist -p 1337",
     "copy:foo": "cpx \"node_modules/foo/skins/**/*\" src/assets/vendor/foo/skins",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "deploy": "npm run build:prod:gh&&gh-pages -d dist",
+    "clean-gh-pages": "rimraf node_modules/gh-pages/.cache"
   },
   "private": true,
   "dependencies": {
