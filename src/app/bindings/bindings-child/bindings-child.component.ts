@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, OnChanges, S
 import random from 'lodash.random';
 import { IPost } from 'app/shared/models/post.interface';
 import { PostByIdService } from '../post-by-id.service';
+//import { BindingsComponent } from '../bindings.component';                          // 1) Can import parent component
 
 interface ISimpleChanges extends SimpleChanges {
     post: SimpleChange;
@@ -19,6 +20,10 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
     testingViewChild: string;
 
     constructor(
+        //private bindingsComponent: BindingsComponent,                                 // 2) We inject it here
+                                                                                        // --- WE DO NOT go any further with this since this creates circular depencies
+                                                                                        // where parent imports child and child imports parent.
+                                                                                        // We can communicate to parent via EventEmitter instead
         private postByIdService: PostByIdService
     ) { }
 
@@ -46,6 +51,8 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
         this.postByIdService.get(this.getRandomInt()).then(data => {
             this.post = data;
             this.change.emit(data);
+            //this.bindingsComponent.change(data);                                        // 3) Could use parents method here
         });
+
     }
 }
