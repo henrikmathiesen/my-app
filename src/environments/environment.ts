@@ -7,5 +7,6 @@ import { IEnvironment } from './IEnvironment';
 
 export const environment: IEnvironment = {
   production: false,
-  env: 'development'
+  env: 'development',
+  useHash: false
 };

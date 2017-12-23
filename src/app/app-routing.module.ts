@@ -1,3 +1,5 @@
+import { environment } from '../environments/environment';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -66,7 +68,7 @@ const routes: Routes = [
 ];
 
 const routerConfig = RouterModule.forRoot(routes, {
-    useHash: false
+    useHash: environment.useHash
 });
 
 @NgModule({
