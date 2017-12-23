@@ -1,25 +1,24 @@
 @import 'my-component-dependencies';
 
 .my-filter {
-    margin-bottom: $my-gutter-md;;
+    margin-bottom: $my-gutter-md;
+
+    &__query {
+        display: inline-block;
+        width: auto;
+    }
 }
 
-.my-filter-query {
-    display: inline-block;
-    width: auto;
-}
-
-.my-post + .my-post {
-    margin-top: $my-gutter-md;
-}
-
-.my-post {
+.my-hero {
     background-color: $my-color-background;
     padding: $my-gutter-md;
-    min-height: 150px;
 
-    p {
+    *:last-child {
         margin-bottom: 0;
+    }
+
+    & + & {
+        margin-top: $my-gutter-md;
     }
 }
 
@@ -31,32 +30,32 @@
     @include breakpoint(medium) {
         font-size: $global-font-size;
     }
-}
 
-.my-pagination-controls--pager {
+    &__pager {
     // https://angular.io/guide/component-styles
     /deep/ {
         .ngx-pagination {
-            @include breakpoint(medium) { 
-                display: inline-block;
-            }
-
-            .pagination-previous,
-            .pagination-next {
-                display: none;
-                
                 @include breakpoint(medium) { 
                     display: inline-block;
+                }
+
+                .pagination-previous,
+                .pagination-next {
+                    display: none;
+            
+                    @include breakpoint(medium) { 
+                        display: inline-block;
+                    }
                 }
             }
         }
     }
-}
 
-.my-pagination-controls--items-per-page {
-    @include breakpoint(medium) {
-        width: auto;
-        position: relative;
-        top: 2px;
+    &__items-per-page {
+        @include breakpoint(medium) {
+            width: auto;
+            position: relative;
+            top: 2px;
+        }
     }
 }

@@ -6,15 +6,15 @@
 </p>
 <div>
     <div class="my-filter">
-        Filter: <input type="text" class="my-filter-query" [(ngModel)]="filterQuery" />
+        Filter: <input type="text" class="my-filter__query" [(ngModel)]="filterQuery" />
     </div>
-    <div class="my-post" *ngFor="let hero of heroes | filterBy: ['id', 'name']: filterQuery | paginate: { itemsPerPage: paginationSettings.itemsPerPage, currentPage: paginationSettings.currentPage }">
+    <div class="my-hero" *ngFor="let hero of heroes | filterBy: ['id', 'name']: filterQuery | paginate: { itemsPerPage: paginationSettings.itemsPerPage, currentPage: paginationSettings.currentPage }">
         <h3>ID: {{ hero.id }}</h3>
         <h4>{{ hero.name }}</h4>
     </div>
     <div class="my-pagination-controls">
-        <pagination-controls class="my-pagination-controls--pager" (pageChange)="paginationSettings.currentPage = $event"></pagination-controls>
-        <select class="my-pagination-controls--items-per-page" [(ngModel)]="paginationSettings.itemsPerPage">
+        <pagination-controls class="my-pagination-controls__pager" (pageChange)="paginationSettings.currentPage = $event"></pagination-controls>
+        <select class="my-pagination-controls__items-per-page" [(ngModel)]="paginationSettings.itemsPerPage">
             <option *ngFor="let nr of paginationSettings.selectableItemsPerPage;" [value]="nr">{{ nr }}</option>
         </select>
     </div>
