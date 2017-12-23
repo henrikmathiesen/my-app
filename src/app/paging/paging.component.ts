@@ -5,7 +5,7 @@ import { Hero } from 'app/shared/models/hero';
 import { HeroService } from 'app/shared/hero.service';
 
 interface IPaginationInstance extends PaginationInstance {
-    selectableItemsPerPage:number[];
+    selectableItemsPerPage: number[];
 }
 
 @Component({
@@ -15,7 +15,7 @@ interface IPaginationInstance extends PaginationInstance {
     ]
 })
 export class PagingComponent implements OnInit {
-    
+
     heroes: Hero[];
     paginationSettings: IPaginationInstance = {
         itemsPerPage: 5,
@@ -32,9 +32,17 @@ export class PagingComponent implements OnInit {
         private heroService: HeroService
     ) { }
 
-    ngOnInit() { 
+    ngOnInit() {
         this.heroService.getHeroes().then(heroes => {
             this.heroes = heroes;
         });
+    }
+
+    showingCount(filteredHeroes: Hero[]) {
+        //console.log(filteredHeroes);
+
+        if (!filteredHeroes) {
+            return;
+        }
     }
 }

@@ -8,6 +8,18 @@
     <div class="my-filter">
         Filter: <input type="text" class="my-filter__query" [(ngModel)]="filterQuery" />
     </div>
+    <div>
+        <div>
+            Total count: {{ heroes?.length }}
+        </div>
+        <div>
+            Filtered count: {{ (heroes | filterBy: ['id', 'name']: filterQuery)?.length }}
+        </div>
+        <div>
+            Showing count: {{ showingCount((heroes | filterBy: ['id', 'name']: filterQuery)) }}
+        </div>
+        <br><br>
+    </div>
     <div class="my-hero" *ngFor="let hero of heroes | filterBy: ['id', 'name']: filterQuery | paginate: { itemsPerPage: paginationSettings.itemsPerPage, currentPage: paginationSettings.currentPage }">
         <h3>ID: {{ hero.id }}</h3>
         <h4>{{ hero.name }}</h4>
