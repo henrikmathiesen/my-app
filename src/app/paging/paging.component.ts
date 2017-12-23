@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PaginationInstance } from 'ngx-pagination';
 
-import { IPost } from 'app/shared/models/post.interface';
-import { PostsService } from 'app/shared/posts.service';
+import { Hero } from 'app/shared/models/hero';
+import { HeroService } from 'app/shared/hero.service';
 
 interface IPaginationInstance extends PaginationInstance {
     selectableItemsPerPage:number[];
@@ -12,14 +12,11 @@ interface IPaginationInstance extends PaginationInstance {
     templateUrl: './paging.component.html',
     styleUrls: [
         './paging.component.scss'
-    ],
-    providers: [
-        PostsService
     ]
 })
 export class PagingComponent implements OnInit {
     
-    posts: IPost[];
+    heroes: Hero[];
     paginationSettings: IPaginationInstance = {
         itemsPerPage: 5,
         currentPage: 1,
@@ -32,12 +29,12 @@ export class PagingComponent implements OnInit {
     filterQuery: string = '';
 
     constructor(
-        private postsService: PostsService
+        private heroService: HeroService
     ) { }
 
     ngOnInit() { 
-        this.postsService.getPosts().then(data => {
-            this.posts = data;
+        this.heroService.getHeroes().then(heroes => {
+            this.heroes = heroes;
         });
     }
 }
