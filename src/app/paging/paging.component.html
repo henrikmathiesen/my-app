@@ -12,7 +12,7 @@
     <div class="my-info">
         Total: {{ heroes?.length }}&nbsp;&nbsp;&nbsp;&nbsp;
         Filtered: {{ (heroes | filterBy: ['id', 'name']: filterQuery)?.length }}&nbsp;&nbsp;&nbsp;&nbsp;
-        Showing: {{ showingCount((heroes | filterBy: ['id', 'name']: filterQuery)) }}&nbsp;&nbsp;&nbsp;&nbsp;
+        Showing: {{ showingNow((heroes | filterBy: ['id', 'name']: filterQuery)) }}&nbsp;&nbsp;&nbsp;&nbsp;
         <button class="my-link-text" (click)="orderByName()">Toggle Order by Name</button> ({{ orderByQuery }})
     </div>
     <div class="my-hero" 

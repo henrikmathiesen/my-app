@@ -41,7 +41,7 @@ export class PagingComponent implements OnInit {
         });
     }
 
-    showingCount(filteredHeroes: Hero[]) {
+    showingNow(filteredHeroes: Hero[]) {
         if (!filteredHeroes) {
             return;
         }
