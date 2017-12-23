@@ -12,10 +12,10 @@
         Total: {{ heroes?.length }}&nbsp;&nbsp;&nbsp;&nbsp;
         Filtered: {{ (heroes | filterBy: ['id', 'name']: filterQuery)?.length }}&nbsp;&nbsp;&nbsp;&nbsp;
         Showing: {{ showingCount((heroes | filterBy: ['id', 'name']: filterQuery)) }}&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="my-link-text" (click)="orderByName()">Toggle Order by Name</button>
+        <button class="my-link-text" (click)="orderByName()">Toggle Order by Name</button> ({{ orderByQuery }})
     </div>
     <div class="my-hero" 
-        *ngFor="let hero of heroes | filterBy: ['id', 'name']: filterQuery | paginate: { itemsPerPage: paginationSettings.itemsPerPage, currentPage: paginationSettings.currentPage }">
+        *ngFor="let hero of heroes | filterBy: ['id', 'name']: filterQuery | orderBy: orderByQuery | paginate: { itemsPerPage: paginationSettings.itemsPerPage, currentPage: paginationSettings.currentPage }">
         <h3>ID: {{ hero.id }}</h3>
         <h4>{{ hero.name }}</h4>
     </div>

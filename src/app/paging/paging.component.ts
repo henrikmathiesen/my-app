@@ -27,6 +27,7 @@ export class PagingComponent implements OnInit {
         ]
     }
     filterQuery: string = '';
+    orderByQuery: string = 'name';
 
     constructor(
         private heroService: HeroService
@@ -49,5 +50,9 @@ export class PagingComponent implements OnInit {
         const showingNow = (offset < 0) ? this.paginationSettings.itemsPerPage : (this.paginationSettings.itemsPerPage - offset);
 
         return showingNow;
+    }
+
+    orderByName(){
+        this.orderByQuery = (this.orderByQuery.indexOf('-') < 0) ? ('-'+this.orderByQuery) : (this.orderByQuery.split('-')[1]);
     }
 }
