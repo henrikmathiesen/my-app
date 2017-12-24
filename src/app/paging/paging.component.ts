@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PaginationInstance } from 'ngx-pagination';
 
 import { Hero } from 'app/shared/models/hero';
