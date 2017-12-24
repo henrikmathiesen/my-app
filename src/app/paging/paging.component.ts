@@ -3,6 +3,7 @@ import { PaginationInstance } from 'ngx-pagination';
 
 import { Hero } from 'app/shared/models/hero';
 import { HeroService } from 'app/shared/hero.service';
+import { OrderByQueryConstants } from './order-by-query.constants';
 
 interface IPaginationInstance extends PaginationInstance {
     selectableItemsPerPage: number[];
@@ -29,7 +30,7 @@ export class PagingComponent implements OnInit {
     };
 
     filterQuery = '';
-    orderByQuery = 'name';
+    orderByQuery = OrderByQueryConstants.nameAscending;
 
     constructor(
         private heroService: HeroService
@@ -55,6 +56,6 @@ export class PagingComponent implements OnInit {
     }
 
     orderByName() {
-        this.orderByQuery = (this.orderByQuery.indexOf('-') < 0) ? ('-' + this.orderByQuery) : (this.orderByQuery.split('-')[1]);
+        this.orderByQuery = this.orderByQuery == OrderByQueryConstants.nameAscending ? OrderByQueryConstants.nameDescending : OrderByQueryConstants.nameAscending;
     }
 }
