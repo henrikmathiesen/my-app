@@ -2,3 +2,25 @@
 <p>
     <a href="https://blog.angularindepth.com/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4">Following along</a>.
 </p>
+<h3>Angular Lifecycle Hooks</h3>
+<p>
+    We need to keep
+    <a href="https://angular.io/guide/lifecycle-hooks">Angular Lifecycle Hooks</a>
+    in mind when looking at this error.
+</p>
+<h3>The error</h3>
+<p>
+    <mark>The culprit of the error is always the child component or a directive.</mark>
+</p>
+<p>
+    Real world examples are much more complex. The parent component properties update or operations
+    that cause DOM changes are usually done indirectly by using services or observables. 
+    But the root cause is always the same.
+</p>
+<hr>
+<div>
+    <div>{{ name }}</div>
+    <div>
+        <my-ecaihbce-child [text]="text"></my-ecaihbce-child>
+    </div>
+</div>
