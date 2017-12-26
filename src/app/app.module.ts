@@ -34,6 +34,7 @@ import {
 import { RxJsComponent } from './rxjs/rxjs.component';
 import { PagingComponent } from './paging/paging.component';
 import { EcaihbceComponent } from './ecaihbce/ecaihbce.component';
+import { EcaihbceChildComponent } from './ecaihbce/ecaihbce-child/ecaihbce-child.component';
 
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
@@ -79,6 +80,7 @@ import { ConstantsApiService } from './shared/constants-api.service';
     RxJsComponent,
     PagingComponent,
     EcaihbceComponent,
+    EcaihbceChildComponent,
     HeroFormValidationDirective
   ],
   // Services (Module wide, can also import in a Component, the provider provides an instance)
