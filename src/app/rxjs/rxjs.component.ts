@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import { Http } from '@angular/http';
 
 // DONT IMPORT EVERYTHING, IT WILL EFFECT BUNDLE SIZE
 // import {Observable} from 'rxjs/Rx';
@@ -24,10 +25,17 @@ export class RxJsComponent implements OnInit, OnDestroy {
     private subjectSubscription: ISubscription;
     private behvaviorSubjectSubscription: ISubscription;
 
+    constructor(
+        private http: Http
+    ){
+
+    }
+
     ngOnInit() {
         this.bindButton();
         this.subject();
         this.behaviorSubject();
+        this.usingHttp();
     }
 
     ngOnDestroy() {
@@ -103,7 +111,7 @@ export class RxJsComponent implements OnInit, OnDestroy {
         subject.next(99);
     }
 
-    private behaviorSubject(){
+    private behaviorSubject() {
         // Works like subjects but have a default value
 
         const subject = new BehaviorSubject<string>('1) default value');
@@ -115,5 +123,19 @@ export class RxJsComponent implements OnInit, OnDestroy {
         );
 
         subject.next('2) next value after default')
+    }
+
+    private usingHttp() { 
+        // This should have been done in a service as best practice
+
+        const observer: Observer<any> = {
+            next: (data: any) => console.log(data),
+            error: (error) => console.log(error),
+            complete: () => console.log('complete')
+        }
+
+        this.http.get('https://jsonplaceholder.typicode.com/posts/')
+            .map((data) => data.json())
+            .subscribe(observer);
     }
 }
