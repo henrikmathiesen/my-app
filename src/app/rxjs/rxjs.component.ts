@@ -6,6 +6,7 @@ import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/co
 // Instead, import what you need
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
+import { Subject } from 'rxjs/Subject';
 import { ISubscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/throttleTime';
@@ -19,17 +20,24 @@ export class RxJsComponent implements OnInit, OnDestroy {
 
     private clickSubscription: ISubscription;
     private anotherSubscription: ISubscription;
+    private subjectSubscription: ISubscription;
 
     ngOnInit() {
         this.bindButton();
+        this.subject();
     }
 
     ngOnDestroy() {
         this.clickSubscription.unsubscribe();
         this.anotherSubscription.unsubscribe();
+        this.subjectSubscription.unsubscribe();
     }
 
     private bindButton() {
+
+        // # Observables, Subscriptions and Observers
+        // - Observable (can be sync or async) -> Subscription -> Observer (next(), error(), complete() will be invoked by the Observable through the Subscription)
+
         // Ofcourse we should use (click) instead of ViewChild etc, but we are following a guide on rxjs ...
         // After some googleing it was not so easy to find example of (click)="onClick()" with Observable ...
 
@@ -66,9 +74,27 @@ export class RxJsComponent implements OnInit, OnDestroy {
             obs.next(6);
             // obs.complete(); If complete, then nothing more is called
 
-            button.addEventListener('click', () => { 
+            button.addEventListener('click', () => {
                 obs.next(7);
             });
         }).subscribe(observer);
+    }
+
+    private subject() {
+        // # Subject
+        // - Use the Observables as event emitters
+        // - Subject -> Subscription -> Observer
+
+        const subject = new Subject<number>();
+
+        // Can pass an observer object to the subscription or just the functions (like above)
+        // We can of course have several subscriptions
+        this.subjectSubscription = subject.subscribe(
+            (value: number) => console.log(value),
+            (error) => { },
+            () => { }
+        );
+
+        subject.next(99);
     }
 }
