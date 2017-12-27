@@ -45,6 +45,7 @@ export class RxJsComponent implements OnInit, OnDestroy {
         // Observable
         this.clickSubscription = Observable.fromEvent(button, 'click')
             // operators are a real strength of rxjs
+            // http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html , "Method Summary"
             .throttleTime(2000)
             .map((event: MouseEvent) => event.clientX)
             // Subscription
@@ -89,6 +90,7 @@ export class RxJsComponent implements OnInit, OnDestroy {
 
         // Can pass an observer object to the subscription or just the functions (like above)
         // We can of course have several subscriptions
+        // We can also use operators here, before subscribe
         this.subjectSubscription = subject.subscribe(
             (value: number) => console.log(value),
             (error) => { },
