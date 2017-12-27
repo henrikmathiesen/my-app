@@ -24,10 +24,11 @@ export class RxJsComponent implements OnInit, OnDestroy {
     private anotherSubscription: ISubscription;
     private subjectSubscription: ISubscription;
     private behvaviorSubjectSubscription: ISubscription;
+    private httpSubjectSubscription: ISubscription;
 
     constructor(
         private http: Http
-    ){
+    ) {
 
     }
 
@@ -39,9 +40,12 @@ export class RxJsComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
+        // There are cleaner way to unsubscribe to all these:
+        // https://stackoverflow.com/questions/38008334/angular-rxjs-when-should-i-unsubscribe-from-subscription
         this.clickSubscription.unsubscribe();
         this.anotherSubscription.unsubscribe();
         this.subjectSubscription.unsubscribe();
+        this.httpSubjectSubscription.unsubscribe();
     }
 
     private bindButton() {
@@ -125,7 +129,7 @@ export class RxJsComponent implements OnInit, OnDestroy {
         subject.next('2) next value after default')
     }
 
-    private usingHttp() { 
+    private usingHttp() {
         // This should have been done in a service as best practice
 
         const observer: Observer<any> = {
@@ -134,7 +138,7 @@ export class RxJsComponent implements OnInit, OnDestroy {
             complete: () => console.log('complete')
         }
 
-        this.http.get('https://jsonplaceholder.typicode.com/posts/')
+        this.httpSubjectSubscription = this.http.get('https://jsonplaceholder.typicode.com/posts/')
             .map((data) => data.json())
             .subscribe(observer);
     }
