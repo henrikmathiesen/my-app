@@ -7,6 +7,7 @@ import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/co
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { ISubscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/operator/throttleTime';
@@ -21,10 +22,12 @@ export class RxJsComponent implements OnInit, OnDestroy {
     private clickSubscription: ISubscription;
     private anotherSubscription: ISubscription;
     private subjectSubscription: ISubscription;
+    private behvaviorSubjectSubscription: ISubscription;
 
     ngOnInit() {
         this.bindButton();
         this.subject();
+        this.behaviorSubject();
     }
 
     ngOnDestroy() {
@@ -98,5 +101,19 @@ export class RxJsComponent implements OnInit, OnDestroy {
         );
 
         subject.next(99);
+    }
+
+    private behaviorSubject(){
+        // Works like subjects but have a default value
+
+        const subject = new BehaviorSubject<string>('1) default value');
+
+        this.behvaviorSubjectSubscription = subject.subscribe(
+            (value: string) => console.log(value),
+            (error) => { },
+            () => { }
+        );
+
+        subject.next('2) next value after default')
     }
 }
