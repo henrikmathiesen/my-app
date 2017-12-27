@@ -17,7 +17,7 @@ export class EcaihbceComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        // However changing it here, AFTER it is sent to the child, results in 
+        // However changing it here, AFTER it is sent to the child, results in
         // ExpressionChangedAfterItHasBeenChecked error
         // this.text = 'updated text, parent ngAfterViewInit';
     }

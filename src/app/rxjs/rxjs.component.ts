@@ -126,7 +126,7 @@ export class RxJsComponent implements OnInit, OnDestroy {
             () => { }
         );
 
-        subject.next('2) next value after default')
+        subject.next('2) next value after default');
     }
 
     private usingHttp() {
@@ -136,7 +136,7 @@ export class RxJsComponent implements OnInit, OnDestroy {
             next: (data: any) => console.log(data),
             error: (error) => console.log(error),
             complete: () => console.log('complete')
-        }
+        };
 
         this.httpSubjectSubscription = this.http.get('https://jsonplaceholder.typicode.com/posts/')
             .map((data) => data.json())

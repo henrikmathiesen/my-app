@@ -56,6 +56,6 @@ export class PagingComponent implements OnInit {
     }
 
     orderByName() {
-        this.orderByQuery = this.orderByQuery == OrderByQueryConstants.nameAscending ? OrderByQueryConstants.nameDescending : OrderByQueryConstants.nameAscending;
+        this.orderByQuery = this.orderByQuery === OrderByQueryConstants.nameAscending ? OrderByQueryConstants.nameDescending : OrderByQueryConstants.nameAscending;
     }
 }
