@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ErrorService {
 
+    // This should probably have been done with a BehaviorSubject instead of a vanilla js pub/sub system
+
     private showErrorSubscriber: any;
 
     private publishShowError() {

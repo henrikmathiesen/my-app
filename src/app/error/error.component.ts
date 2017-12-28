@@ -18,14 +18,15 @@ export class ErrorComponent implements OnInit {
     }
 
     ngOnInit() {
+        // This should probably have been done with a BehaviorSubject instead
         this.errorService.subscribeShowError(this.showError.bind(this));
-    }
-
-    showError() {
-        this.errorIsVisible = true;
     }
 
     hideError() {
         this.errorIsVisible = false;
+    }
+
+    private showError() {
+        this.errorIsVisible = true;
     }
 }
