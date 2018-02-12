@@ -30,6 +30,8 @@ export class RxJsComponent implements OnInit, OnDestroy {
         private http: Http
     ) {
 
+        // SE TEMPLATE FOR LINK TO DOCS
+
     }
 
     ngOnInit() {
@@ -112,7 +114,7 @@ export class RxJsComponent implements OnInit, OnDestroy {
             () => { }
         );
 
-        subject.next(99);
+        subject.next(99); // WE TRIGGER THE EMIT HERE (instead of reacting to an event/http call)
     }
 
     private behaviorSubject() {
