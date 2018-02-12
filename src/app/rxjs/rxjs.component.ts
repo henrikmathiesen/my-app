@@ -19,12 +19,17 @@ import 'rxjs/add/operator/map';
 })
 export class RxJsComponent implements OnInit, OnDestroy {
     @ViewChild('button') button: ElementRef;
+    @ViewChild('buttonSwitchMap') buttonSwitchMap: ElementRef;
+
+    private buttonElement: HTMLElement;
+    private buttonSwitchMapElement: HTMLElement;
 
     private clickSubscription: ISubscription;
     private anotherSubscription: ISubscription;
     private subjectSubscription: ISubscription;
     private behvaviorSubjectSubscription: ISubscription;
     private httpSubjectSubscription: ISubscription;
+    private switchMapSubscription: ISubscription;
 
     constructor(
         private http: Http
@@ -35,10 +40,14 @@ export class RxJsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+        this.buttonElement = (this.button.nativeElement as HTMLElement);
+        this.buttonSwitchMapElement = (this.buttonSwitchMap.nativeElement as HTMLElement);
+
         this.bindButton();
         this.subject();
         this.behaviorSubject();
         this.usingHttp();
+        this.usingSwitchMap();
     }
 
     ngOnDestroy() {
@@ -48,6 +57,7 @@ export class RxJsComponent implements OnInit, OnDestroy {
         this.anotherSubscription.unsubscribe();
         this.subjectSubscription.unsubscribe();
         this.httpSubjectSubscription.unsubscribe();
+        this.switchMapSubscription.unsubscribe();
     }
 
     private bindButton() {
@@ -58,9 +68,8 @@ export class RxJsComponent implements OnInit, OnDestroy {
         // Ofcourse we should use (click) instead of ViewChild etc, but we are following a guide on rxjs ...
         // After some googleing it was not so easy to find example of (click)="onClick()" with Observable ...
 
-        const button = (this.button.nativeElement as HTMLElement);
         // Observable
-        this.clickSubscription = Observable.fromEvent(button, 'click')
+        this.clickSubscription = Observable.fromEvent(this.buttonElement, 'click')
             // operators are a real strength of rxjs
             // http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html , "Method Summary"
             .throttleTime(2000)
@@ -92,7 +101,7 @@ export class RxJsComponent implements OnInit, OnDestroy {
             obs.next(6);
             // obs.complete(); If complete, then nothing more is called
 
-            button.addEventListener('click', () => {
+            this.buttonElement.addEventListener('click', () => {
                 obs.next(7);
             });
         }).subscribe(observer);
@@ -143,5 +152,15 @@ export class RxJsComponent implements OnInit, OnDestroy {
         this.httpSubjectSubscription = this.http.get('https://jsonplaceholder.typicode.com/posts/')
             .map((data) => data.json())
             .subscribe(observer);
+    }
+
+    private usingSwitchMap() {
+        this.switchMapSubscription = Observable.fromEvent(this.buttonSwitchMapElement, 'click')
+            .map((event: MouseEvent) => event.clientX)
+            .subscribe(
+                cord => console.log('switch map clicked: ', cord),
+                err => console.log('switch map error', err),
+                () => console.log('switch map complete')
+            );
     }
 }
