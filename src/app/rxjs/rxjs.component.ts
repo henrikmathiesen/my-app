@@ -159,19 +159,14 @@ export class RxJsComponent implements OnInit, OnDestroy {
     private usingSwitchMap() {
         // https://www.learnrxjs.io/operators/transformation/switchmap.html
 
-        Observable.interval(3000).map(() => {
-
-        })
-
         this.switchMapSubscription = Observable.fromEvent(this.buttonSwitchMapElement, 'click')
-            .switchMap((foo: any) => {
-                //return Observable.interval(3000).map((event: MouseEvent) => event.clientX)
-                return Observable.interval(3000);
+            .switchMap((event: MouseEvent) => {
+                return Observable.interval(3000).map(n => event.clientX)
             })
             .subscribe(
-                cord => console.log('switch map clicked: ', cord),
-                err => console.log('switch map error', err),
-                () => console.log('switch map complete')
+            cord => console.log('switch map clicked: ', cord),
+            err => console.log('switch map error', err),
+            () => console.log('switch map complete')
             );
     }
 }
