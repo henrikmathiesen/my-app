@@ -11,8 +11,10 @@ import { Subject } from 'rxjs/Subject';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { ISubscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/observable/interval';
 import 'rxjs/add/operator/throttleTime';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
     templateUrl: './rxjs.component.html'
@@ -155,12 +157,20 @@ export class RxJsComponent implements OnInit, OnDestroy {
     }
 
     private usingSwitchMap() {
+        // https://www.learnrxjs.io/operators/transformation/switchmap.html
+
         this.switchMapSubscription = Observable.fromEvent(this.buttonSwitchMapElement, 'click')
-            .map((event: MouseEvent) => event.clientX)
+            .switchMap((event: MouseEvent) => {
+                // Like a debounce(?) ...
+                // Could have done a better example
+                // switchMap cancels the last emission if a new one is triggered
+                // "This works perfect for scenarios like typeaheads where you are no longer concerned with the response of the previous request when a new input arrives."
+                return Observable.interval(3000).map(n => event.clientX)
+            })
             .subscribe(
-                cord => console.log('switch map clicked: ', cord),
-                err => console.log('switch map error', err),
-                () => console.log('switch map complete')
+            cord => console.log('switch map clicked: ', cord),
+            err => console.log('switch map error', err),
+            () => console.log('switch map complete')
             );
     }
 }
