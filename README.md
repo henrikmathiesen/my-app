@@ -1,5 +1,8 @@
 # MyApp
 
+Exploring Angular  
+https://henrikmathiesen.github.io/my-app
+
 ## Following along
 https://angular.io/guide/quickstart  
 https://angular.io/tutorial  
