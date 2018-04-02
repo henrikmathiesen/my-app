@@ -15,9 +15,8 @@ enum UseInViewEnum {
 })
 export class HeroesComponent implements OnInit {
 
-  heroes: Hero[];
-
-  selectedHero: Hero;
+  heroes: Hero[] = [];
+  selectedHero: Hero = null;
 
   // Both of these work
   // useInViewEnum: typeof UseInViewEnum = UseInViewEnum;
