@@ -15,11 +15,6 @@ enum UseInViewEnum {
 })
 export class HeroesComponent implements OnInit {
 
-  hero: Hero = {
-    id: null,
-    name: null
-  };
-
   heroes: Hero[];
 
   selectedHero: Hero;

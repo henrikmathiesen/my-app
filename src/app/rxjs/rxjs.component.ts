@@ -165,7 +165,7 @@ export class RxJsComponent implements OnInit, OnDestroy {
                 // Could have done a better example
                 // switchMap cancels the last emission if a new one is triggered
                 // "This works perfect for scenarios like typeaheads where you are no longer concerned with the response of the previous request when a new input arrives."
-                return Observable.interval(3000).map(n => event.clientX)
+                return Observable.interval(3000).map(n => event.clientX);
             })
             .subscribe(
             cord => console.log('switch map clicked: ', cord),
