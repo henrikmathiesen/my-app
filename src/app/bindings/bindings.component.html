@@ -2,7 +2,7 @@
 
 <div [hidden]="!post">
     <div>
-        <button class="button" (click)="refresh()">Refresh data</button>
+        <button class="button" (click)="refresh()">Refresh data in parent</button>
     </div>
     <p>
         Refresh does propagate down.
@@ -20,5 +20,5 @@
         <br /> spans classes:
         <mark>{{theSpan.className}}</mark>
     </p>
-    <my-bindings-child [post]="post" (change)="change($event)"></my-bindings-child>
+    <my-bindings-child [post]="post" [message]="post?.title" (change)="change($event)"></my-bindings-child>
 </div>

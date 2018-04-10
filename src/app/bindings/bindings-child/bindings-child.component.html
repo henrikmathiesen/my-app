@@ -1,10 +1,13 @@
 <h3>Bindings - Child Component</h3>
 
 <div>
-    <button class="button" (click)="refresh()">Refresh data</button>
+    <button class="button" (click)="refresh()">Refresh data in child</button>
 </div>
 <p>
     Refresh does NOT propagate up. For that to work we need to set up @Output with EventEmitter.
+</p>
+<p>
+    Message via getter/setter is: <em>{{ message }}</em>
 </p>
 <div *ngIf="post">
     <h3>User Id: {{ post.userId }}</h3>

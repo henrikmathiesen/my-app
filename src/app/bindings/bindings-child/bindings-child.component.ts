@@ -20,6 +20,16 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
 
     testingViewChild: string;
 
+    private msg:string = 'default message';
+    @Input()
+    set message(msg: string) {
+        console.log('changes.message', msg);
+        this.msg = msg;
+    }
+    get message(){
+        return this.msg;
+    }
+
     constructor(
         // private bindingsComponent: BindingsComponent,                                // 2) We inject it here
                                                                                         // --- WE DO NOT go any further with this since this creates circular depencies
