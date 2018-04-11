@@ -80,6 +80,20 @@ export class HeroFormComponent {
         }
     }
 
+    logForm(){
+        console.log('==== FORM ====');
+        console.log(this.heroForm);
+        console.log('==== /FORM ====');
+
+        console.log('==== VALIDS ====');
+        //console.log(this.heroForm.controls['name'].valid);
+        //console.log(this.heroForm.getFormGroup(this.userAccountFormGroup).controls['email'].valid);
+        //console.log(this.heroForm.getFormGroup(this.userAccountFormGroup).controls['confirmEmail'].valid);
+        //console.log(this.heroForm.getFormGroup(this.userAccountFormGroup).valid);
+        console.log(this.heroForm.controls['description'].valid);
+        console.log('==== /VALIDS ====');
+    }
+
     private clearNullFields() {
         this.heroForm.controls['code'].reset();
         this.heroForm.controls['description'].reset();  // is in a sub component
