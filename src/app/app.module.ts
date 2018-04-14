@@ -46,7 +46,7 @@ import { ConstantsApiService } from './shared/constants-api.service';
 @NgModule({
   // Modules (we can use functionality from them in this module)
   imports: [
-    BrowserModule,
+    BrowserModule,                                  // app.module is the only module that imports this, other modules import CommonModule
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
@@ -94,6 +94,10 @@ import { ConstantsApiService } from './shared/constants-api.service';
   // - Use an eager loaded core.module with all application wide services in a provider (gets registered with the root injector), import it in app.module (lazy loaded modules can then use these also)
   // - Use local providers in feature modules, for structure puropose (even though services here are technically registered in the root injector)
   // - For shared components, directive and pipes, use a shared.module and put them there, import the shared module in feature modules that need it
+  // - REMEMBER
+  //    - services provided via an eagerly loaded module is SHARED, via the root injector
+  //    - the rest seams to be seperated among modules
+  //      - For example, if app.module imports RouterModule and core.module, that does NOT mean that core.module will have access to router directives -- core.module HAS TO import RouterModule as well
   providers: [
     HeroService,
     ErrorService,
