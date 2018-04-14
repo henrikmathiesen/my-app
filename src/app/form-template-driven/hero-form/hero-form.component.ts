@@ -42,14 +42,19 @@ export class HeroFormComponent {
         /*
             IMPORTANT
             - It is not best practice to use two way binding the way we have done in the view [(ngModel)]
-            - It is better to use [ngModel] as a one way binding, if we want to set fiels with values
-            - The posted form data can be get by using this.heroForm.value
+            - It is better to use [ngModel]="user.name" as a one way binding, if we want to set fields with values
+            - The posted form data, that the user typed in, can be get by using this.heroForm.value
             - Allthough note that the name attributes will be used as properties on the object, so snake case is not recommended (food-preference)
+            - If we are not displaying data, then ngModel (by itself like that) together with a name="foo" is enough -- data will be placed on the form
             https://toddmotto.com/angular-2-forms-template-driven#ngmodel-ngmodel-and-ngmodel
 
             BUT
             - hero-form-validation does dynamic validation on the updated model, so it needs 2 way binding
             - But we could perhaps use this.heroForm.valueChanges.subscribe
+
+            Side note
+            - (ngModel)="user.name" means that when user types in the field, user.name is populated
+            - But, as stated above, we can get it from the form itself
         */
 
         this.submited = true;
@@ -83,15 +88,16 @@ export class HeroFormComponent {
     logForm(){
         console.log('==== FORM ====');
         console.log(this.heroForm);
+        console.log(this.model);
         console.log('==== /FORM ====');
 
-        console.log('==== VALIDS ====');
+        //console.log('==== VALIDS ====');
         //console.log(this.heroForm.controls['name'].valid);
         //console.log(this.heroForm.getFormGroup(this.userAccountFormGroup).controls['email'].valid);
         //console.log(this.heroForm.getFormGroup(this.userAccountFormGroup).controls['confirmEmail'].valid);
         //console.log(this.heroForm.getFormGroup(this.userAccountFormGroup).valid);
-        console.log(this.heroForm.controls['description'].valid);
-        console.log('==== /VALIDS ====');
+        //console.log(this.heroForm.controls['description'].valid);
+        //console.log('==== /VALIDS ====');
     }
 
     private clearNullFields() {
