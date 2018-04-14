@@ -63,7 +63,19 @@ const routes: Routes = [
     },
     {
         path: 'detail/:id',
-        component: HeroDetailComponent
+        component: HeroDetailComponent,
+        
+        // canActivate: [OurRouteGuardService]
+        // - make a service that implements import { CanActivate } from '@angular/router';
+        // - the interface method gets a route: ActivatedRouteSnapshot as first argument
+        // - provide the service in a module
+        // - https://angular.io/api/router/CanActivate
+
+        // canDeactivate: [OurRouteLeaveGuardService]
+        // - make a service that implements import { CanDeactivate } from '@angular/router';
+        // - the interface method gets the current route:s component as first argument
+        // - provide the service in a module
+        // - https://angular.io/api/router/CanDeactivate
     },
 ];
 
