@@ -64,7 +64,7 @@ const routes: Routes = [
     {
         path: 'detail/:id',
         component: HeroDetailComponent,
-        
+
         // canActivate: [OurRouteGuardService]
         // - make a service that implements import { CanActivate } from '@angular/router';
         // - the interface method gets a route: ActivatedRouteSnapshot as first argument
@@ -132,6 +132,41 @@ export class AppRoutingModule { }
                 children: [
                     path: 'step1',
                     component: Step1Component       // urls are the same, but this component will be loaded in the router-outlet in LazyComponent
+                ]
+            }
+
+
+
+
+    REDIRECT TO /sub/subsub
+
+    - app-routing.module
+        - routes
+            {
+                path: '',
+                redirectTo: '/sub/subsub',
+                pathMatch: PathMatch.full
+            },
+            {
+                path: 'sub',
+                loadChildren: 'app/sub/sub.module#SubModule'
+            }
+
+    - sub-routing.module
+        - routes
+            {
+                path: '',
+                component: SubComponent,            // no need for a <router-outlet></router-outlet> , in fact no need for a component at all
+                children: [
+                    {
+                        path: '',
+                        redirectTo: 'subsub',
+                        pathMatch: PathMatch.full
+                    },
+                    {
+                        path: 'subsub',
+                        component: SubSubComponent
+                    }
                 ]
             }
 
