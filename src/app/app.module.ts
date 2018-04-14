@@ -105,8 +105,9 @@ import { ConstantsApiService } from './shared/constants-api.service';
     PostsService,
     ConstantsApiService,
   ],
+  exports: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-// Beware of multiple providers, if importing a module with providers in several modules: https://angular.io/guide/ngmodule#the-core-module
