@@ -88,3 +88,51 @@ const routerConfig = RouterModule.forRoot(routes, {
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+/*
+
+    LAZY LOAD MODULE
+
+    - app.module.ts
+        - imports BrowserModule
+        - imports app-routing.module
+        - DOES NOT import the lazy loaded module
+
+    - app-routing.module
+        - imports RouterModule.forRoot(routes)
+        - exports RouterModule (from '@angular/router';), for convenience
+        - routes
+            {
+                path: 'lazy',
+                loadChildren: 'app/lazy/lazy.module#LazyModule'
+            }
+        
+    - lazy.module
+        - imports CommonModule
+        - imports lazy-routing.module
+
+    - lazy-routing.module
+        - imports RouterModule.forChild(routes)
+        - exports RouterModule (from '@angular/router';), for convenience (if needed)
+        - routes
+            {
+                path: '',                           // url: /lazy
+                component: LazyComponent
+            },
+            {
+                path: 'step1',                      // url: /lazy/step1
+                component: Step1Component
+            }
+
+        OR
+            {
+                path: '',
+                component: LazyComponent,           // should have a <router-outlet></router-outlet>
+                children: [
+                    path: 'step1',
+                    component: Step1Component       // urls are the same, but this component will be loaded in the router-outlet in LazyComponent
+                ]
+            }
+
+*/
