@@ -55,6 +55,10 @@ export class HeroFormComponent {
             Side note
             - (ngModel)="user.name" means that when user types in the field, user.name is populated
             - But, as stated above, we can get it from the form itself
+
+
+            CHECKBOXES AND RADIOS
+            https://www.concretepage.com/angular-2/angular-2-radio-button-and-checkbox-example
         */
 
         this.submited = true;

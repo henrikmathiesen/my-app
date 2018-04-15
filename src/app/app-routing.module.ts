@@ -89,9 +89,13 @@ const routerConfig = RouterModule.forRoot(routes, {
 })
 export class AppRoutingModule { }
 
-
 /*
 
+    GET ROUTE INFO AND SET TITLE
+    - https://toddmotto.com/dynamic-page-titles-angular-2-router-events
+
+
+    
     LAZY LOAD MODULE
 
     - app.module.ts
