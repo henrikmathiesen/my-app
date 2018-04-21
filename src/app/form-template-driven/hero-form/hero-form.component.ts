@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgForm, NgModelGroup } from '@angular/forms';
+import { NgForm, NgModelGroup, FormControl } from '@angular/forms';
 import { OrderHero } from '../models/order-hero';
+import { HeroFormConstant } from './models/hero-form.constant';
 import { OrderHeroSupportData } from '../models/order-hero-support-data';
 import { HeroFormSetupService } from './services/hero-form-setup.service';
 
@@ -15,14 +16,20 @@ import { HeroFormSetupService } from './services/hero-form-setup.service';
 export class HeroFormComponent {
     @ViewChild('heroForm') heroForm: NgForm;
     @ViewChild('userAccountFormGroup') userAccountFormGroup: NgModelGroup;
+    @ViewChild('userAccountFormGroupEmailFormControl') userAccountFormGroupEmailFormControl: FormControl;   // Can get to a form control directly (see template also)
 
     model: OrderHero;
     supportData: OrderHeroSupportData;
     submited: boolean;
 
+    heroFormConstant: HeroFormConstant;
+
     constructor(
         private heroFormSetupService: HeroFormSetupService
     ) {
+        console.log(
+            HeroFormConstant.email
+        );
         this.model = this.heroFormSetupService.setupModel();
         this.supportData = this.heroFormSetupService.setupSupportData();
         this.submited = false;
@@ -93,6 +100,10 @@ export class HeroFormComponent {
         console.log('==== FORM ====');
         console.log(this.heroForm);
         console.log(this.model);
+        console.log(
+            this.heroForm.getFormGroup(this.userAccountFormGroup).controls['email'].valid,
+            this.userAccountFormGroupEmailFormControl.valid
+        );
         console.log('==== /FORM ====');
 
         //console.log('==== VALIDS ====');

@@ -61,7 +61,7 @@
                 <button class="my-link-text" type="button" (click)="enableFormControl('email', userAccountFormGroup)">Enable email</button>
             </div>
             <label for="email">Email (required, email)</label>
-            <input type="email" id="email" name="email" ngModel required email> <!-- OBS ngModel is enough (see comments in code behind) -->
+            <input type="email" id="email" name="{{heroFormConstant.email}}" ngModel required email #userAccountFormGroupEmailFormControl="ngModel"> <!-- OBS ngModel is enough (see comments in code behind) -->
         </div>
         <div class="cell medium-6">
             <label for="confirmEmail">Confirm Email (required, email)</label>
