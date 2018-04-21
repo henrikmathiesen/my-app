@@ -20,7 +20,7 @@ export class HeroesComponent implements OnInit {
 
   // Both of these work
   // useInViewEnum: typeof UseInViewEnum = UseInViewEnum;
-  useInViewEnum = UseInViewEnum;
+  readonly useInViewEnum = UseInViewEnum;
 
   constructor(
     private heroService: HeroService,

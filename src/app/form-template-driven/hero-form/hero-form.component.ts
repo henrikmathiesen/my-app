@@ -22,13 +22,13 @@ export class HeroFormComponent {
     supportData: OrderHeroSupportData;
     submited: boolean;
 
-    heroFormConstant: HeroFormConstant;
+    readonly heroFormConstant = HeroFormConstant;
 
     constructor(
         private heroFormSetupService: HeroFormSetupService
     ) {
         console.log(
-            HeroFormConstant.email
+            this.heroFormConstant.email
         );
         this.model = this.heroFormSetupService.setupModel();
         this.supportData = this.heroFormSetupService.setupSupportData();
