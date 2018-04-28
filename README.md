@@ -29,6 +29,10 @@ https://www.npmjs.com/package/cpx , useful for copy whole directory, see package
 
 https://blog.angularindepth.com/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4  
 
+Internationalization i18  
+https://medium.com/frontend-fun/angular-introduction-to-internationalization-i18n-28226a85e04e  
+https://angular.io/guide/i18n
+
 ## CLI info
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
