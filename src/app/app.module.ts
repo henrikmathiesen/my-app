@@ -45,6 +45,9 @@ import { DataSharingMediatorService } from './shared/data-sharing-mediator.servi
 import { PostsService } from './shared/posts.service';
 import { ConstantsApiService } from './shared/constants-api.service';
 
+import { UnitTestShallowParentService } from './unit-test-shallow-parent/unit-test-shallow-parent.service';
+import { UnitTestShallowChildService } from './unit-test-shallow-parent/unit-test-shallow-child/unit-test-shallow-child.service';
+
 
 @NgModule({
   // Modules (we can use functionality from them in this module)
@@ -109,6 +112,9 @@ import { ConstantsApiService } from './shared/constants-api.service';
     DataSharingMediatorService,
     PostsService,
     ConstantsApiService,
+
+    UnitTestShallowParentService,
+    UnitTestShallowChildService
   ],
   exports: [
 
