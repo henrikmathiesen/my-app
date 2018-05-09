@@ -14,7 +14,7 @@ export class UnitTestShallowChildComponent implements OnInit {
 
   ngOnInit() {
     console.log(
-      this.unitTestShallowChildService.foo()
+      '# ' + this.unitTestShallowChildService.foo()
     );
   }
 

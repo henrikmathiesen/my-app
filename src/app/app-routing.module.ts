@@ -14,6 +14,7 @@ import { FormReactiveComponent } from './form-reactive/form-reactive.component';
 import { RxJsComponent } from './rxjs/rxjs.component';
 import { PagingComponent } from './paging/paging.component';
 import { EcaihbceComponent } from './ecaihbce/ecaihbce.component';
+import { UnitTestShallowParentComponent } from './unit-test-shallow-parent/unit-test-shallow-parent.component';
 
 const routes: Routes = [
     {
@@ -60,6 +61,10 @@ const routes: Routes = [
     {
         path: 'ecaihbce',
         component: EcaihbceComponent
+    },
+    {
+        path: 'unit-test-shallow',
+        component: UnitTestShallowParentComponent
     },
     {
         path: 'detail/:id',
