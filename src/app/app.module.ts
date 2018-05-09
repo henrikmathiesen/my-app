@@ -21,6 +21,9 @@ import { ErrorComponent } from './error/error.component';
 import { DataSharingComponent } from './data-sharing/data-sharing.component';
 import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-sharing-sibbling.component';
 
+import { UnitTestShallowParentComponent } from './unit-test-shallow-parent/unit-test-shallow-parent.component';
+import { UnitTestShallowChildComponent } from './unit-test-shallow-parent/unit-test-shallow-child/unit-test-shallow-child.component';
+
 import { FormTemplateDrivenComponent, HeroFormComponent, HeroFormDescriptionComponent, HeroFormValidationDirective } from './form-template-driven';
 import {
   FormReactiveComponent,
@@ -81,7 +84,9 @@ import { ConstantsApiService } from './shared/constants-api.service';
     PagingComponent,
     EcaihbceComponent,
     EcaihbceChildComponent,
-    HeroFormValidationDirective
+    HeroFormValidationDirective,
+    UnitTestShallowParentComponent,
+    UnitTestShallowChildComponent
   ],
   // Services (Module wide, can also import in a Component, the provider provides an instance)
   // If we need the service in many components we put it here, instead of local providers in @Component (for local provider: remember that multiple instances of the component will ge a different service instances)
