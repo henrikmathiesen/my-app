@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UnitTestShallowChildComponent } from './unit-test-shallow-child.component';
+import { UnitTestShallowChildService } from './unit-test-shallow-child.service';
 
 describe('UnitTestShallowChildComponent', () => {
   let component: UnitTestShallowChildComponent;
@@ -8,7 +9,12 @@ describe('UnitTestShallowChildComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UnitTestShallowChildComponent ]
+      declarations: [ 
+        UnitTestShallowChildComponent 
+      ],
+      providers: [
+        UnitTestShallowChildService
+      ]
     })
     .compileComponents();
   }));
