@@ -5,4 +5,8 @@ export class UnitTestShallowParentService {
 
   constructor() { }
 
+  foo() {
+    return 'parent bar';
+  }
+
 }

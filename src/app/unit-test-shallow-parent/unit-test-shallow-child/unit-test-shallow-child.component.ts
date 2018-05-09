@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UnitTestShallowChildService } from './unit-test-shallow-child.service';
 
 @Component({
   selector: 'my-unit-test-shallow-child',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnitTestShallowChildComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private unitTestShallowChildService: UnitTestShallowChildService
+  ) { }
 
   ngOnInit() {
+    console.log(
+      this.unitTestShallowChildService.foo()
+    );
   }
 
 }

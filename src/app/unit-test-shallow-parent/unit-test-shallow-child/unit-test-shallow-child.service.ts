@@ -5,4 +5,8 @@ export class UnitTestShallowChildService {
 
   constructor() { }
 
+  foo() {
+    return 'child bar';
+  }
+
 }
