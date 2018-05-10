@@ -98,20 +98,24 @@ describe('LittleMoreFormComponent', () => {
 
     describe('validate', () => {
         let validate: AbstractControl;
+        let name: AbstractControl;
 
         beforeEach(() => {
             validate = component.littleMoreForm.get(['validate']);
+            name = component.littleMoreForm.get(['name']);
         });
 
-        it('is not required', () => {
-            expect(validate.hasError('required')).toBe(false);
+        it('is starts valid', () => {
+            expect(validate.valid).toBe(true);
         });
 
         it('adds the minlength validator on name when true', () => { 
-            // TODO
+            name.setValue('AA');
+            expect(name.valid).toBe(true);
+
+            validate.setValue(true);
+            expect(name.valid).toBe(false);
+            expect(name.hasError('minlength')).toBe(true);
         });
     });
 });
-
-
-// test switching between form and info
