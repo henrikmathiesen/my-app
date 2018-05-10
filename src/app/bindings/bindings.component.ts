@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, OnDestroy, AfterViewInit, ElementRef } from '@angular/core';
-import random from 'lodash.random';
+import * as random from 'lodash.random';
 
 import { IPost } from 'app/shared/models/post.interface';
 import { PostsService } from 'app/shared/posts.service';

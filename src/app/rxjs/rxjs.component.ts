@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 // DONT IMPORT EVERYTHING, IT WILL EFFECT BUNDLE SIZE
 // import {Observable} from 'rxjs/Rx';
@@ -34,7 +34,7 @@ export class RxJsComponent implements OnInit, OnDestroy {
     private switchMapSubscription: ISubscription;
 
     constructor(
-        private http: Http
+        private http: HttpClient
     ) {
 
         // SE TEMPLATE FOR LINK TO DOCS
@@ -152,7 +152,7 @@ export class RxJsComponent implements OnInit, OnDestroy {
         };
 
         this.httpSubjectSubscription = this.http.get('https://jsonplaceholder.typicode.com/posts/')
-            .map((data) => data.json())
+            .map((data) => data)
             .subscribe(observer);
     }
 

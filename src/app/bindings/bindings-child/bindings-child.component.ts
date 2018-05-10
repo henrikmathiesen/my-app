@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
-import random from 'lodash.random';
+import * as random from 'lodash.random';
 
 import { IPost } from 'app/shared/models/post.interface';
 import { PostsService } from 'app/shared/posts.service';

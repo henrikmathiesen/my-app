@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';                              // 1 module for Template Driven Form and 1 for Reactive Form
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgArrayPipesModule } from 'ngx-pipes';
 
@@ -55,7 +55,7 @@ import { UnitTestShallowChildService } from './unit-test-shallow-parent/unit-tes
     BrowserModule,                                  // app.module is the only module that imports this, other modules import CommonModule
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
+    HttpClientModule,
     NgxPaginationModule,
     NgArrayPipesModule,
     AppRoutingModule,
