@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule, AbstractControl } from '@angular/forms';
 import { LittleMoreFormComponent } from './little-more-form.component';
 
+// TO TEST submit, call onSubmit on the component
+
 describe('LittleMoreFormComponent', () => {
     let component: LittleMoreFormComponent;
     let fixture: ComponentFixture<LittleMoreFormComponent>;
