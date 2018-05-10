@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UnitTestShallowParentService } from './unit-test-shallow-parent.service';
 
 @Component({
-  templateUrl: './unit-test-shallow-parent.component.html',
-  styleUrls: ['./unit-test-shallow-parent.component.scss']
+  templateUrl: './unit-test-shallow-parent.component.html'
 })
 export class UnitTestShallowParentComponent implements OnInit {
 
