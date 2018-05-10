@@ -8,6 +8,16 @@ describe('LittleMoreFormComponent', () => {
     let component: LittleMoreFormComponent;
     let fixture: ComponentFixture<LittleMoreFormComponent>;
 
+    const getNrOfChars = (n) => {
+        let chars = '';
+
+        for (var i = 0; i < n; i++) {
+            chars += 'A';
+        }
+
+        return chars;
+    };
+
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
@@ -57,16 +67,6 @@ describe('LittleMoreFormComponent', () => {
     });
 
     describe('description', () => {
-        const getNrOfChars = (n) => {
-            let chars = '';
-
-            for (var i = 0; i < n; i++) {
-                chars += 'A';
-            }
-
-            return chars;
-        };
-
         let description: AbstractControl;
 
         beforeEach(() => {
@@ -115,13 +115,35 @@ describe('LittleMoreFormComponent', () => {
             expect(validate.valid).toBe(true);
         });
 
-        it('adds the minlength validator on name when true', () => { 
+        it('adds the minlength validator on name when true', () => {
             name.setValue('AA');
             expect(name.valid).toBe(true);
 
             validate.setValue(true);
             expect(name.valid).toBe(false);
             expect(name.hasError('minlength')).toBe(true);
+        });
+    });
+
+    describe('a valid form', () => {
+        let name: AbstractControl;
+        let description: AbstractControl;
+        let validate: AbstractControl;
+
+        beforeEach(() => {
+            name = component.littleMoreForm.get(['name']);
+            description = component.littleMoreForm.get(['description']);
+            validate = component.littleMoreForm.get(['validate']);
+        });
+
+        it('starts invalid', () => {
+            expect(component.littleMoreForm.valid).toBe(false);
+        });
+
+        it('gets valid', () => { 
+            name.setValue('John Doe');
+            description.setValue(getNrOfChars(30));
+            expect(component.littleMoreForm.valid).toBe(true);
         });
     });
 });

@@ -23,7 +23,7 @@ describe('PersonFormAddressComponent', () => {
         fixture = TestBed.createComponent(PersonFormAddressComponent);
         component = fixture.componentInstance;
 
-        component.parentFormGroup = new FormGroup({ 'foo': new FormControl() });
+        component.parentFormGroup = new FormGroup({ foo: new FormControl() });
 
         // This will run ngOnInit
         fixture.detectChanges();
