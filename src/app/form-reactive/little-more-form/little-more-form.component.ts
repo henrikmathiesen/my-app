@@ -51,6 +51,8 @@ export class LittleMoreFormComponent implements OnInit, IModel {
 
   ngOnInit() {
     this.handleValidateFormControlChangesService.valueChanges(this.littleMoreForm, this.validationMessages);
+
+    //this.littleMoreForm.get(['name']).setValue('foo');
   }
 
   onSubmit() {
