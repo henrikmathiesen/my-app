@@ -43,6 +43,7 @@ export class LittleMoreFormComponent implements OnInit, IModel {
     private littleMoreFormSupportDataService: LittleMoreFormSupportDataService,
     private handleValidateFormControlChangesService: LittleMoreFormValidateFormControlChangesService
   ) {
+    // Maybe we should do this in ngOnInit?
     this.littleMoreForm = this.littleFormSetupFormService.setup();
     this.validationMessages.name = this.littleMoreFormSupportDataService.getNameValidationMessages().default;
     this.validationMessages.description = this.littleMoreFormSupportDataService.getDescriptionValidationMessage();
