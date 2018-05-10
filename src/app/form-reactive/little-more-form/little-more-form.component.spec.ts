@@ -82,19 +82,23 @@ describe('LittleMoreFormComponent', () => {
         it('also has a min length validation', () => {
             description.setValue(getNrOfChars(29));
             expect(description.hasError('minlength')).toBe(true);
+            expect(description.valid).toBe(false);
 
             description.setValue(getNrOfChars(30));
             expect(description.hasError('minlength')).toBe(false);
+            expect(description.valid).toBe(true);
         });
 
         it('also has a max length validation', () => {
             description.setValue(getNrOfChars(500));
             expect(description.hasError('maxlength')).toBe(false);
+            expect(description.valid).toBe(true);
         });
 
         it('also has a max length validation', () => {
             description.setValue(getNrOfChars(501));
             expect(description.hasError('maxlength')).toBe(true);
+            expect(description.valid).toBe(false);
         });
     });
 
