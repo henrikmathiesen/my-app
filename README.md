@@ -3,7 +3,14 @@
 Exploring Angular  
 https://henrikmathiesen.github.io/my-app
 
+## Update
+
+https://update.angular.io/  
+But bump up the version numbers yourself and npm install...  
+Also remember language-service
+
 ## Following along
+
 https://angular.io/guide/quickstart  
 https://angular.io/tutorial  
 https://cli.angular.io/  
