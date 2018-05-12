@@ -94,6 +94,16 @@ describe('dashboard.component', () => {
         // beforeEach(inject([Router], (_router: Router) => {
         // }));
 
+        // OR like this
+        // let stegCurrentService: StegCurrentService;
+        // beforeEach(inject([
+        //     StegCurrentService
+        //   ], (
+        //     stegCurrentSrvc: StegCurrentService
+        //   ) => {
+        //       stegCurrentService = stegCurrentSrvc;
+        //     }));
+
 
         it('starts with no heroes in view model and no heroes rendered in DOM', () => {
             expect(instance.heroes).toBeFalsy();
