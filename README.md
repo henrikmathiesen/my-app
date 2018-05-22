@@ -9,6 +9,10 @@ https://update.angular.io/
 But bump up the version numbers yourself and npm install...  
 Also remember language-service
 
+## What --prod flag does
+
+https://angular.io/guide/deployment
+
 ## Following along
 
 https://angular.io/guide/quickstart  
