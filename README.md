@@ -13,6 +13,10 @@ Also remember language-service
 
 https://angular.io/guide/deployment
 
+## Immutability
+
+https://vsavkin.com/immutability-vs-encapsulation-90549ab74487
+
 ## Following along
 
 https://angular.io/guide/quickstart  
