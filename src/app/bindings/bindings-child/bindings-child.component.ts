@@ -48,7 +48,17 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     ngOnChanges(changes: ISimpleChanges) {
-        // We can listen for changes in @Inputs an act on them like this
+        /* 
+            We can listen for changes in @Inputs an act on them like this
+            OBS:
+            "Angular only calls the hook when the value of the input property changes. 
+            The value of the hero property is the reference to the hero object. 
+            Angular doesn't care that the hero's own name property changed. 
+            The hero object reference didn't change so, from Angular's perspective, there is no change to report!
+            - https://angular.io/guide/lifecycle-hooks#onchanges
+            - https://vsavkin.com/immutability-vs-encapsulation-90549ab74487
+        */
+
         if (changes.post) {
             console.log('changes.post', changes.post);
         }
