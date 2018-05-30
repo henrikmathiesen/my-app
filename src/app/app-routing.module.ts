@@ -15,6 +15,7 @@ import { RxJsComponent } from './rxjs/rxjs.component';
 import { PagingComponent } from './paging/paging.component';
 import { EcaihbceComponent } from './ecaihbce/ecaihbce.component';
 import { UnitTestShallowParentComponent } from './unit-test-shallow-parent/unit-test-shallow-parent.component';
+import { SomePipesComponent } from './some-pipes/some-pipes.component';
 
 const routes: Routes = [
     {
@@ -82,6 +83,10 @@ const routes: Routes = [
         // - provide the service in a module
         // - https://angular.io/api/router/CanDeactivate
     },
+    {
+        path: 'some-pipes',
+        component: SomePipesComponent
+    }
 ];
 
 const routerConfig = RouterModule.forRoot(routes, {

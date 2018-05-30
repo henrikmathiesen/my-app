@@ -38,6 +38,7 @@ import { RxJsComponent } from './rxjs/rxjs.component';
 import { PagingComponent } from './paging/paging.component';
 import { EcaihbceComponent } from './ecaihbce/ecaihbce.component';
 import { EcaihbceChildComponent } from './ecaihbce/ecaihbce-child/ecaihbce-child.component';
+import { SomePipesComponent } from './some-pipes/some-pipes.component';
 
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
@@ -47,7 +48,6 @@ import { ConstantsApiService } from './shared/constants-api.service';
 
 import { UnitTestShallowParentService } from './unit-test-shallow-parent/unit-test-shallow-parent.service';
 import { UnitTestShallowChildService } from './unit-test-shallow-parent/unit-test-shallow-child/unit-test-shallow-child.service';
-
 
 @NgModule({
   // Modules (we can use functionality from them in this module)
@@ -89,7 +89,8 @@ import { UnitTestShallowChildService } from './unit-test-shallow-parent/unit-tes
     EcaihbceChildComponent,
     HeroFormValidationDirective,
     UnitTestShallowParentComponent,
-    UnitTestShallowChildComponent
+    UnitTestShallowChildComponent,
+    SomePipesComponent
   ],
   // Services (Module wide, can also import in a Component, the provider provides an instance)
   // If we need the service in many components we put it here, instead of local providers in @Component (for local provider: remember that multiple instances of the component will ge a different service instances)
