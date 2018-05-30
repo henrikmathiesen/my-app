@@ -1,3 +1,28 @@
+<h2>Some Pipes</h2>
 <p>
-  some-pipes works!
+  <a href="https://angular.io/guide/pipes">Angular has built in pipes.</a>
+  They are case sensitive.
+</p>
+
+<h3>json Pipe Example</h3>
+<p>
+  Useful for debugging
+</p>
+<h4>Without pipe</h4>
+<p>
+  {{ obj }}
+</p>
+<h4>With pipe</h4>
+<p>
+  {{ obj | json }}
+</p>
+
+<h3>Date Pipe Example</h3>
+<h4>Without pipe</h4>
+<p>
+  {{ vacation }}
+</p>
+<h4>With pipe</h4>
+<p>
+  {{ vacation | date : 'yyyy-MM-dd' }}
 </p>
