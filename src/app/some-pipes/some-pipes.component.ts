@@ -10,7 +10,7 @@ export class SomePipesComponent implements OnInit {
   constructor() { }
 
   obj: Object = {foo: 'bar', baz: 'qux', nested: {xyz: 3, numbers: [1, 2, 3, 4, 5]}};
-  vacation = new Date('2018-07-01');
+  vacation = new Date('2018-07-01T06:00:00+00:00');
 
   ngOnInit() {
   }

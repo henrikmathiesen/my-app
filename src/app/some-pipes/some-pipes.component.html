@@ -4,6 +4,12 @@
   They are case sensitive.
 </p>
 
+<h3>Parameterizing a pipe</h3>
+<p>
+  A pipe can accept any number of optional parameters. To add parameters to a pipe, follow the pipe name with a colon and then the parameter value (such as currency:'EUR'). 
+  If the pipe accepts multiple parameters, separate the values with colons (such as slice:1:5)
+</p>
+
 <h3>json Pipe Example</h3>
 <p>
   Useful for debugging
@@ -24,5 +30,5 @@
 </p>
 <h4>With pipe</h4>
 <p>
-  {{ vacation | date : 'yyyy-MM-dd' }}
+  {{ vacation | date : 'yyyy-MM-dd, h:mm' }}
 </p>
