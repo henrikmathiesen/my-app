@@ -4,11 +4,24 @@
   They are case sensitive.
 </p>
 
+<h3>Pipes are pure by default</h3>
+<p>
+  They only run when a value type is changed or a reference is changed. But not when mutating state.
+  <a href="https://angular.io/guide/pipes#pure-and-impure-pipes">Pure and impure pipes</a>
+</p>
+
 <h3>Parameterizing a pipe</h3>
 <p>
   A pipe can accept any number of optional parameters. To add parameters to a pipe, follow the pipe name with a colon and then the parameter value (such as currency:'EUR'). 
   If the pipe accepts multiple parameters, separate the values with colons (such as slice:1:5)
 </p>
+
+<h3>Using pipe (built in and custom) from code behind</h3>
+<p>
+  See some-pipes.component.ts, need to provide them (app.module.ts)
+</p>
+
+<hr>
 
 <h3>json Pipe Example</h3>
 <p>
@@ -41,7 +54,7 @@
   {{ someDate | date: 'yyyy-MM-dd, h:mm' }}
 </p>
 
-<h3>Custom Pipe</h3>
+<h3>Custom Pipe (need to declare it, see app.module.ts)</h3>
 <p>
   {{ 'Lorem ipsum dolores es sitamet' | truncateWords : 3 }}
 </p>

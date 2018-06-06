@@ -12,8 +12,6 @@ export class TruncateWordsPipe implements PipeTransform {
 
         words = words.slice(0, cap);
 
-        console.log(words);
-
         words[cap - 1] = words[cap - 1]
 			.replace('.', '')
 			.replace(',', '')

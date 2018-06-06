@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { UpperCasePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';                              // 1 module for Template Driven Form and 1 for Reactive Form
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -117,7 +118,10 @@ import { UnitTestShallowChildService } from './unit-test-shallow-parent/unit-tes
     ConstantsApiService,
 
     UnitTestShallowParentService,
-    UnitTestShallowChildService
+    UnitTestShallowChildService,
+
+    TruncateWordsPipe,
+    UpperCasePipe
   ],
   exports: [
 
