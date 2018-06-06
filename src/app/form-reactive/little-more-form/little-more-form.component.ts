@@ -69,7 +69,7 @@ export class LittleMoreFormComponent implements OnInit, IModel {
     // Can use either of these
     // return !this.littleMoreForm.controls[name].valid && this.littleMoreForm.controls[name].touched;
     
-    // touched works as blur
+    // touched works as blur, except it stays touched, so second time the user breaks validation rules it is dynamic
     return !this.littleMoreForm.get(formControlName).valid && this.littleMoreForm.get(formControlName).touched;
   }
 
