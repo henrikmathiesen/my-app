@@ -76,6 +76,8 @@ const routes: Routes = [
         // - the interface method gets a route: ActivatedRouteSnapshot as first argument
         // - provide the service in a module
         // - https://angular.io/api/router/CanActivate
+        //
+        // See also: https://angular.io/api/router/CanActivateChild
 
         // canDeactivate: [OurRouteLeaveGuardService]
         // - make a service that implements import { CanDeactivate } from '@angular/router';
