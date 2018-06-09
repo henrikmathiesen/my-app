@@ -186,4 +186,104 @@ export class AppRoutingModule { }
                 ]
             }
 
+
+    
+    
+    
+
+    MULTIPLE ROUTER OUTLETS
+
+    // app.component.html
+
+    <h2>APP</h2>
+    <router-outlet></router-outlet>
+
+    // other.component.html
+
+    <h2>OTHER</h2>
+    <app-foo></app-foo>
+    <router-outlet></router-outlet>
+
+    
+    // app-routing.module
+
+    import { NgModule } from '@angular/core';
+    import { Routes, RouterModule } from '@angular/router';
+
+    import {
+        PathMatchConstant,
+        RouteDataModel
+    } from './models';
+
+    import { StegEnum } from './steg/models';
+
+    import {
+        AComponent,
+        BComponent,
+        CComponent,
+        DComponent
+    } from './steg';
+
+    import { SubmitConfirmationComponent } from './submit-confirmation/submit-confirmation.component';
+
+    import {
+        StegRouteActivatorService
+    } from './services';
+
+    const routes: Routes = [
+        {
+            path: '',
+            redirectTo: '/steg1',
+            pathMatch: PathMatchConstant.full
+        },
+        {
+            path: '',
+            canActivateChild: [StegRouteActivatorService],
+            component: AComponent,                            <---------- GOES INTO FIRST ROUTER OUTLET
+            children: [                                       <---------- THESE CHILDREN GO INTO SECOND ROUTER OUTLET
+                {
+                    path: 'steg1',
+                    component: BComponent
+                },
+                {
+                    path: 'steg2',
+                    component: CComponent,
+                    data: <RouteDataModel>{
+                        requiresValidSteg: [
+                            StegEnum.steg1
+                        ]
+                    }
+                },
+                {
+                    path: 'steg3',
+                    component: DComponent,
+                    data: <RouteDataModel>{
+                        requiresValidSteg: [
+                            StegEnum.steg1,
+                            StegEnum.steg2
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            path: 'bekraftelse',                                  <---------- GOES INTO FIRST ROUTER OUTLET
+            component: SubmitConfirmationComponent
+        },
+        {
+            path: '**',
+            redirectTo: '/steg1'
+        }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { useHash: true })
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class AppRoutingModule { }
+
 */
