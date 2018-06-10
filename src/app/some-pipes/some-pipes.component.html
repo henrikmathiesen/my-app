@@ -59,7 +59,14 @@
   {{ 'Lorem ipsum dolores es sitamet' | truncateWords : 3 }}
 </p>
 
+<hr>
+
 <h3>Currency</h3>
+<p>
+  {{ salary | currency : 'kr ' : '' : '1.0-0' }}
+</p>
+
+<h3>Currency (hacking)</h3>
 <p>
   {{ salary | currency: ' ' : '' : '1.0' }}
 </p>

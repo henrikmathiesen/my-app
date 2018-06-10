@@ -1,6 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { UpperCasePipe } from '@angular/common';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { registerLocaleData, UpperCasePipe } from '@angular/common';
+
+// https://github.com/angular/angular/tree/master/packages/common/locales
+import localeSv from '@angular/common/locales/sv';                                              // ng serve --locale=sv if using JIT compiler , dont need to if using AOT
+registerLocaleData(localeSv, 'sv');                                                             // <-- , see also providers
+
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';                              // 1 module for Template Driven Form and 1 for Reactive Form
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -111,6 +117,7 @@ import { UnitTestShallowChildService } from './unit-test-shallow-parent/unit-tes
   //    - the rest seams to be seperated among modules
   //      - For example, if app.module imports RouterModule and core.module, that does NOT mean that core.module will have access to router directives -- core.module HAS TO import RouterModule as well
   providers: [
+    { provide: LOCALE_ID, useValue: 'sv' },
     HeroService,
     ErrorService,
     DataSharingMediatorService,
