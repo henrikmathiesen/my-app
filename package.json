@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --locale=sv",
     "start:henry": "ng serve --env=henry",
     "build:aot": "ng build --aot",
     "build:prod": "ng build --prod",

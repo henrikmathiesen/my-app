@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
-import { registerLocaleData, UpperCasePipe } from '@angular/common';
+import { registerLocaleData, CurrencyPipe, UpperCasePipe } from '@angular/common';
 
 // https://github.com/angular/angular/tree/master/packages/common/locales
-import localeSv from '@angular/common/locales/sv';                                              // ng serve --locale=sv if using JIT compiler , dont need to if using AOT
+import localeSv from '@angular/common/locales/sv';                                              // ng serve --locale=sv if using JIT compiler , dont need to if using AOT , for unit testing see test.ts and sv-currency-no-decimals.pipe.spec
 registerLocaleData(localeSv, 'sv');                                                             // <-- , see also providers
-
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';                              // 1 module for Template Driven Form and 1 for Reactive Form
 import { HttpClientModule } from '@angular/common/http';
@@ -47,6 +46,7 @@ import { EcaihbceComponent } from './ecaihbce/ecaihbce.component';
 import { EcaihbceChildComponent } from './ecaihbce/ecaihbce-child/ecaihbce-child.component';
 import { SomePipesComponent } from './some-pipes/some-pipes.component';
 import { TruncateWordsPipe } from './some-pipes/truncate-words.pipe';
+import { SvCurrencyNoDecimals } from './some-pipes/sv-currency-no-decimals.pipe';
 
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
@@ -99,7 +99,8 @@ import { UnitTestShallowChildService } from './unit-test-shallow-parent/unit-tes
     UnitTestShallowParentComponent,
     UnitTestShallowChildComponent,
     SomePipesComponent,
-    TruncateWordsPipe
+    TruncateWordsPipe,
+    SvCurrencyNoDecimals
   ],
   // Services (Module wide, can also import in a Component, the provider provides an instance)
   // If we need the service in many components we put it here, instead of local providers in @Component (for local provider: remember that multiple instances of the component will ge a different service instances)
@@ -127,6 +128,7 @@ import { UnitTestShallowChildService } from './unit-test-shallow-parent/unit-tes
     UnitTestShallowParentService,
     UnitTestShallowChildService,
 
+    CurrencyPipe,
     TruncateWordsPipe,
     UpperCasePipe
   ],
