@@ -56,16 +56,20 @@ export class SomePipesComponent implements OnInit {
     const na = '123 45 678';
     const naParsed = parseNumber(na, se);
 
+    const mobile = '070 123 45 67';
+    const mobileParsed = parseNumber(mobile, se);
+
     // It needs country code as parameter or as prefix on the phone string
     // else it can not decide which country the phone belongs to
 
-    console.log(sthlm01Parsed, sthlm02Parsed, sthlm03Parsed, sthlm04Parsed, naParsed);
+    console.log(sthlm01Parsed, sthlm02Parsed, sthlm03Parsed, sthlm04Parsed, naParsed, mobileParsed);
 
     const sthlm01Formated = formatNumber(sthlm01Parsed, international);
     const sthlm02Formated = formatNumber(sthlm02Parsed, international);
     const sthlm03Formated = formatNumber(sthlm03Parsed, international);
     const sthlm04Formated = formatNumber(sthlm04Parsed, international);
     const naFormated = formatNumber(naParsed, international);
+    const mobileFormated = formatNumber(mobileParsed, international);
 
     // It seems SE is not valid as second argument. We use International.
 
@@ -75,6 +79,7 @@ export class SomePipesComponent implements OnInit {
         ${sthlm03Formated}
         ${sthlm04Formated}
         ${naFormated}
+        ${mobileFormated}
       `);
 
   }
