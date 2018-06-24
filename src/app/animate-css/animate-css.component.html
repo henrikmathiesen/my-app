@@ -8,4 +8,8 @@
     <p>
         Both ways will make the file part of the CLI build, so the style will be minified.
     </p>
+    <div class="animated" [ngClass]="{'rubberBand': triggerAnimation}">
+        <h3>Animation</h3>
+    </div>
+    <button class="my-link-text" (click)="onTriggerAnimation()">Trigger animation</button>
 </div>
