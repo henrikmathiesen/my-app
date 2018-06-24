@@ -3,10 +3,14 @@
     I just want to test the different ways to include a non sass file into the project, from a CDN.
     We use bootstrap as an example.
 </p>
+<h3>We can do one of the following</h3>
 <ul>
     <li>Include it in index.html</li>
-    <li>Import it in app.scss (url('')) is needed</li>
+    <li>Import it in app.scss, url('') is needed</li>
 </ul>
+<p>
+    Remember to use the minified version, since it is not part of CLI build.
+</p>
 <div class="container">
     <div class="row">
         <div class="col-md-6">COL 1</div>

@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "my",
       "styles": [
+        "../node_modules/animate.css/animate.css",
         "./sass/app.scss"
       ],
       "stylePreprocessorOptions":{
