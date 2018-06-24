@@ -7,7 +7,7 @@ describe('sv-currency-no-decimals.pipe', () => {
 
     let svCurrencyNoDecimals: SvCurrencyNoDecimals;
     let currencyPipe: CurrencyPipe;
-    let nbs = '\xa0';
+    const nbs = '\xa0';
 
     beforeEach(() => {
         TestBed.configureTestingModule({
