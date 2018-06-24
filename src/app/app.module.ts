@@ -1,3 +1,5 @@
+// Yes, this file is messy ...
+
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { registerLocaleData, CurrencyPipe, UpperCasePipe } from '@angular/common';
@@ -29,6 +31,8 @@ import { DataSharingSibblingComponent } from './data-sharing-sibbling/data-shari
 
 import { UnitTestShallowParentComponent } from './unit-test-shallow-parent/unit-test-shallow-parent.component';
 import { UnitTestShallowChildComponent } from './unit-test-shallow-parent/unit-test-shallow-child/unit-test-shallow-child.component';
+
+import { IncludeBootstrapComponent } from './include-bootstrap/include-bootstrap.component';
 
 import { FormTemplateDrivenComponent, HeroFormComponent, HeroFormDescriptionComponent, HeroFormValidationDirective } from './form-template-driven';
 import {
@@ -100,7 +104,8 @@ import { UnitTestShallowChildService } from './unit-test-shallow-parent/unit-tes
     UnitTestShallowChildComponent,
     SomePipesComponent,
     TruncateWordsPipe,
-    SvCurrencyNoDecimals
+    SvCurrencyNoDecimals,
+    IncludeBootstrapComponent
   ],
   // Services (Module wide, can also import in a Component, the provider provides an instance)
   // If we need the service in many components we put it here, instead of local providers in @Component (for local provider: remember that multiple instances of the component will ge a different service instances)
