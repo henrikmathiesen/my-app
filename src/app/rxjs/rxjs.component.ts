@@ -78,10 +78,11 @@ export class RxJsComponent implements OnInit, OnDestroy {
             .map((event: MouseEvent) => event.clientX)
             // Subscription
             .subscribe(
-            // Observer next, error, complete (might not be called for some Observables)
-            (coordinate: number) => console.log('clicked', coordinate),
-            (error) => { },
-            () => { });
+                // Observer next, error, complete (might not be called for some Observables)
+                (coordinate: number) => console.log('clicked', coordinate),
+                (error) => { },
+                () => { }
+            );
 
         // We can also do it like this
 
