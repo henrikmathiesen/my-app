@@ -40,6 +40,12 @@ export class HeroFormComponent {
     //     //this.heroForm.addFormGroup(this.userAccountFormGroup);
     // }
 
+    ngOnInit() {
+        this.heroForm.valueChanges.subscribe((v) => { 
+            console.log(v);
+        });
+    }
+
     onSubmit() {
         // We make a copy, because clearNullFields() will clear properties on model before console.log() prints
         const postModel = Object.assign({}, this.model);
@@ -96,7 +102,7 @@ export class HeroFormComponent {
         }
     }
 
-    logForm(){
+    logForm() {
         console.log('==== FORM ====');
         console.log(this.heroForm);
         console.log(this.model);
