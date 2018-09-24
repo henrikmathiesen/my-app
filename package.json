@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "comment": "locale parameter bellow should really be for aot compiling instead ...",
     "start": "ng serve --locale=sv",
     "start:henry": "ng serve --env=henry",
     "build:aot": "ng build --aot",
