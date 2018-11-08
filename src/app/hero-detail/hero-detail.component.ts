@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
-import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/switchMap';                   // See hero-form-validation.directive for info on RXJS 5.5 imports
 
 import { Hero } from '../shared/models/hero';
 import { HeroService } from '../shared/hero.service';

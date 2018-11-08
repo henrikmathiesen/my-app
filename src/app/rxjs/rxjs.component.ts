@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 // DONT IMPORT EVERYTHING, IT WILL EFFECT BUNDLE SIZE
 // import {Observable} from 'rxjs/Rx';
 
-// Instead, import what you need
+// Instead, import what you need                                        // See hero-form-validation.directive for info on RXJS 5.5 imports
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import { Subject } from 'rxjs/Subject';
