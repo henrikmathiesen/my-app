@@ -52,6 +52,8 @@ import { EcaihbceChildComponent } from './ecaihbce/ecaihbce-child/ecaihbce-child
 import { SomePipesComponent } from './some-pipes/some-pipes.component';
 import { TruncateWordsPipe } from './some-pipes/truncate-words.pipe';
 import { SvCurrencyNoDecimals } from './some-pipes/sv-currency-no-decimals.pipe';
+import { DateObjToNgbDatePipe } from './some-pipes/date-obj-to-ngb-date.pipe';
+import { NgbDateToDateObjPipe } from './some-pipes/ngb-date-to-date-obj.pipe';
 
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
@@ -106,6 +108,8 @@ import { UnitTestShallowChildService } from './unit-test-shallow-parent/unit-tes
     SomePipesComponent,
     TruncateWordsPipe,
     SvCurrencyNoDecimals,
+    DateObjToNgbDatePipe,
+    NgbDateToDateObjPipe,
     IncludeBootstrapComponent,
     AnimateCss
   ],
