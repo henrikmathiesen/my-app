@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "comment-1": "locale parameter bellow should really be for aot compiling instead, but it wont hurt here, althoug for JIT we need code in app.module etc (see comments there)",
-    "comment-2": "in newer versions of Angular use projects > name > architect > build > configurations > 'i18nLocale': 'sv', in angular.json (double quotes, might also need it in test entry) for sv culture with aot (wont work with jit)",
+    "comment-2": "in newer versions of Angular use projects > name > architect > build > configurations > production > 'i18nLocale': 'sv', in angular.json (double quotes, might also need it in test entry) for sv culture with aot (wont work with jit)",
     "start": "ng serve --locale=sv",
     "start:henry": "ng serve --env=henry",
     "build:aot": "ng build --aot",
