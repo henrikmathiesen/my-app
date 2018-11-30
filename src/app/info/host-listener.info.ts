@@ -30,6 +30,7 @@
         static readonly documentClick = 'document:click';
         static readonly documentKeyup = 'document:keyup';
         static readonly escape = 'Escape';
+        static readonly esc = 'Esc';
     }
 
 */
