@@ -15,6 +15,10 @@ export class PostsService {
         private constantsApiService: ConstantsApiService
     ) { }
 
+    // If we do not reject the promise in the catch block (done by another service) the then function will run
+    // If we instead had a second function to then, it would have been called
+    // This is the same pattern as RXJS: https://blog.angular-university.io/rxjs-error-handling/
+
     getPosts(): Promise<IPost[]> {
         return this.http.get(this.constantsApiService.getJsonPlaceHolderUrl())
             .toPromise()
