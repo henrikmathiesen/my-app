@@ -18,6 +18,7 @@ export class PostsService {
     // catch() will handle error in the promise but also an error in the .then() block, https://javascript.info/task/then-vs-catch
     // If we do not reject promise in catch() (via service), then the then function of bindings.component will run
     // This works the same as $q in Angular 1 (see your-todos-nobe)
+    // Side note: If we are not doing anything with the data here, just returning it, we can skip the .then() here
 
     getPosts(): Promise<IPost[]> {
         return this.http.get(this.constantsApiService.getJsonPlaceHolderUrl())
