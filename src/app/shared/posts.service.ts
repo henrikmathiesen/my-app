@@ -15,9 +15,9 @@ export class PostsService {
         private constantsApiService: ConstantsApiService
     ) { }
 
-    // If we do not reject the promise in the catch block (done by another service) the then function will run
-    // If we instead had a second function to then, it would have been called
-    // This is the same pattern as RXJS: https://blog.angular-university.io/rxjs-error-handling/
+    // catch() will handle error in the promise but also an error in the .then() block, https://javascript.info/task/then-vs-catch
+    // If we do not reject promise in catch() (via service), then the then function of bindings.component will run
+    // This works the same as $q in Angular 1 (see your-todos-nobe)
 
     getPosts(): Promise<IPost[]> {
         return this.http.get(this.constantsApiService.getJsonPlaceHolderUrl())
