@@ -7,6 +7,17 @@
             </div>
             <label for="name">Name (required)</label>
             <input type="text" id="name" name="name" [(ngModel)]="model.name" required>
+            <!--
+
+                <input [(ngModel)]="user.name">
+                <input [ngModel]="user.name"` (ngModelChange)="user.name = $event">
+
+                "The [(ngModel)] syntax is sugar syntax for masking the (ngModelChange)"
+                https://toddmotto.com/angular-2-forms-template-driven
+
+                (ngModelChange)="funk()" // use it to listen to checkbox clicks...
+
+            -->
         </div>
         <div class="cell medium-6">
             <label for="alter-ego">Alter Ego</label>
