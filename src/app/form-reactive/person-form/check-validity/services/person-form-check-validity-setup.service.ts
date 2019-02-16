@@ -8,7 +8,7 @@ export class PersonFormCheckValiditySetupService {
 
     constructor(
         private personFormConstantsService: PersonFormConstantsService,
-        private PersonFormAddressConstantsService: PersonFormAddressConstantsService
+        private personFormAddressConstantsService: PersonFormAddressConstantsService
     ) { }
 
     setupSelectableControls(): Array<PersonFormCheckValiditySelectableControlModel> {
@@ -28,18 +28,18 @@ export class PersonFormCheckValiditySetupService {
         nickName.label = 'Nickname';
 
         const street = new PersonFormCheckValiditySelectableControlModel();
-        street.formControlName = this.PersonFormAddressConstantsService.getFormControlNames().street;
-        street.formGroupName = this.PersonFormAddressConstantsService.getFormControlNames().address;
+        street.formControlName = this.personFormAddressConstantsService.getFormControlNames().street;
+        street.formGroupName = this.personFormAddressConstantsService.getFormControlNames().address;
         street.label = 'Street';
 
         const postalCode = new PersonFormCheckValiditySelectableControlModel();
-        postalCode.formControlName = this.PersonFormAddressConstantsService.getFormControlNames().postalCode;
-        postalCode.formGroupName = this.PersonFormAddressConstantsService.getFormControlNames().address;
+        postalCode.formControlName = this.personFormAddressConstantsService.getFormControlNames().postalCode;
+        postalCode.formGroupName = this.personFormAddressConstantsService.getFormControlNames().address;
         postalCode.label = 'Postal Code';
 
         const city = new PersonFormCheckValiditySelectableControlModel();
-        city.formControlName = this.PersonFormAddressConstantsService.getFormControlNames().city;
-        city.formGroupName = this.PersonFormAddressConstantsService.getFormControlNames().address;
+        city.formControlName = this.personFormAddressConstantsService.getFormControlNames().city;
+        city.formGroupName = this.personFormAddressConstantsService.getFormControlNames().address;
         city.label = 'City';
 
         const controls = new Array<PersonFormCheckValiditySelectableControlModel>();

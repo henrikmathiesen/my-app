@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UpperCasePipe } from '@angular/common';
+// import { UpperCasePipe } from '@angular/common';
 import { parseNumber, formatNumber } from 'libphonenumber-js';
-import { TruncateWordsPipe } from './truncate-words.pipe';
+// import { TruncateWordsPipe } from './truncate-words.pipe';
 
 @Component({
   selector: 'my-some-pipes',
@@ -10,8 +10,8 @@ import { TruncateWordsPipe } from './truncate-words.pipe';
 export class SomePipesComponent implements OnInit {
 
   constructor(
-    private upperCasePipe: UpperCasePipe,
-    private truncateWordsPipe: TruncateWordsPipe
+    // private upperCasePipe: UpperCasePipe,
+    // private truncateWordsPipe: TruncateWordsPipe
   ) { }
 
   obj: Object = { foo: 'bar', baz: 'qux', nested: { xyz: 3, numbers: [1, 2, 3, 4, 5] } };
@@ -25,17 +25,17 @@ export class SomePipesComponent implements OnInit {
     this.formatPhones();
   }
 
-  private truncateWords() {
-    let words = 'Lorem ipsum dolores es sitamet';
-    words = this.truncateWordsPipe.transform(words, 3);
-    console.log(words);
-  }
+  // private truncateWords() {
+  //   let words = 'Lorem ipsum dolores es sitamet';
+  //   words = this.truncateWordsPipe.transform(words, 3);
+  //   console.log(words);
+  // }
 
-  private uppercaseWords() {
-    let words = 'Lorem ipsum';
-    words = this.upperCasePipe.transform(words);
-    console.log(words);
-  }
+  // private uppercaseWords() {
+  //   let words = 'Lorem ipsum';
+  //   words = this.upperCasePipe.transform(words);
+  //   console.log(words);
+  // }
 
   private formatPhones() {
     const se = 'SE';

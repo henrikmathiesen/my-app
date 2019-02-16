@@ -6,7 +6,7 @@ export class SvCurrencyNoDecimals implements PipeTransform {
 
     constructor(
         private currencyPipe: CurrencyPipe
-    ){}
+    ) { }
 
     transform(value: number) {
         if (!value) {

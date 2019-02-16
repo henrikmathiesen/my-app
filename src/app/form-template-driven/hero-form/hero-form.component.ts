@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { NgForm, NgModelGroup, FormControl } from '@angular/forms';
 import { OrderHero } from '../models/order-hero';
 import { HeroFormConstant } from './models/hero-form.constant';
@@ -13,7 +13,7 @@ import { HeroFormSetupService } from './services/hero-form-setup.service';
         HeroFormSetupService
     ]
 })
-export class HeroFormComponent {
+export class HeroFormComponent implements OnInit {
     @ViewChild('heroForm') heroForm: NgForm;
     @ViewChild('userAccountFormGroup') userAccountFormGroup: NgModelGroup;
     @ViewChild('userAccountFormGroupEmailFormControl') userAccountFormGroupEmailFormControl: FormControl;   // Can get to a form control directly (see template also)
@@ -37,11 +37,11 @@ export class HeroFormComponent {
 
     // ngOnInit() {
     //     // Not needed since the formGroup is not in a sub component
-    //     //this.heroForm.addFormGroup(this.userAccountFormGroup);
+    //     // this.heroForm.addFormGroup(this.userAccountFormGroup);
     // }
 
     ngOnInit() {
-        this.heroForm.valueChanges.subscribe((v) => { 
+        this.heroForm.valueChanges.subscribe((v) => {
             console.log(v);
         });
     }
@@ -112,13 +112,13 @@ export class HeroFormComponent {
         );
         console.log('==== /FORM ====');
 
-        //console.log('==== VALIDS ====');
-        //console.log(this.heroForm.controls['name'].valid);
-        //console.log(this.heroForm.getFormGroup(this.userAccountFormGroup).controls['email'].valid);
-        //console.log(this.heroForm.getFormGroup(this.userAccountFormGroup).controls['confirmEmail'].valid);
-        //console.log(this.heroForm.getFormGroup(this.userAccountFormGroup).valid);
-        //console.log(this.heroForm.controls['description'].valid);
-        //console.log('==== /VALIDS ====');
+        // console.log('==== VALIDS ====');
+        // console.log(this.heroForm.controls['name'].valid);
+        // console.log(this.heroForm.getFormGroup(this.userAccountFormGroup).controls['email'].valid);
+        // console.log(this.heroForm.getFormGroup(this.userAccountFormGroup).controls['confirmEmail'].valid);
+        // console.log(this.heroForm.getFormGroup(this.userAccountFormGroup).valid);
+        // console.log(this.heroForm.controls['description'].valid);
+        // console.log('==== /VALIDS ====');
     }
 
     private clearNullFields() {

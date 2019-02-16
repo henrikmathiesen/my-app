@@ -1,9 +1,9 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';                                           // B1
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';        // NO_ERRORS_SCHEMA                                     // B1
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UnitTestShallowParentService } from './unit-test-shallow-parent.service';
 import { UnitTestShallowParentComponent } from './unit-test-shallow-parent.component';
-import { UnitTestShallowChildComponent } from './unit-test-shallow-child/unit-test-shallow-child.component';        // A1
+// import { UnitTestShallowChildComponent } from './unit-test-shallow-child/unit-test-shallow-child.component';        // A1
 
 describe('UnitTestShallowParentComponent', () => {
   let component: UnitTestShallowParentComponent;
@@ -25,9 +25,9 @@ describe('UnitTestShallowParentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
+      declarations: [
         UnitTestShallowParentComponent,
-        //UnitTestShallowChildComponent                                                                             // A2
+        // UnitTestShallowChildComponent                                                                            // A2
       ],
       schemas: [                                                                                                    // B2
         CUSTOM_ELEMENTS_SCHEMA
@@ -36,7 +36,7 @@ describe('UnitTestShallowParentComponent', () => {
         UnitTestShallowParentService                                                                                // C1
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

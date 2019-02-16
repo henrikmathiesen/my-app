@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 // https://angular.io/guide/structural-directives#ng-container-to-the-rescue
 
 /*

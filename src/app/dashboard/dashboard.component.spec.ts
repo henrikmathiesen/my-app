@@ -1,11 +1,11 @@
-import { Directive, Input } from '@angular/core';
-import { ComponentFixture, TestBed, fakeAsync, tick, inject } from '@angular/core/testing';
+// import { Directive, Input } from '@angular/core';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing'; // inject
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 
 import { Hero } from '../shared/models/hero';
 import { DashboardComponent } from './dashboard.component';
-import { AppModule } from '../app.module';
+// import { AppModule } from '../app.module';
 import { HeroService } from '../shared/hero.service';
 
 class DummyComponent { }

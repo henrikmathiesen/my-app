@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 /*
 
 // https://medium.com/@aleixsuau/error-handling-angular-859d529fa53a

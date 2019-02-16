@@ -40,7 +40,7 @@ describe('PersonFormAddressComponent', () => {
     describe('street', () => {
         let street: AbstractControl;
 
-        beforeEach(() => { 
+        beforeEach(() => {
             street = component.personFormAddressGroup.get(['street']);
         });
 

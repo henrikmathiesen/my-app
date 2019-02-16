@@ -62,7 +62,7 @@ describe('heroes.component typed test', () => {
 
     describe('gotoDetail', () => {
 
-        beforeEach(() => { 
+        beforeEach(() => {
             spyOn(mockRouter, 'navigate').and.callThrough();
         });
 

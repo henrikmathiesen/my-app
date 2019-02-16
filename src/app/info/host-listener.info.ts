@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 /*
 
     // some.component.ts

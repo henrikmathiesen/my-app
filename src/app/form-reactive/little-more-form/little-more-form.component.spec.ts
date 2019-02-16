@@ -11,7 +11,7 @@ describe('LittleMoreFormComponent', () => {
     const getNrOfChars = (n) => {
         let chars = '';
 
-        for (var i = 0; i < n; i++) {
+        for (let i = 0; i < n; i++) {
             chars += 'A';
         }
 
@@ -140,7 +140,7 @@ describe('LittleMoreFormComponent', () => {
             expect(component.littleMoreForm.valid).toBe(false);
         });
 
-        it('gets valid', () => { 
+        it('gets valid', () => {
             name.setValue('John Doe');
             description.setValue(getNrOfChars(30));
             expect(component.littleMoreForm.valid).toBe(true);

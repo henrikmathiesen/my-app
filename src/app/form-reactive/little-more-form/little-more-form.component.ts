@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms'; // FormBuilder, Validators
 import { LittleMoreFormSetupFormService } from './services/little-more-form-setup-form.service';
 import { LittleMoreFormSupportDataService } from './services/little-more-form-support-data.service';
 import { LittleMoreFormValidateFormControlChangesService } from './services/little-more-form-validate-form-control-changes.service';
@@ -52,7 +52,7 @@ export class LittleMoreFormComponent implements OnInit, IModel {
   ngOnInit() {
     this.handleValidateFormControlChangesService.valueChanges(this.littleMoreForm, this.validationMessages);
 
-    //this.littleMoreForm.get(['name']).setValue('foo');
+    // this.littleMoreForm.get(['name']).setValue('foo');
   }
 
   onSubmit() {
@@ -68,7 +68,7 @@ export class LittleMoreFormComponent implements OnInit, IModel {
   showValidationError(formControlName: string) {
     // Can use either of these
     // return !this.littleMoreForm.controls[name].valid && this.littleMoreForm.controls[name].touched;
-    
+
     // touched works as blur, except it stays touched, so second time the user breaks validation rules it is dynamic
     return !this.littleMoreForm.get(formControlName).valid && this.littleMoreForm.get(formControlName).touched;
   }

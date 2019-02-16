@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 @Component({
     templateUrl: './animate-css.component.html',
 })
-export class AnimateCss {
+export class AnimateCssComponent {
 
     triggerAnimation = false;
 
-    onTriggerAnimation() { 
+    onTriggerAnimation() {
         this.triggerAnimation = true;
         setTimeout(() => this.triggerAnimation = false, 1000);
     }

@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 /* 
 
     https://blog.angular-university.io/rxjs-error-handling/

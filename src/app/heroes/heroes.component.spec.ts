@@ -1,7 +1,7 @@
 import { fakeAsync, tick } from '@angular/core/testing';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 import { HeroesComponent } from './heroes.component';
-import { HeroService } from '../shared/hero.service';
+// import { HeroService } from '../shared/hero.service';
 import { Hero } from '../shared/models/Hero';
 
 describe('heroes.component', () => {

@@ -17,7 +17,7 @@ import { EcaihbceComponent } from './ecaihbce/ecaihbce.component';
 import { UnitTestShallowParentComponent } from './unit-test-shallow-parent/unit-test-shallow-parent.component';
 import { SomePipesComponent } from './some-pipes/some-pipes.component';
 import { IncludeBootstrapComponent } from './include-bootstrap/include-bootstrap.component';
-import { AnimateCss } from './animate-css/animate-css.component';
+import { AnimateCssComponent } from './animate-css/animate-css.component';
 
 const routes: Routes = [
     {
@@ -97,7 +97,7 @@ const routes: Routes = [
     },
     {
         path: 'animate-css',
-        component: AnimateCss
+        component: AnimateCssComponent
     }
 ];
 
@@ -110,6 +110,9 @@ const routerConfig = RouterModule.forRoot(routes, {
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+/* tslint:disable */
 
 /*
 

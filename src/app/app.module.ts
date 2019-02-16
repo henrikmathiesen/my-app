@@ -33,7 +33,7 @@ import { UnitTestShallowParentComponent } from './unit-test-shallow-parent/unit-
 import { UnitTestShallowChildComponent } from './unit-test-shallow-parent/unit-test-shallow-child/unit-test-shallow-child.component';
 
 import { IncludeBootstrapComponent } from './include-bootstrap/include-bootstrap.component';
-import { AnimateCss } from './animate-css/animate-css.component';
+import { AnimateCssComponent } from './animate-css/animate-css.component';
 
 import { FormTemplateDrivenComponent, HeroFormComponent, HeroFormDescriptionComponent, HeroFormValidationDirective } from './form-template-driven';
 import {
@@ -113,7 +113,7 @@ import { UnitTestShallowChildService } from './unit-test-shallow-parent/unit-tes
     NgbDateToDateObjPipe,
     SvSortPipe,
     IncludeBootstrapComponent,
-    AnimateCss
+    AnimateCssComponent
   ],
   // Services (Module wide, can also import in a Component, the provider provides an instance)
   // If we need the service in many components we put it here, instead of local providers in @Component (for local provider: remember that multiple instances of the component will ge a different service instances)

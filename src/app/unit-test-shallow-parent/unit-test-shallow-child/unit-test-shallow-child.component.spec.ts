@@ -9,14 +9,14 @@ describe('UnitTestShallowChildComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
-        UnitTestShallowChildComponent 
+      declarations: [
+        UnitTestShallowChildComponent
       ],
       providers: [
         UnitTestShallowChildService
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

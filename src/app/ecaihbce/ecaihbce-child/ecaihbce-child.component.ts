@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
-import { EcaihbceComponent } from '../ecaihbce.component';
+// import { EcaihbceComponent } from '../ecaihbce.component';
 
 @Component({
     selector: 'my-ecaihbce-child',
@@ -9,7 +9,7 @@ export class EcaihbceChildComponent implements OnInit, AfterViewInit {
     @Input() text: string;
 
     constructor(
-        private ecaihbceComponent: EcaihbceComponent
+        // private ecaihbceComponent: EcaihbceComponent
     ) { }
 
     ngOnInit() {

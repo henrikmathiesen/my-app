@@ -20,21 +20,21 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
 
     testingViewChild: string;
 
-    private msg:string = 'default message';
+    private msg = 'default message';
     @Input()
     set message(msg: string) {
         console.log('changes.message', msg);
         this.msg = msg;
     }
-    get message(){
+    get message() {
         return this.msg;
     }
 
     constructor(
         // private bindingsComponent: BindingsComponent,                                // 2) We inject it here
-                                                                                        // --- WE DO NOT go any further with this since this creates circular depencies
-                                                                                        // where parent imports child and child imports parent.
-                                                                                        // We can communicate to parent via EventEmitter instead
+        // --- WE DO NOT go any further with this since this creates circular depencies
+        // where parent imports child and child imports parent.
+        // We can communicate to parent via EventEmitter instead
         private postsService: PostsService
     ) { }
 
@@ -48,12 +48,12 @@ export class BindingsChildComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     ngOnChanges(changes: ISimpleChanges) {
-        /* 
+        /*
             We can listen for changes in @Inputs an act on them like this
             OBS:
-            "Angular only calls the hook when the value of the input property changes. 
-            The value of the hero property is the reference to the hero object. 
-            Angular doesn't care that the hero's own name property changed. 
+            "Angular only calls the hook when the value of the input property changes.
+            The value of the hero property is the reference to the hero object.
+            Angular doesn't care that the hero's own name property changed.
             The hero object reference didn't change so, from Angular's perspective, there is no change to report!
             - https://angular.io/guide/lifecycle-hooks#onchanges
             - https://vsavkin.com/immutability-vs-encapsulation-90549ab74487
