@@ -1,6 +1,6 @@
 import { UniqueStringInCollectionPipe } from './unique-string-in-collection.pipe';
 
-describe('appUniqueStringInCollection', () => {
+describe('UniqueStringInCollection', () => {
 
     let pipe: UniqueStringInCollectionPipe;
 
@@ -18,7 +18,7 @@ describe('appUniqueStringInCollection', () => {
         });
 
         it('should test 2', () => {
-            const collection = ['Adam', 'Bertil', 'Ceasar', 'Adam', 'Adam', 'Bertil'];
+            const collection = ['Adam', 'Adam', 'Bertil', 'Ceasar', 'Bertil', 'Adam', 'Bertil'];
             const result = pipe.transform(collection);
 
             expect(result).toEqual(['Adam', 'Bertil', 'Ceasar']);
