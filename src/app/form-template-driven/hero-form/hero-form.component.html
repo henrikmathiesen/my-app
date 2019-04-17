@@ -15,8 +15,6 @@
                 "The [(ngModel)] syntax is sugar syntax for masking the (ngModelChange)"
                 https://toddmotto.com/angular-2-forms-template-driven
 
-                (ngModelChange)="funk()" // use it to listen to checkbox clicks...
-
             -->
         </div>
         <div class="cell medium-6">
@@ -52,6 +50,13 @@
                         <div>
                             <legend>Other Stuff</legend>
                             <div>
+                                <!--
+                                    (ngModelChange)="funk()" // use it to listen to checkbox clicks, can pass in $event or check model
+                                    
+                                    [checked]="isGodkand" (change)="isGodkand = !isGodkand" // works also
+
+                                    boolean should reflect checked status...
+                                -->
                                 <input type="checkbox" id="is-crazy" name="is-crazy" [(ngModel)]="model.isCrazy">
                                 <label for="is-crazy">Crazy?</label>
                             </div>
