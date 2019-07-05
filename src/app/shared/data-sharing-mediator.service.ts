@@ -10,4 +10,7 @@ export class DataSharingMediatorService {
     changeMessage(message: string) {
         this.messageSource.next(message);
     }
+
+    // OBS: Remember that it can be a timing issue depending on which component loads first
+    // Can complement this with a private variable for current message and a getMessage()
 }
