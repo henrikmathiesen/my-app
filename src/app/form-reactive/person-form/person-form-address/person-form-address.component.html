@@ -1,3 +1,14 @@
+<!--
+
+    For this nested formGroup to work we could also have done
+        - Set up the nested structure in the parent (instead of adding a formGroup to the parents formGroup here in the child)
+        - Send down parent formGroup (personFormGroup), as we do now
+        - But in the template bellow use
+        [formGroup]="personFormGroup" formGroupName="address"
+
+-->
+
+
 <fieldset [formGroup]="personFormAddressGroup">
     <div>
         <label for="street">Street</label>
