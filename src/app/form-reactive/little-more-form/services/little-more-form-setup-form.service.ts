@@ -20,6 +20,9 @@ export class LittleMoreFormSetupFormService {
             ])],
             'validate': [false]
         });
+
+        // Validators.compose is not necessary anymore
+        // https://stackoverflow.com/questions/42394999/why-should-i-use-validators-compose
     }
 
 }

@@ -31,5 +31,8 @@ export class PersonFormAddressSetupFormService {
             Validators.required,
             Validators.maxLength(5)
         ])];
+
+        // Validators.compose is not necessary anymore
+        // https://stackoverflow.com/questions/42394999/why-should-i-use-validators-compose
     }
 }
