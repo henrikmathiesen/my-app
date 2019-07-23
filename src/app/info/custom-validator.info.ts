@@ -2,24 +2,23 @@
 
 /*
 
-    // CUSTOM VALIDATOR
-
     // setup service with form builder
 
+    import { Validators, FormBuilder } from '@angular/forms';
     import { SomeValidator } from 'app/validators';
 
-    foo: [
-            bar.baz,
-            [
-                Validators.required,
-                Validators.pattern(ValidationConstant.something),
-                SomeValidator.validate
-            ]
+    constructor(
+        private formBuilder: FormBuilder
+    ) { }
+
+    this.formBuilder.group({
+        'name': [
+            Validators.required,
+            Validators.pattern(ValidationConstant.something),
+            SomeValidator.validate
         ]
+    });
 
-
-        
-        
     // some validator
 
     import { AbstractControl } from '@angular/forms';
@@ -28,12 +27,11 @@
 
         static validate(control: AbstractControl): { invalidFoo: boolean } { 
             if (!control || !control.value) {
+                // let other validators worry about empty values
                 return null;
             }
             
-            return bar === baz
-                ? null
-                : { invalidFoo: true };
+            return control.value === 'foo' ? null : { invalidFoo: true };
         }
 
     }
