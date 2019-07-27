@@ -56,6 +56,7 @@ import { DateObjToNgbDatePipe } from './some-pipes/date-obj-to-ngb-date.pipe';
 import { NgbDateToDateObjPipe } from './some-pipes/ngb-date-to-date-obj.pipe';
 import { SvSortPipe } from './some-pipes/sv-sort.pipe';
 import { UniqueStringInCollectionPipe } from './some-pipes/unique-string-in-collection.pipe';
+import { UniqueInObjCollectionPipe } from './some-pipes/unique-in-obj-collection.pipe';
 
 import { HeroService } from './shared/hero.service';
 import { ErrorService } from './shared/error.service';
@@ -114,6 +115,7 @@ import { UnitTestShallowChildService } from './unit-test-shallow-parent/unit-tes
     NgbDateToDateObjPipe,
     SvSortPipe,
     UniqueStringInCollectionPipe,
+    UniqueInObjCollectionPipe,
     IncludeBootstrapComponent,
     AnimateCssComponent
   ],

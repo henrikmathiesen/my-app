@@ -32,7 +32,7 @@ describe('UniqueInObjCollectionPipe', () => {
                         name: 'Adam',
                         age: 20
                     }
-                ]
+                ];
             });
 
             it('should test - 1', () => {
@@ -86,7 +86,7 @@ describe('UniqueInObjCollectionPipe', () => {
                         city: 'Gothenburg',
                         address: 'Gotgatan'
                     }
-                ]
+                ];
             });
 
             it('should test - 1', () => {

@@ -8,7 +8,7 @@ export class UniqueStringInCollectionPipe implements PipeTransform {
             return value;
         }
 
-        const onlyUnique = (value, index, self) => self.indexOf(value) === index;
+        const onlyUnique = (v, index, self) => self.indexOf(v) === index;
         return value.filter(onlyUnique);
     }
 
