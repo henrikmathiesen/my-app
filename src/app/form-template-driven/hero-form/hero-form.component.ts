@@ -44,9 +44,28 @@ export class HeroFormComponent implements OnInit {
         this.heroForm.valueChanges.subscribe((v) => {
             console.log(v);
         });
+
+        setTimeout(() => {
+
+            // If not set here in setTimeout, formControl is not defined ...
+            // Maybe there is a better hook than ngOnInit
+
+            this.heroForm.controls['power'].valueChanges.subscribe((v) => {
+                console.log(v);
+            });
+
+            // console.log('x', this.heroForm.controls['code']);
+            // console.log('y', this.heroForm.controls['power']);
+        });
+
     }
 
     onSubmit() {
+        console.log('SUBMIT');
+        console.log('FORM VALID');
+        console.log(this.heroForm.valid);
+        console.log('/FORM VALID');
+
         // We make a copy, because clearNullFields() will clear properties on model before console.log() prints
         const postModel = Object.assign({}, this.model);
         const values = Object.assign({}, this.heroForm.value);

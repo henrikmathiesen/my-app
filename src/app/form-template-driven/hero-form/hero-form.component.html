@@ -12,6 +12,8 @@
                 <input [(ngModel)]="user.name">
                 <input [ngModel]="user.name"` (ngModelChange)="user.name = $event">
 
+                These are the same ^
+
                 "The [(ngModel)] syntax is sugar syntax for masking the (ngModelChange)"
                 https://toddmotto.com/angular-2-forms-template-driven
 
@@ -27,6 +29,7 @@
             <div>
                 <label for="power">Power (required)</label>
                 <select id="power" name="power" required [(ngModel)]="model.power">
+                    <option value="">Select One</option> <!-- TODO, default it in supportData -->
                     <option *ngFor="let power of supportData.powers" [value]="power">{{power}}</option>
                 </select>
             </div>
