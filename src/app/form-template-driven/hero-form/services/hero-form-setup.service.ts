@@ -11,7 +11,7 @@ export class HeroFormSetupService {
         model.id = 5;
         model.name = 'SkyDog';
         model.code = null;
-        model.power = OrderHeroSupportData.staticPowers[Powers.SuperHot];
+        model.power = ''; // <- Set it to empty to match <option value="", OrderHeroSupportData.staticPowers[Powers.ReallySmart];
         model.foodPreference = OrderHeroSupportData.staticFoodPreferences[FoodPreferences.Pasta];
         model.description = 'Give me all you got';
         model.alterEgo = 'Terrier';

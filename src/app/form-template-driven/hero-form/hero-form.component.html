@@ -29,8 +29,9 @@
             <div>
                 <label for="power">Power (required)</label>
                 <select id="power" name="power" required [(ngModel)]="model.power">
-                    <option value="">Select One</option> <!-- TODO, default it in supportData -->
+                    <option value="">Select One</option> <!-- this option is not valid according to required, good -->
                     <option *ngFor="let power of supportData.powers" [value]="power">{{power}}</option>
+                    <!-- [value] for value types, [ngValue] for objects -->
                 </select>
             </div>
             <div>

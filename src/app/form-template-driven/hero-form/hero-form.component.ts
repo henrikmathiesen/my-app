@@ -31,6 +31,7 @@ export class HeroFormComponent implements OnInit {
             this.heroFormConstant.email
         );
         this.model = this.heroFormSetupService.setupModel();
+
         this.supportData = this.heroFormSetupService.setupSupportData();
         this.submited = false;
     }
