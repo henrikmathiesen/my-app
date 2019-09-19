@@ -23,7 +23,7 @@ export class SvSortPipe implements PipeTransform {
                 const putFirstItem = arr.filter(item => item === putFirst)[0];
                 const arrWithoutPutFirstItem = arr.filter(item => item !== putFirst);
 
-                return [putFirstItem, ...arrWithoutPutFirstItem.sort()];
+                return [putFirstItem, ...arrWithoutPutFirstItem.sort(sortFn)];
             } else {
                 return arr.sort(sortFn);
             }
