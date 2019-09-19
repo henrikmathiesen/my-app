@@ -27,11 +27,22 @@
     <div class="grid-x grid-margin-x">
         <div class="cell medium-6">
             <div>
+                <!-- 
+                    Template form: array with option as label, string array
+                    [value] for value types, [ngValue] for objects
+                    Using a Label option that comes from the bound array wont work, 
+                        - since value (needs to be empty for required validation to work) and label (needs to not be empty) would be the same
+                        - (allthough could use a custom validator)
+                    Label option is not valid according to required, good
+                    hero-form-setup.service.ts , model.power = '' , sets label option as default selected
+                    <option value="" selected *ngIf="something.length > 1">Select something</option>: 
+                        - selected attribute is another option perhaps?
+                        - *ngIf can be used to hide label option if only one choice
+                -->
                 <label for="power">Power (required)</label>
                 <select id="power" name="power" required [(ngModel)]="model.power">
-                    <option value="">Select One</option> <!-- this option is not valid according to required, good -->
+                    <option value="">Select One</option>
                     <option *ngFor="let power of supportData.powers" [value]="power">{{power}}</option>
-                    <!-- [value] for value types, [ngValue] for objects -->
                 </select>
             </div>
             <div>
