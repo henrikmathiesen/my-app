@@ -55,6 +55,10 @@ export class HeroFormComponent implements OnInit {
                 console.log(v);
             });
 
+            this.heroForm.controls['powerObject'].valueChanges.subscribe((v) => {
+                console.log(v);
+            });
+
             // console.log('x', this.heroForm.controls['code']);
             // console.log('y', this.heroForm.controls['power']);
         });

@@ -31,9 +31,9 @@
                     Template form: array with option as label, string array
                     [value] for value types, [ngValue] for objects
                     Using a Label option that comes from the bound array wont work, 
-                        - since value (needs to be empty for required validation to work) and label (needs to not be empty) would be the same
+                        - since value (needs to be empty for required validation to work) and label (needs to NOT be empty) would be the same
                         - (allthough could use a custom validator)
-                    Label option is not valid according to required, good
+                    Label option with value="" is not valid according to required, good
                     hero-form-setup.service.ts , model.power = '' , sets label option as default selected
                     <option value="" selected *ngIf="something.length > 1">Select something</option>: 
                         - selected attribute is another option perhaps?
@@ -43,6 +43,18 @@
                 <select id="power" name="power" required [(ngModel)]="model.power">
                     <option value="">Select One</option>
                     <option *ngFor="let power of supportData.powers" [value]="power">{{power}}</option>
+                </select>
+            </div>
+            <div>
+                <!--
+                    Template form: array with option as label, object array
+                    Label option with [ngValue]="null" is not valid according to required, good
+                    hero-form-setup.service.ts , model.powerObject = null , sets label option as default selected
+                -->
+                <label for="powerObject">Power Objects (required)</label>
+                <select id="powerObject" name="powerObject" required [(ngModel)]="model.powerObject">
+                    <option [ngValue]="null">Select One</option>
+                    <option *ngFor="let power of supportData.powerObjects" [ngValue]="power">{{power.name}}</option>
                 </select>
             </div>
             <div>
