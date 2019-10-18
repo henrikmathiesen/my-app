@@ -18,6 +18,7 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
 
     constructor(
         private postsService: PostsService
+        // Can also get access to this component's native DOM element by injecting it here. See hero-form-validation.directive.ts and host-listener.info.ts
     ) { }
 
     private getRandomInt(): number {
