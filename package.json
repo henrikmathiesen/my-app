@@ -15,6 +15,7 @@
     "build:prod:sm": "ng build --prod --sourcemaps=true",
     "serve:build:prod": "http-server ./dist -p 1337",
     "copy:foo": "cpx \"node_modules/foo/skins/**/*\" src/assets/vendor/foo/skins",
+    "comment-cpx":"^ cpx not installed, just example",
     "test": "ng test",
     "lint": "ng lint",
     "deploy": "npm run build:prod:gh&&gh-pages -d dist",
