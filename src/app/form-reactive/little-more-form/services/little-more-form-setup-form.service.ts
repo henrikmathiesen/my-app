@@ -13,11 +13,21 @@ export class LittleMoreFormSetupFormService {
     setup() {
         return this.formBuilder.group({
             'name': [null, Validators.required],          // [defaultValue, validators]
-            'description': [null, Validators.compose([
-                Validators.required,
-                Validators.minLength(this.littleMoreFormSupportDataService.getDescriptionLengths().minLength),
-                Validators.maxLength(this.littleMoreFormSupportDataService.getDescriptionLengths().maxLength)
-            ])],
+            // 'description': [null, Validators.compose([
+            //     Validators.required,
+            //     Validators.minLength(this.littleMoreFormSupportDataService.getDescriptionLengths().minLength),
+            //     Validators.maxLength(this.littleMoreFormSupportDataService.getDescriptionLengths().maxLength)
+            // ])],
+
+            // cleaner way to write it
+            description: [
+                '',
+                [
+                    Validators.required,
+                    Validators.minLength(this.littleMoreFormSupportDataService.getDescriptionLengths().minLength),
+                    Validators.maxLength(this.littleMoreFormSupportDataService.getDescriptionLengths().maxLength)
+                ]
+            ],
             'validate': [false]
         });
 
