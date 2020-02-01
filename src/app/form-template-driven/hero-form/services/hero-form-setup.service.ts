@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { OrderHero } from '../../models/order-hero';
-import { OrderHeroSupportData, Powers, FoodPreferences, PropertyRule } from '../../models/order-hero-support-data';
+import { OrderHeroSupportData, FoodPreferences, PropertyRule } from '../../models/order-hero-support-data';
 
 @Injectable()
 export class HeroFormSetupService {

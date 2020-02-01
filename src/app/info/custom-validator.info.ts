@@ -12,7 +12,7 @@
     ) { }
 
     this.formBuilder.group({
-        'name': [
+        name: [
             Validators.required,
             Validators.pattern(ValidationConstant.something),
             SomeValidator.validate

@@ -13,7 +13,7 @@ export class SimpleFormComponent {
         this.nameControl = new FormControl();
 
         this.simpleForm = new FormGroup({
-            'nameControl': this.nameControl
+            nameControl: this.nameControl
         });
     }
 
