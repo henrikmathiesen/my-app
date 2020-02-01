@@ -56,6 +56,9 @@
                     <option [ngValue]="null">Select One</option>
                     <option *ngFor="let power of supportData.powerObjects" [ngValue]="power">{{power.name}}</option>
                 </select>
+                <!--
+                    For reactive forms, start here: https://ultimatecourses.com/blog/angular-dynamic-components-forms#select-field
+                -->
             </div>
             <div>
                 <label for="code">Code (required, min 4 char)</label>
