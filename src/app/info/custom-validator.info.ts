@@ -43,4 +43,13 @@
 
     this.someForm.get(['groupName', 'controlName']).hasError('invalidFoo');
 
+
+
+    // NOTES
+        - Injecting into a custom validator, 2 approaches:
+            - SomeValidatorService, provide it, use bind in formBuilder
+                https://stackoverflow.com/questions/42646440/inject-custom-service-into-a-custom-validator
+            - Use a function that returns a custom validator function, execute in formBuilder and pass arguments (for example a pipe (but could be other inputs))
+                https://dzone.com/articles/how-to-create-custom-validators-in-angular
+
 */
