@@ -74,7 +74,7 @@ describe('LittleMoreFormComponent', () => {
         });
 
         it('is required and starts with no value, therefor starts invalid', () => {
-            expect(description.value).toBe(null);
+            expect(description.value).toBe('');
             expect(description.valid).toBe(false);
             expect(description.hasError('required')).toBe(true);
         });
