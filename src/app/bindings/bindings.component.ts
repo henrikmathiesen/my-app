@@ -14,6 +14,40 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
     @ViewChild(BindingsChildComponent) bindingsChild: BindingsChildComponent;                                   // 2) And access it via ViewChild
     @ViewChild('theSpan') theSpan: ElementRef;                                                                  // A) Can grab a DOM element like this
 
+    /*
+
+        https://netbasal.com/understanding-viewchildren-contentchildren-and-querylist-in-angular-896b0c689f6e
+
+        When the parameter is a component/directive the return value will be the component/directive instance.
+        When the parameter is the name of a template variable, the return value will be a reference to the native element.
+        But you can ask for other tokens.
+
+
+        If several children of same type
+            @ViewChildren(AlertComponent) alerts: QueryList<AlertComponent>
+
+        ngAfterViewInit() {
+            this.alerts.forEach(alertInstance => console.log(alertInstance));
+        }
+
+        The QueryList for ViewChildren and ViewChild component instance is available in ngAfterViewInit.
+
+
+        ViewChild(ren) vs ContentChild(ren)
+
+            - https://angular.io/api/core/ContentChild
+            - https://angular.io/api/core/ContentChildren
+
+            ViewChildren don’t include elements that exist within the ng-content tag.
+            ContentChildren includes only elements that exists within the ng-content tag.
+            (see also info/transclusion.info.ts)
+
+            The QueryList for ContentChildren and ContentChild component instance is available in ngAfterContentInit.
+            
+            https://angular.io/guide/lifecycle-hooks
+
+    */
+
     post: IPost;
 
     constructor(
