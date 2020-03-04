@@ -59,10 +59,10 @@ postSomething() {
 	.pipe(
         catchError((error) => {
             this.errorMessageService.setMessage('A specific error happened');		        // store in service, ready to communicate it to the user
-            return throwError(error);												        // stops subscribe from running, triggers handleError() in GlobalErrorHandler
-        })
-          );
-}
+            throw error; 												                    // stops subscribe success callback from running, triggers handleError() in GlobalErrorHandler
+        })                                                                                  // return throwError(error); (from rxjs) does not seam to trigger GlobalErrorHandler
+    );                                                                                      // complete callback in subscribe WILL run
+}                                                                                           // IF error callback in subscribe, need to throw error; from there else GlobalErrorHandler will not run
 			
 
 // error-message.service	
