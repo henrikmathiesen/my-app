@@ -1,6 +1,7 @@
 /* tslint:disable */
 
-// https://angular.io/guide/structural-directives#ng-container-to-the-rescue
+    // https://angular.io/guide/structural-directives#ng-container-to-the-rescue
+    // https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/
 
 /*
 
