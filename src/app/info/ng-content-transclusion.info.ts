@@ -50,11 +50,11 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             <p class="app-text-smaller">
-                <ng-content select="[alert-text]"></ng-content>
+                <ng-content select="[alert-text]"></ng-content> <!-- A1) can select with css selectors. Use no selector, just <ng-content></ng-content> for 1 transclution -->
             </p>
             <p class="app-text-smaller" [hidden]="!moreInfoHref">
                 <a href="{{moreInfoHref}}" target="_blank">&gt;
-                    <ng-content select="[alert-link]"></ng-content>
+                    <ng-content select="[alert-link]"></ng-content> <!-- OBS missing in template bellow -->
                 </a>
             </p>
         </div>
@@ -65,8 +65,8 @@
     // other.html
 
     <app-alert>
-        <span alert-text>
-        Lorem ipsum
+        <span alert-text> <!-- A2) matching this attribute -->
+            Lorem ipsum
         </span>
     </app-alert>
 
