@@ -14,6 +14,8 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
     @ViewChild(BindingsChildComponent) bindingsChild: BindingsChildComponent;                                   // 2) And access it via ViewChild
     @ViewChild('theSpan') theSpan: ElementRef;                                                                  // A) Can grab a DOM element like this
 
+    /* tslint:disable */
+    
     /*
 
         https://netbasal.com/understanding-viewchildren-contentchildren-and-querylist-in-angular-896b0c689f6e
@@ -47,6 +49,8 @@ export class BindingsComponent implements OnInit, OnDestroy, AfterViewInit {
             https://angular.io/guide/lifecycle-hooks
 
     */
+
+    /* tslint:enable */
 
     post: IPost;
 

@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 /* 
 
     // https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/

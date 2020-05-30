@@ -3,8 +3,8 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="simpleForm">
     <div class="grid-x grid-margin-x">
         <div class="cell medium-6">
-            <label for="name">Name</label>
-            <input type="text" id="nameControl" name="nameControl" [formControl]="nameControl"> <!-- formControlName also works -->
+            <label for="nameControl">Name</label>
+            <input type="text" id="nameControl" name="nameControl" [formControl]="nameControl"> <!-- formControlName also works instead of [formControl] -->
             <div>
                 <button type="submit" class="success button expanded" [disabled]="!simpleForm.valid">Submit</button>
             </div>
