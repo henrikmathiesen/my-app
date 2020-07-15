@@ -11,6 +11,7 @@
                 - // make a nested group
         - dont forget attr.aria-invalid and attr.aria-describedby form validation error connection
             - https://www.w3.org/WAI/tutorials/forms/notifications/
+        - required is enough, instead of aria-required
 
 
     // .html
@@ -57,6 +58,7 @@
         - Using just new FormGroup here, could also use FormBuilder
         - dont forget attr.aria-invalid and attr.aria-describedby form validation error connection
             - https://www.w3.org/WAI/tutorials/forms/notifications/
+        - required is enough, instead of aria-required
 
     
     // .html
