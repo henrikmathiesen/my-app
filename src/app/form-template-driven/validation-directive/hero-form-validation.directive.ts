@@ -14,7 +14,7 @@ export class HeroFormValidationDirective implements OnInit, OnDestroy {
     private subject: Subject<any> = new Subject();
     private subscription: ISubscription;
 
-    // constructor(private el: ElementRef) {} // Can get access to DOM element this way. Example: this.element.nativeElement.focus();
+    // constructor(private el: ElementRef) {} // Can get access to DOM element this way. Example: this.el.nativeElement.focus();
 
     ngOnInit() {
         this.subscription = this.subject
