@@ -58,7 +58,16 @@
                 </select>
                 <!--
                     For reactive forms, start here: https://ultimatecourses.com/blog/angular-dynamic-components-forms#select-field
+                        - I think same principles applies as in template forms
                     See also docs in person-form-check-validity.component.html
+                -->
+
+                <!--
+                    Can also put the placeholder as an item at index 0 in the model[].
+                    However if we filter the model[] we must be careful to not filter out the placeholder.
+                    See info/shift-placeholder.ts , for creating placeholder item and put it at index 0
+                    Also, with this aproach, the placeholder is not null, so required validation will say OK,
+                    need a custom validator then to check the Id.
                 -->
             </div>
             <div>
