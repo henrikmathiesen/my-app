@@ -59,7 +59,7 @@
         - dont forget attr.aria-invalid and attr.aria-describedby form validation error connection
             - https://www.w3.org/WAI/tutorials/forms/notifications/
         - required is enough, instead of aria-required
-
+        - for primitives, value="ja" is enough, dont need [value]
     
     // .html
 
