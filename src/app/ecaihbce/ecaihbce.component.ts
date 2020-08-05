@@ -9,6 +9,8 @@ export class EcaihbceComponent implements OnInit, AfterViewInit {
 
     constructor(
         // private cd: ChangeDetectorRef , can be used to manually detect changes: this.cd.detectChanges();
+        // use it in ngAfterViewInit(){} or ngAfterContentChecked(){}
+        // https://angular.io/guide/lifecycle-hooks#lifecycle-event-sequence
     ) { }
 
     ngOnInit() {
