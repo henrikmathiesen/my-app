@@ -5,6 +5,7 @@ export class ParsableDateChecker {
     static isValidDateString(value: string): boolean {
 
         // yyyy-MM-dd or yyyyMMdd
+        // OBS
         // Use regex to check against the above pattern (see regular-expressions > basics-04.test.js)
         // else value could be yyyyMM-dd or yyyy-MMdd for example
         // then this method would remove the dashes (in this scope), check Is reasonable date and say OK
