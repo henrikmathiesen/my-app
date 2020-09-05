@@ -39,13 +39,24 @@ export class SomePipesComponent implements OnInit {
   //   console.log(words);
   // }
 
-  private formatDates() { 
+  private formatDates() {
     console.log(this.datePipe.transform(new Date(), 'yyyy-MM-dd'));
-    console.log(this.datePipe.transform(new Date(2020,8,5,0,0,0,0), 'yyyy-MM-dd'));   // rendered in local time (https://angular.io/api/common/DatePipe)
+    console.log(this.datePipe.transform(new Date(2020, 8, 5, 0, 0, 0, 0), 'yyyy-MM-dd'));   // rendered in local time (https://angular.io/api/common/DatePipe)
     console.log(this.datePipe.transform(null, 'yyyy-MM-dd'));                         // returns null
     console.log(this.datePipe.transform(false, 'yyyy-MM-dd'));                        // returns 1970-01-01
     console.log(this.datePipe.transform(10, 'yyyy-MM-dd'));                           // returns 1970-01-01
     // console.log(this.datePipe.transform('foo', 'yyyy-MM-dd'));                     // exception
+
+    const d1 = new Date();
+    d1.setHours(12,0,0,0)
+
+    setTimeout(() => {
+      const d2 = new Date();
+      d2.setHours(12,0,0,0)
+
+      console.log(d1, d2);
+
+    }, 1000);
   }
 
   private formatPhones() {
