@@ -2,7 +2,7 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
-import { registerLocaleData, CurrencyPipe, UpperCasePipe } from '@angular/common';
+import { registerLocaleData, CurrencyPipe, DatePipe, UpperCasePipe } from '@angular/common';
 
 // https://github.com/angular/angular/tree/master/packages/common/locales
 import localeSv from '@angular/common/locales/sv';                                              // ng serve --locale=sv if using JIT compiler , dont need to if using AOT , for unit testing see test.ts and sv-currency-no-decimals.pipe.spec
@@ -146,6 +146,7 @@ import { UnitTestShallowChildService } from './unit-test-shallow-parent/unit-tes
     UnitTestShallowChildService,
 
     CurrencyPipe,
+    DatePipe,
     TruncateWordsPipe,
     UpperCasePipe
   ],

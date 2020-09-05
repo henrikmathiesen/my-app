@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 // import { UpperCasePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { parseNumber, formatNumber } from 'libphonenumber-js';
 // import { TruncateWordsPipe } from './truncate-words.pipe';
 
 @Component({
-  selector: 'my-some-pipes',
   templateUrl: './some-pipes.component.html'
 })
 export class SomePipesComponent implements OnInit {
@@ -12,6 +12,7 @@ export class SomePipesComponent implements OnInit {
   constructor(
     // private upperCasePipe: UpperCasePipe,
     // private truncateWordsPipe: TruncateWordsPipe
+    private datePipe: DatePipe
   ) { }
 
   obj: Object = { foo: 'bar', baz: 'qux', nested: { xyz: 3, numbers: [1, 2, 3, 4, 5] } };
@@ -22,6 +23,7 @@ export class SomePipesComponent implements OnInit {
   ngOnInit() {
     // this.truncateWords();
     // this.uppercaseWords();
+    this.formatDates();
     this.formatPhones();
   }
 
@@ -36,6 +38,15 @@ export class SomePipesComponent implements OnInit {
   //   words = this.upperCasePipe.transform(words);
   //   console.log(words);
   // }
+
+  private formatDates() { 
+    console.log(this.datePipe.transform(new Date(), 'yyyy-MM-dd'));
+    console.log(this.datePipe.transform(new Date(2020,8,5,0,0,0,0), 'yyyy-MM-dd'));   // rendered in local time (https://angular.io/api/common/DatePipe)
+    console.log(this.datePipe.transform(null, 'yyyy-MM-dd'));                         // returns null
+    console.log(this.datePipe.transform(false, 'yyyy-MM-dd'));                        // returns 1970-01-01
+    console.log(this.datePipe.transform(10, 'yyyy-MM-dd'));                           // returns 1970-01-01
+    // console.log(this.datePipe.transform('foo', 'yyyy-MM-dd'));                     // exception
+  }
 
   private formatPhones() {
     const se = 'SE';
