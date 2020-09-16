@@ -17,3 +17,25 @@
 // - See angular-x-routing
 //      - tsconfig.json
 //      - better-imports.component
+
+
+
+/* 
+
+    SIDE NOTE
+
+    declare const require: any;
+    const moment = require('moment');
+
+    or
+
+    import moment from 'moment';
+
+    And using moment
+
+    in 2 files
+
+    does not increase file size (I didnt think it would)
+    main 621KB -> 991KB (using moment in one file) = 370KB increase -> 991KB (using moment in second file) = 0KB increase
+
+*/
