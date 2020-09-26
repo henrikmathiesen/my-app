@@ -38,6 +38,7 @@
         Application wide services should, as of Angular 6, have the @Injectable({providedIn: 'root'}) decorator, no need to provide them. Place the files in app/services.
         Application wide services should, in legazy Angular, be provided in an eagerly loaded core.module and imported in app.module only. Place the files in app/core/services folder.
         Services only relevant in a lazy loaded context should be provided in the lazy loaded module. Place files in app/lazy/services.
+        Services only relevant in a eagerly loaded context should be provided in the eagerly loaded module -- but beware that the service will be registered with the root injector. Place files in app/eagerly/services.
         I dont really see a need to provide a service at the component level.
 
     PIPES PROVIDE, KEY TAKE AWAYS
@@ -49,12 +50,12 @@
             - If a pipe is used in a component.ts file, it does need to be in module providers[]
 
         
-        I think pipes should be placed in shared folder and declared in shared.module
+        I think custom pipes should be placed in shared folder and declared in shared.module
             declarations: [SomePipe]
             exports: [SomePipe]
         That way all eagerly loaded modules and lazy loaded modules can import shared.module and use the pipes in the template.
 
-        But! Lets say we want to use SomePipe in a component.ts file, then we need to provide it, so we do that in providers[] in shared.module.
+        But! Lets say we want to use SomePipe in a component.ts file, then we need to provide it, so we do that in providers[] in shared.module. The same is true for a build in pipe, we need to provide it somewhere.
         This however means that all the eagerly loaded modules will get one instance from the root injector while the lazy loaded modules will get their own instance from their own injector.
         Pipes are pure, meaning given the same input they give the same output, and they have no side effect and do not hold any state -- so the consequences should not be that bad.
         But I would still prefer that provided pipes would belong to the root injector.
@@ -62,7 +63,13 @@
         Sadly the @Injectable({providedIn: 'root'}) decorator is not available for pipes.
         https://github.com/angular/angular/issues/25943
 
+        
         So, what to do?
+            
             - We could provide the pipe in app.module, that way it would be added to the root injector and become an app wide singleton.
+                - I would however prefer to have it provided in the shared module, where it is declared and exported
+
+            - Another way is to use a static forRoot(): ModuleWithProviders in shared.module. See angular-x-routing.
+                - Also recomended here https://angular-2-training-book.rangle.io/modules/shared-di-tree
 
 */
