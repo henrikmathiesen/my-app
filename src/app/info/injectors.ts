@@ -75,4 +75,7 @@
                 - Also the exported components/pipes/directives in shared.module will be accessible in app.modules components.
                 - Importing the shared.module in eagerly loaded module does not increase the bundle file size.
 
+                - shared.module exports CommonModule , it then gets imported in app.module, which already imports BrowserModule that exports CommonModule
+                    - Not a problem https://angular.io/guide/ngmodule-faq#what-if-i-import-the-same-module-twice
+
 */
