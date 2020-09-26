@@ -71,5 +71,8 @@
 
             - Another way is to use a static forRoot(): ModuleWithProviders in shared.module. See angular-x-routing.
                 - Also recomended here https://angular-2-training-book.rangle.io/modules/shared-di-tree
+                - This will register the pipe services with the root injector.
+                - Also the exported components/pipes/directives in shared.module will be accessible in app.modules components.
+                - Importing the shared.module in eagerly loaded module does not increase the bundle file size.
 
 */
