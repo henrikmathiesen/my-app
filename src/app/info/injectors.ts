@@ -41,6 +41,9 @@
         Services only relevant in a eagerly loaded context should be provided in the eagerly loaded module -- but beware that the service will be registered with the root injector. Place files in app/eagerly/services.
         I dont really see a need to provide a service at the component level.
 
+        There is some confusion about using @Injectable({providedIn: SomeModule}) . It would be the same as providing it in the providers array of eagerly / lazy modules(?)
+            https://github.com/angular/angular-cli/issues/10170
+
     PIPES PROVIDE, KEY TAKE AWAYS
         
         Remember
