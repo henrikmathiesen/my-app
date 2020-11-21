@@ -30,5 +30,6 @@ export class DataSharingSibblingComponent implements OnInit, OnDestroy {
         NavigationExtras in Angular 7 plus, is an alternative
         https://medium.com/coding-in-depth/best-use-of-navigationextras-in-angular-7-plus-d5fb436e298e
     
+        See angular-x-rxjs6-plus
     */
 }
