@@ -63,6 +63,10 @@ postSomething() {
         })                                                                                  // return throwError(error); (from rxjs) does not seam to trigger GlobalErrorHandler
     );                                                                                      // complete callback in subscribe WILL run
 }                                                                                           // IF error callback in subscribe, need to throw error; from there else GlobalErrorHandler will not run
+
+                                                                                            // If we want to return something to the subscriber, we could use
+                                                                                            // import { of } from 'rxjs'; return of(null);
+                                                                                            // Also see angular-x-rxjs6-plus > catch-error-try-again.component.ts
 			
 
 // error-message.service	
