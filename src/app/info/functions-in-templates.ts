@@ -11,7 +11,7 @@
         getVal()
         https://angular.io/guide/template-syntax
 
-    And Todd Motto Does
+    And Todd Motto does
     
         *ngIf="user.get('name').hasError('required') && user.get('name').touched"
         https://ultimatecourses.com/blog/angular-2-forms-reactive
