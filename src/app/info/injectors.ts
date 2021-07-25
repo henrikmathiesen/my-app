@@ -58,7 +58,7 @@
             exports: [SomePipe]
         That way all eagerly loaded modules and lazy loaded modules can import shared.module and use the pipes in the template.
 
-        But! Lets say we want to use SomePipe in a component.ts file, then we need to provide it, so we do that in providers[] in shared.module. The same is true for a build in pipe, we need to provide it somewhere.
+        But! Lets say we want to use SomePipe in a component.ts file, then we need to provide it, so we do that in providers[] in shared.module. The same is true for a built in pipe, we need to provide it somewhere.
         This however means that all the eagerly loaded modules will get one instance from the root injector while the lazy loaded modules will get their own instance from their own injector.
         Pipes are pure, meaning given the same input they give the same output, and they have no side effect and do not hold any state -- so the consequences should not be that bad.
         But I would still prefer that provided pipes would belong to the root injector.
