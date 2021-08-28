@@ -89,6 +89,5 @@
 
     matches.sort((a, b) => (getOccurrence(a)).localeCompare(getOccurrence(b), "sv", { sensitivity: 'case' }));
 
-    test
 
 */
