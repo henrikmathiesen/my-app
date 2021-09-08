@@ -2,6 +2,8 @@
 
 /* 
 
+    See also javascript-the-important-parts > other > order-search-result
+
 
     // # 1
     // Ranks whole words heigher
