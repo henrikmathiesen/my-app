@@ -19,6 +19,7 @@
             - https://shekhargulati.com/2017/07/06/angular-4-use-of-base-href-and-deploy-url-build-options/
             - deploy-url deprecated in Angular 15 , base-href should be enough
             - deploy-url in Angular 15 prepends path to css image url in component css, but not in styles.css 
+            - base-href does not prepend path to css image url, in Angular 15
         - output-path
             - name of folder for output (default dist)
 
