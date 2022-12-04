@@ -17,6 +17,8 @@
             - Will change paths to css and js in index.html
             - Will change paths to lazy loaded module scripts
             - https://shekhargulati.com/2017/07/06/angular-4-use-of-base-href-and-deploy-url-build-options/
+            - deploy-url deprecated in Angular 15 , base-href should be enough
+            - deploy-url in Angular 15 prepend path to css image url in component css, but not in styles.css 
         - output-path
             - name of folder for output (default dist)
 
