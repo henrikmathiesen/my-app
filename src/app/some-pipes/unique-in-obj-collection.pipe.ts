@@ -27,3 +27,31 @@ export class UniqueInObjCollectionPipe implements PipeTransform {
     }
 
 }
+
+
+/* 
+
+ALT (better aproach)
+
+let uniqueKeys: Set<string>;
+let onlyUnique: (arbetsstallen: ArbetsstalleFlatModel[]) => ArbetsstalleFlatModel[];
+
+uniqueKeys = new Set<string>();
+onlyUnique = (arbetsstallen: ArbetsstalleFlatModel[]) => {
+  const filtered = arbetsstallen.filter((a) => {
+    const key = `${a.cfar}|${a.adress}|${a.postnr}|${a.postort}`;
+    // Kontrollera om nyckeln redan finns i Set
+    if (uniqueKeys.has(key)) {
+      // Dublett hittad, vill ej ha med
+      return false;
+    } else {
+      // Första gången denna kombination upstår då vill vi lägga till nyckeln och inkludera objektet
+      uniqueKeys.add(key);
+      return true;
+    }
+  });
+  return filtered;
+};
+
+
+*/
